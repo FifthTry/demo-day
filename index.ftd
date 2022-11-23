@@ -3,6 +3,8 @@
 
 
 
+
+
 -- boolean is-mobile: false
 
 -- boolean show-section: false
@@ -17,18 +19,20 @@ $processor$: sitemap
 
 -- optional string site-name: 
 
--- optional ftd.image-src site-logo:
-dark: $assets.files.images.site-icon.svg.dark
-light: $assets.files.images.site-icon.svg.light
+-- ftd.image-src site-logo:
+dark: $assets.files.static.brand-logo.svg.dark
+light: $assets.files.static.brand-logo.svg.light
 
 -- string site-url: /
+
+
+
 
 
 -- record owner:
 caption name:
 string url:
 string avatar:
-
 
 -- record ft-zen:
 caption name:
@@ -38,6 +42,11 @@ string avatar:
 -- ft-zen abrar: Abrar
 url: abrark.com5
 avatar: logo
+
+
+
+
+
 
 
 
@@ -78,14 +87,40 @@ groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
 
 -- sidebar:
 
+
+
+
+
+
+
+
+
+
 -- ftd.text dd: yo
 link: https://www.fifthtry.com/h/dd/
 role: $fpm.type.copy-relaxed
 
 
+
+
+
+
+
+
+
+
 -- ftd.text remote: yo
 link: https://www.fifthtry.com/h/remote/
 role: $fpm.type.copy-relaxed
+
+
+
+
+
+
+
+
+
 
 -- ftd.column demo-day:
 optional caption title:
@@ -107,7 +142,6 @@ boolean in-future: false
 string youtube-id:
 spacing: 32
 boolean sidebar: false
-
 
 --- demo-day-desktop: $title
 id: demo-container
@@ -145,6 +179,13 @@ sidebar: $sidebar
 
 
 
+
+
+
+
+
+
+
 -- ftd.column demo-day-desktop:
 optional caption title:
 optional body body:
@@ -178,7 +219,6 @@ site-name: $site-name
 
 --- container: ftd.main
 
-
 --- ftd.row:
 width: fill
 id: main-row
@@ -188,7 +228,6 @@ spacing: 64
 if: $toc is not empty
 toc-obj: $toc
 
-
 --- container: main-row
 
 --- ftd.column:
@@ -197,7 +236,6 @@ id: demo-container
 min-height: fill
 padding-vertical: $fpm.space.space-4
 max-width: 800
-
 
 --- ftd.row:
 width: fill
@@ -238,7 +276,6 @@ color: $fpm.color.main.text-strong
 role: $fpm.type.heading-hero
 color: $fpm.color.main.text-strong
 
-
 --- container: demo-container
 
 --- ftd.text:
@@ -247,10 +284,8 @@ role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 margin-bottom: 26
 
-
 --- youtube:
 v: $youtube-id
-
 
 --- container: main-row
 
@@ -275,6 +310,16 @@ padding-bottom: 32
 margin-top: 25
 margin-bottom: 25
 border-radius: 8
+
+
+
+
+
+
+
+
+
+
 -- ftd.column demo-day-mobile:
 optional caption title:
 optional body body:
@@ -309,7 +354,6 @@ site-name: $site-name
 
 --- container: ftd.main
 
-
 --- ftd.column:
 width: fill
 id: main-row
@@ -323,14 +367,11 @@ id: demo-container
 min-height: fill
 padding-vertical: $fpm.space.space-4
 
-
-
 --- ftd.row:
 width: fill
 padding-vertical: 12
 region: h0
 id: header-container
-
 
 --- ftd.column:
 id: head-conatiner
@@ -373,7 +414,6 @@ role: $fpm.type.copy-tight
 color: $fpm.color.main.text-strong
 style: bold
 
-
 --- container: header-container
 
 --- ftd.column:
@@ -388,19 +428,14 @@ $on-click$: toggle $open-right-sidebar-info
 
 --- container: demo-container
 
-
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 margin-bottom: 26
 
-
 --- youtube:
 v: $youtube-id
-
-
-
 
 --- container: main-row
 
@@ -415,7 +450,6 @@ background-color:  $fpm.color.main.background.overlay
 z-index: 1
 width: fill
 $on-click$: $open-right-sidebar-info = false
-
 
 --- ftd.column:
 width: fill
@@ -449,6 +483,14 @@ padding-vertical: 24
 padding-horizontal: 24
 
 
+
+
+
+
+
+
+
+
 -- ftd.column presentation:
 optional caption title:
 optional body body:
@@ -458,7 +500,6 @@ width: fill
 open: true
 id: presentation-container
 append-at: presentation-container
-
 
 --- presentation-desktop: $title
 if: not $is-mobile 
@@ -475,6 +516,15 @@ body: $body
 owner: $owner
 helper: $helper
 id: presentation-container
+
+
+
+
+
+
+
+
+
 
 -- ftd.column presentation-desktop:
 optional caption title:
@@ -505,7 +555,6 @@ color: $fpm.color.main.text
 role: $fpm.type.copy-tight
 color: $fpm.color.main.text
 
-
 --- container: ftd.main
 
 ---  ftd.row:
@@ -529,11 +578,9 @@ role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
 
-
 --- ftd.column:
 id: presentation-container
 width: fill
-
 
 -- ftd.column presentation-mobile:
 optional caption title:
@@ -564,7 +611,6 @@ color: $fpm.color.main.text
 role: $fpm.type.copy-tight
 color: $fpm.color.main.text
 
-
 --- container: ftd.main
 
 ---  ftd.row:
@@ -588,10 +634,17 @@ role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
 
-
 --- ftd.column:
 id: presentation-container
 width: fill
+
+
+
+
+
+
+
+
 
 
 -- ftd.column render-toc:
@@ -626,11 +679,9 @@ toc: $obj
 
 
 
-
 -- ftd.column toc-instance:
 fpm.toc-item toc:
 id: toc-instance
-
 
 --- ftd.row:
 if: $toc.url is not null
@@ -676,9 +727,7 @@ color: $fpm.color.main.text
 color if $toc.is-active: $fpm.color.main.cta-primary.base
 padding-left: 10
 
-
 --- container: ftd.main
-
 
 --- childrens:
 $loop$: $toc.children as $obj
@@ -695,7 +744,6 @@ toc: $obj
 
 -- ftd.column childrens:
 fpm.toc-item toc:
-
 
 --- ftd.row:
 if: $toc.url is not null
@@ -740,7 +788,6 @@ margin-left: $fpm.space.space-3
 color: $fpm.color.main.text
 color if $toc.is-active: $fpm.color.main.cta-primary.base
 
-
 --- container: ftd.main
 
 --- ftd.column:
@@ -759,29 +806,17 @@ toc: $obj
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 -- ftd.iframe youtube:
 caption v:
 youtube: $v
 height: 400
 width: fill
 margin-bottom: 34
+
+
+
+
+
 
 
 
