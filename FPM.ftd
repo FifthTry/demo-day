@@ -7,6 +7,10 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/demo-day/main
 
 -- fpm.dependency: fifthtry.github.io/header as h
 -- fpm.dependency: fifthtry.github.io/color-doc as cs
+-- fpm.dependency: fifthtry.github.io/admonitions as cbox
+
+
+-- fpm.auto-import: cbox
 
 -- fpm.auto-import: ds
 -- fpm.auto-import: fpm
@@ -15,9 +19,9 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/demo-day/main
 
 -- fpm.sitemap:
 
-#home: /
+#Home: /
 
-## abh: /
+## Demo: /
 
-- toc-one: /
--toc-toe:/
+- Presentation: /
+- Documentation:/
