@@ -293,6 +293,7 @@ margin-left: 32
 background-image: $assets.files.static.calender.svg
 width: 75
 height: 85
+margin-top: -34
 
 
 --- ftd.text: $date
@@ -429,6 +430,14 @@ id: demo-container
 min-height: fill
 padding-vertical: $fpm.space.space-4
 
+--- ftd.column: 
+width: fill
+id: dd-container
+background-color: $blue
+padding-horizontal: 24
+border-radius: 20
+margin-bottom: 24
+
 --- ftd.row:
 width: fill
 padding-vertical: 12
@@ -442,6 +451,9 @@ width: fill
 
 --- ftd.row:
 spacing: 8
+
+
+
 
 --- ftd.text: $title
 role: $fpm.type.heading-small
@@ -462,20 +474,19 @@ spacing: 4
 margin-left: 8
 padding-top: 4
 
---- ftd.text: (
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
-style: bold
+--- ftd.row:
+spacing: 12
+margin-left: 102
+background-image: $assets.files.static.calender.svg
+width: 75
+height: 85
 
 --- ftd.text: $date
-role: $fpm.type.copy-tight
+role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
 style: bold
-
---- ftd.text: )
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
-style: bold
+text-align: center
+padding-top: 8
 
 --- container: header-container
 
@@ -486,19 +497,56 @@ padding-top: $fpm.space.space-2
 
 --- ftd.image:
 src: $assets.files.static.info-icon.svg
-width: 36
+width: 30
+margin-top: -63
 $on-click$: toggle $open-right-sidebar-info
 
---- container: demo-container
+--- container: dd-container
 
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 margin-bottom: 26
+text-align: justify
+
+
+
+
+--- ftd.column:
+if: $demo-video is not null
+width: fill
+
+--- detail.detail: Demo Video
+width: fill
 
 --- youtube:
 v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $planning-video is not null
+width: fill
+
+--- detail.detail: Planning Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $review-video is not null
+width: fill
+
+--- detail.detail: Review Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
 
 --- container: main-row
 
