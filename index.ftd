@@ -380,6 +380,7 @@ padding-vertical: 12
 region: h0
 id: header-container
 
+
 --- ftd.column:
 id: head-conatiner
 width: fill
@@ -534,8 +535,6 @@ id: presentation-container
 
 
 
-
-
 -- ftd.row presentation-desktop:
 optional caption title:
 optional body body:
@@ -571,7 +570,6 @@ text-align: justify
 --- ftd.column:
 id: presentation-container
 width: fill
-
 
 
 --- container: ftd.main
@@ -623,6 +621,7 @@ color: $fpm.color.main.text
 style: semi-bold
 text-align: center
 width: fill
+
 --- ftd.text: $helper
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
@@ -637,10 +636,14 @@ optional body body:
 string owner:
 string helper:
 string status:
-width: fill
 open: true
 id: presentation-container
 append-at: presentation-container
+background-color: $blue
+border-radius: 20
+padding-horizontal: 24
+spacing: 10
+
 
 --- ftd.text: $title
 role: $fpm.type.heading-small
@@ -651,30 +654,62 @@ region: h1
 ---  ftd.row:
 width: fill
 spacing: 12
-margin-bottom: 12
+
+
+---  ftd.column:
+width: 225
+spacing: 12
+id: second-container
+background-color: $blue-dark
+padding-top: 16
+padding-bottom: 24
+padding-horizontal: 24
+border-radius: 20
+align: center
+height: 240
+
+
+--- ftd.text: Status:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+
+--- ftd.text: $status
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+color if $status == Pending: $fpm.color.main.custom.two
+color if $status == Succes: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
 
 --- ftd.text: Owner:
-role: $fpm.type.copy-tight
+role: $fpm.type.copy-large
 color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
 
 --- ftd.text: $owner
 role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- container: ftd.main
-
----  ftd.row:
+color: $fpm.color.main.cta-primary.base
+text-align: center
 width: fill
-margin-bottom: 12
-spacing: 12
 
 --- ftd.text: Helper:
-role: $fpm.type.copy-tight
+role: $fpm.type.copy-large
 color: $fpm.color.main.text
-
+style: semi-bold
+text-align: center
+width: fill
 --- ftd.text: $helper
 role: $fpm.type.copy-tight
-color: $fpm.color.main.text
+color: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
+
+
 
 --- container: ftd.main
 
@@ -683,6 +718,7 @@ text:$body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
+text-align: justify
 
 --- ftd.column:
 id: presentation-container
