@@ -1,57 +1,842 @@
--- import: fifthtry.github.io/demo-day/assets
+-- import:fifthtry.github.io/header as h
+-- import:fifthtry.github.io/demo-day/assets 
 
 
 
--- ds.page: Welcome to your [FPM site](https://fpm.dev/)
-
-FPM Blank Package Template Repo
-
-🧑‍🚀 **Seasoned traveler?** update this file. Enjoy!
 
 
---- ds.image: doc-site
-src: $assets.files.doc-site-example.png
+-- boolean is-mobile: false
+
+-- boolean show-section: false
+
+-- is-mobile: true
+if: $ftd.device == mobile
+
+-- boolean open-right-sidebar-info: false
+
+-- fpm.sitemap-data sitemap:
+$processor$: sitemap
+
+-- optional string site-name: 
+
+-- ftd.image-src site-logo:
+dark: $assets.files.static.brand-logo.svg.dark
+light: $assets.files.static.brand-logo.svg.light
+
+-- string site-url: /
+
+
+
+
+
+-- record owner:
+caption name:
+string url:
+string avatar:
+
+-- record ft-zen:
+caption name:
+string url:
+string avatar:
+
+-- ft-zen abrar: Abrar
+url: abrark.com5
+avatar: logo
+
+
+
+
+
+
+
+
+
+
+-- demo-day:  Fifthtry
+number: 11th
+date: 22 nov
+youtube-id: rny1EGkqw_M
+sidebar: true
+id: demo-id
+
+Lorem Ipsum is simply {dd: 22 nov} text of the printing and typesetting industry. L\
+orem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap int
+o electronic typesetting, remaining essentially unchanged. It was popularised
+in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
+ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
+including versions of Lorem Ipsum.
+
+-- presentation: Move FifthTry.com to Heroku
+owner: @ft-zens.abrark
+helper: @ft-zens.priyanka
+
+Currently we are using github pages, now lets switch to
+Heroku so we can start using fpm's auth feature.
+This document will become the "coming soon page" for
+others, and for FifthTry employees it would act as
+planning document. Also implement auth with following
+groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
+
+-- container: demo-id.demo-container.right-sidebar
+
+-- sidebar:
+
+-- container: demo-id.demo-container.right-sidebar-mobile
+
+-- sidebar:
+
+
+
+
+
+
+
+
+
+
+-- ftd.text dd: yo
+link: https://www.fifthtry.com/h/dd/
+role: $fpm.type.copy-relaxed
+
+
+
+
+
+
+
+
+
+
+-- ftd.text remote: yo
+link: https://www.fifthtry.com/h/remote/
+role: $fpm.type.copy-relaxed
+
+
+
+
+
+
+
+
+
+
+-- ftd.column demo-day:
+optional caption title:
+optional body body:
+fpm.toc-item list toc: $sitemap.toc
+fpm.toc-item list sections: $sitemap.sections
+fpm.toc-item list sub-sections: $sitemap.subsections
+optional fpm.toc-item current-section: $sitemap.current-section
+optional fpm.toc-item current-subsection: $sitemap.current-subsection
+optional fpm.toc-item current-page: $sitemap.current-page
+background-color: $fpm.color.main.background.base
+open: true
+id: demo-container
+append-at: demo-container
+width: fill
+string number:
+string date:
+boolean in-future: false
+string youtube-id:
+spacing: 32
+boolean sidebar: false
+
+--- demo-day-desktop: $title
+id: demo-container
+if: not $is-mobile
+body: $body
+toc: $toc
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+number: $number
+date: $date
+in-future: $in-future
+youtube-id: $youtube-id
+sidebar: $sidebar
+
+--- container: ftd.main
+
+--- demo-day-mobile: $title
+id: demo-container
+if: $is-mobile
+body: $body
+toc: $toc
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+number: $number
+date: $date
+in-future: $in-future
+youtube-id: $youtube-id
+sidebar: $sidebar
+
+
+
+
+
+
+
+
+
+
+-- ftd.column demo-day-desktop:
+optional caption title:
+optional body body:
+fpm.toc-item list toc: 
+fpm.toc-item list sections: 
+fpm.toc-item list sub-sections: 
+optional fpm.toc-item current-section:
+optional fpm.toc-item current-subsection:
+optional fpm.toc-item current-page:
+background-color: $fpm.color.main.background.base
+open: true
+id: demo-container
+append-at: demo-container
+width: fill
+string number:
+string date:
+boolean in-future: false
+string youtube-id:
+spacing: 32
+boolean sidebar:
+
+--- h.header: 
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+site-logo: $site-logo
+site-url: $site-url
+site-name: $site-name
+
+--- container: ftd.main
+
+--- ftd.row:
+width: fill
+id: main-row
+spacing: 64
+
+--- render-toc:
+if: $toc is not empty
+toc-obj: $toc
+
+--- container: main-row
+
+--- ftd.column:
+width: fill
+id: demo-container
+min-height: fill
+padding-vertical: $fpm.space.space-4
+max-width: 800
+
+--- ftd.row:
+width: fill
+padding-vertical: 12
+region: h0
+id: header-container
+
+--- ftd.row:
+spacing: 8
+
+--- ftd.text: $title
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- ftd.text: $number
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- ftd.text: Demo Day
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- container: header-container
+
+--- ftd.row:
+spacing: 12
+margin-left: 12
+
+--- ftd.text: (
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- ftd.text: $date
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- ftd.text: )
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- container: demo-container
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+margin-bottom: 26
+
+--- youtube:
+v: $youtube-id
+
+--- container: main-row
+
+--- ftd.column:
+if: $sidebar
+id: right-sidebar
+min-width: 284
+max-width: 284
+z-index: 999
+background-color: $fpm.color.main.background.overlay
+sticky: true
+top: 0
+right: 48
+height: calc 100vh - 0px
+overflow-y: auto
+align: top-right
+margin-right: 48
+padding-left: 24
+padding-top: 4
+padding-right: 16
+padding-bottom: 32
+margin-top: 25
+margin-bottom: 25
+border-radius: 8
+
+
+
+
+
+
+
+
+
+
+-- ftd.column demo-day-mobile:
+optional caption title:
+optional body body:
+fpm.toc-item list toc: $sitemap.toc
+fpm.toc-item list sections: $sitemap.sections
+fpm.toc-item list sub-sections: $sitemap.subsections
+optional fpm.toc-item current-section: $sitemap.current-section
+optional fpm.toc-item current-subsection: $sitemap.current-subsection
+optional fpm.toc-item current-page: $sitemap.current-page
+background-color: $fpm.color.main.background.base
+open: true
+id: demo-container
+append-at: demo-container
+width: fill
+string number:
+string date:
+boolean in-future: false
+string youtube-id:
+spacing: 32
+boolean sidebar:
+
+--- h.header: 
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+site-logo: $site-logo
+site-url: $site-url
+toc: $toc
+site-name: $site-name
+
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+id: main-row
+spacing: 48
+padding-bottom: 48
+padding-horizontal: 24
+
+--- ftd.column:
+width: fill
+id: demo-container
+min-height: fill
+padding-vertical: $fpm.space.space-4
+
+--- ftd.row:
+width: fill
+padding-vertical: 12
+region: h0
+id: header-container
+
+--- ftd.column:
+id: head-conatiner
+width: fill
+
+--- ftd.row:
+spacing: 8
+
+--- ftd.text: $title
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+
+--- ftd.text: $number
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+
+--- ftd.text: Demo Day
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+
+--- container: head-conatiner
+
+--- ftd.row:
+spacing: 4
+margin-left: 8
+padding-top: 4
+
+--- ftd.text: (
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text-strong
+style: bold
+
+--- ftd.text: $date
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text-strong
+style: bold
+
+--- ftd.text: )
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text-strong
+style: bold
+
+--- container: header-container
+
+--- ftd.column:
+if: $sidebar
+align: center
+padding-top: $fpm.space.space-2
+
+--- ftd.image:
+src: $assets.files.static.info-icon.svg
+width: 36
+$on-click$: toggle $open-right-sidebar-info
+
+--- container: demo-container
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+margin-bottom: 26
+
+--- youtube:
+v: $youtube-id
+
+--- container: main-row
+
+--- ftd.column:
+if: $open-right-sidebar-info
+anchor: parent
+top: 0
+bottom: 0
+left: 0
+right: 0
+background-color:  $fpm.color.main.background.overlay
+z-index: 1
+width: fill
+$on-click$: $open-right-sidebar-info = false
+
+--- ftd.column:
+width: fill
+
+--- ftd.image:
+src: $assets.files.static.cross.svg
+height: 16
+width: auto
+margin-top: 30
+margin-left: 16
+$on-click$: $open-right-sidebar-info = false 
+
+--- container: main-row
+
+--- ftd.column:
+if: $open-right-sidebar-info
+width: calc 100% - 48px
+height: calc 100vh - 0px
+overflow-y: auto
+align: top-right
+anchor: parent
+right: 0
+top: 0
+background-color: $fpm.color.main.background.step-1
+z-index: 1
+
+--- ftd.column:
+id: right-sidebar-mobile
+width: fill
+padding-vertical: 24
+padding-horizontal: 24
+
+
+
+
+
+
+
+
+
+
+-- ftd.column presentation:
+optional caption title:
+optional body body:
+string owner:
+string helper:
+width: fill
+open: true
+id: presentation-container
+append-at: presentation-container
+
+--- presentation-desktop: $title
+if: not $is-mobile 
+body: $body
+owner: $owner
+helper: $helper
+id: presentation-container
+
+--- container: ftd.main
+
+--- presentation-mobile: $title
+if: $is-mobile 
+body: $body
+owner: $owner
+helper: $helper
+id: presentation-container
+
+
+
+
+
+
+
+
+
+
+-- ftd.column presentation-desktop:
+optional caption title:
+optional body body:
+string owner:
+string helper:
+width: fill
+open: true
+id: presentation-container
+append-at: presentation-container
+
+--- ftd.text: $title
+role: $fpm.type.heading-large
+color: $fpm.color.main.text-strong
+width: fill
+region: h1
+
+---  ftd.row:
+width: fill
+spacing: 12
+margin-bottom: 12
+
+--- ftd.text: Owner:
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- ftd.text: $owner
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- container: ftd.main
+
+---  ftd.row:
+width: fill
+margin-bottom: 12
+spacing: 12
+
+--- ftd.text: Helper:
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- ftd.text: $helper
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- container: ftd.main
+
+--- ftd.text: 
+text:$body
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+width: fill
+
+--- ftd.column:
+id: presentation-container
+width: fill
+
+-- ftd.column presentation-mobile:
+optional caption title:
+optional body body:
+string owner:
+string helper:
+width: fill
+open: true
+id: presentation-container
+append-at: presentation-container
+
+--- ftd.text: $title
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+width: fill
+region: h1
+
+---  ftd.row:
+width: fill
+spacing: 12
+margin-bottom: 12
+
+--- ftd.text: Owner:
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- ftd.text: $owner
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- container: ftd.main
+
+---  ftd.row:
+width: fill
+margin-bottom: 12
+spacing: 12
+
+--- ftd.text: Helper:
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- ftd.text: $helper
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text
+
+--- container: ftd.main
+
+--- ftd.text: 
+text:$body
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+width: fill
+
+--- ftd.column:
+id: presentation-container
 width: fill
 
 
---- ds.h1: 🚀 Project Structure
-
-Inside of your FPM project, you'll see the following folders and files:
-
-
---- ds.code:
-lang:
-
-/
-├── .build/
-│   └── index.html
-├── .packages/
-│   └── fifthtry.github.io/
-│   	└── All downloaded dependencies
-│   	
-├── FPM.ftd
-├── index.ftd
-└── README.md
 
 
 
---- ds.h1: 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
---- ds.code:
-lang:
-
-=======================================================================
-| Command                | Action                                     |
-| :--------------------- | :----------------------------------------- |
-| fpm build              | FPM builder installs all `FPM` dependencies|
-| fpm serve              | Starts local dev server at available port  |
-|                        | `localhost:8000`                           |
-=======================================================================
 
 
---- ds.h1: 👀 Want to learn more?
 
-Feel free to check [our documentation](https://fpm.dev/) or jump into our [FifthTry Discord server](https://discord.gg/bucrdvptYd).
 
+
+-- ftd.column render-toc:
+fpm.toc-item list toc-obj:
+sticky: true
+top: 0
+left: 24
+height: calc 100vh - 0px
+overflow-y: auto
+min-width: 280
+align: top-left
+background-color:  $fpm.color.main.background.overlay
+border-radius: 8
+padding-left: 24
+padding-top: 24
+padding-right: 16
+padding-bottom: 32
+margin-top: 25
+margin-bottom: 25
+border-bottom-radius: 15
+
+--- toc-instance:
+$loop$: $toc-obj as $obj
+toc: $obj
+
+
+
+
+
+
+
+
+
+
+-- ftd.column toc-instance:
+fpm.toc-item toc:
+id: toc-instance
+
+--- ftd.row:
+if: $toc.url is not null
+width: fill
+spacing: 8
+
+--- ftd.image:
+if: $toc.font-icon is not null
+src: $toc.font-icon
+height: 14
+width: auto
+
+--- ftd.text: 
+if: $toc.url is not null
+link: $toc.url
+text: $toc.title
+role: $fpm.type.fine-print
+min-width: fit-content
+margin-bottom: 16
+;margin-left: $fpm.space.space-3
+color: $fpm.color.main.text
+color if $toc.is-active: $fpm.color.main.cta-primary.base
+
+--- container: ftd.main
+
+--- ftd.row:
+if: $toc.url is null
+width: fill
+spacing: 8
+
+--- ftd.image:
+if: $toc.font-icon is not null
+src: $toc.font-icon
+height: 14
+width: auto
+
+--- ftd.text:
+text: $toc.title
+role: $fpm.type.fine-print
+min-width: fit-content
+margin-bottom: 16
+color: $fpm.color.main.text
+color if $toc.is-active: $fpm.color.main.cta-primary.base
+padding-left: 10
+
+--- container: ftd.main
+
+--- childrens:
+$loop$: $toc.children as $obj
+toc: $obj
+
+
+
+
+
+
+
+
+
+
+-- ftd.column childrens:
+fpm.toc-item toc:
+
+--- ftd.row:
+if: $toc.url is not null
+width: fill
+spacing: 8
+
+--- ftd.image:
+if: $toc.font-icon is not null
+src: $toc.font-icon
+height: 14
+width: auto
+
+--- ftd.text: 
+link: $toc.url
+text: $toc.title
+role: $fpm.type.fine-print
+min-width: fit-content
+margin-bottom: 16
+margin-left: $fpm.space.space-3
+color: $fpm.color.main.text
+color if $toc.is-active: $fpm.color.main.cta-primary.base
+
+--- container: ftd.main
+
+--- ftd.row:
+if: $toc.url is  null
+width: fill
+spacing: 8
+
+--- ftd.image:
+if: $toc.font-icon is not null
+src: $toc.font-icon
+height: 14
+width: auto
+
+--- ftd.text: 
+text: $toc.title
+role: $fpm.type.fine-print
+min-width: fit-content
+margin-bottom: 16
+margin-left: $fpm.space.space-3
+color: $fpm.color.main.text
+color if $toc.is-active: $fpm.color.main.cta-primary.base
+
+--- container: ftd.main
+
+--- ftd.column:
+margin-left: $fpm.space.space-3
+
+--- childrens:
+$loop$: $toc.children as $obj
+toc: $obj
+
+
+
+
+
+
+
+
+
+
+-- ftd.iframe youtube:
+caption v:
+youtube: $v
+height: 400
+width: fill
+margin-bottom: 34
+
+
+
+
+
+
+
+
+
+
+-- ftd.column sidebar:
+width: fill
+
+--- cbox.text-4: Need Help?
+
+Please join our [Discord to ask any questions](https://discord.gg/d2MgKBybEQ)
+related to this workshop!
+Or just meet the others who are learning FTD like you :-)
+
+--- cbox.info: Github Repo
+
+The code for this workshop can be found on Github:
+[ftd-lang/ftd-workshop](https://github.com/ftd-lang/ftd-workshop).
+
+--- cbox.text-4: Join The Next Session
+
+The next remote workshop would be happening on **4th Nov 2022**. [Learn more
+here](https://fifthtry.com/events/).
