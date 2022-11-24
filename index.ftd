@@ -2,7 +2,13 @@
 -- import:fifthtry.github.io/demo-day/assets 
 
 
+-- ftd.color blue:
+dark: #1E3A4C
+light: #1E3A4C
 
+-- ftd.color blue-dark:
+dark: #142733
+light: #142733
 
 
 -- boolean is-mobile: false
@@ -71,6 +77,7 @@ including versions of Lorem Ipsum.
 -- presentation: Move FifthTry.com to Heroku
 owner: @ft-zens.abrark
 helper: @ft-zens.priyanka
+status: Pending
 
 Currently we are using github pages, now lets switch to
 Heroku so we can start using fpm's auth feature.
@@ -496,6 +503,7 @@ optional caption title:
 optional body body:
 string owner:
 string helper:
+string status:
 width: fill
 open: true
 id: presentation-container
@@ -506,6 +514,7 @@ if: not $is-mobile
 body: $body
 owner: $owner
 helper: $helper
+status: $status
 id: presentation-container
 
 --- container: ftd.main
@@ -515,6 +524,7 @@ if: $is-mobile
 body: $body
 owner: $owner
 helper: $helper
+status: $status
 id: presentation-container
 
 
@@ -526,67 +536,107 @@ id: presentation-container
 
 
 
--- ftd.column presentation-desktop:
+-- ftd.row presentation-desktop:
 optional caption title:
 optional body body:
 string owner:
 string helper:
+string status:
 width: fill
 open: true
 id: presentation-container
 append-at: presentation-container
+background-color: $blue
+border-radius: 20
+padding-vertical: 24
+padding-horizontal: 24
+spacing: 24
+
+--- ftd.column:
+width: percent 72
 
 --- ftd.text: $title
-role: $fpm.type.heading-large
+role: $fpm.type.heading-medium
 color: $fpm.color.main.text-strong
 width: fill
-region: h1
-
----  ftd.row:
-width: fill
-spacing: 12
-margin-bottom: 12
-
---- ftd.text: Owner:
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- ftd.text: $owner
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- container: ftd.main
-
----  ftd.row:
-width: fill
-margin-bottom: 12
-spacing: 12
-
---- ftd.text: Helper:
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- ftd.text: $helper
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- container: ftd.main
+margin-bottom: 18
 
 --- ftd.text: 
-text:$body
+text: $body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
+text-align: justify
 
 --- ftd.column:
 id: presentation-container
 width: fill
+
+
+
+--- container: ftd.main
+
+---  ftd.column:
+width: percent 28
+spacing: 12
+margin-bottom: 12
+id: second-container
+background-color: $blue-dark
+padding-top: 16
+padding-bottom: 24
+padding-horizontal: 24
+border-radius: 20
+align: center
+
+
+--- ftd.text: Status:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+
+--- ftd.text: $status
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+color if $status == Pending: $fpm.color.main.custom.two
+color if $status == Succes: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
+
+--- ftd.text: Owner:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+
+--- ftd.text: $owner
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
+
+--- ftd.text: Helper:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+--- ftd.text: $helper
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
+
+
 
 -- ftd.column presentation-mobile:
 optional caption title:
 optional body body:
 string owner:
 string helper:
+string status:
 width: fill
 open: true
 id: presentation-container
