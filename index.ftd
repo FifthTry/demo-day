@@ -22,6 +22,9 @@ light: #142733
 
 
 
+
+
+
 -- boolean is-mobile: false
 
 -- boolean show-section: false
@@ -68,6 +71,15 @@ in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
 ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
 including versions of Lorem Ipsum.
 
+
+
+
+
+
+
+
+
+
 -- presentation: Move FifthTry.com to Heroku
 owner: @ft-zens.abrark
 helper: @ft-zens.priyanka
@@ -79,6 +91,15 @@ This document will become the "coming soon page" for
 others, and for FifthTry employees it would act as
 planning document. Also implement auth with following
 groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
+
+
+
+
+
+
+
+
+
 
 -- container: demo-id.demo-container.right-sidebar
 
@@ -228,8 +249,6 @@ site-name: $site-name
 
 --- container: ftd.main
 
-
-
 --- ftd.row:
 width: fill
 id: main-row
@@ -247,7 +266,6 @@ id: demo-container
 min-height: fill
 padding-vertical: $fpm.space.space-4
 max-width: 800
-
 
 --- ftd.column: 
 width: fill
@@ -272,7 +290,6 @@ width: 48
 height: 48
 align: center
 
-
 --- ftd.text: $title
 role: $fpm.type.heading-hero
 color: $fpm.color.main.text-strong
@@ -295,14 +312,12 @@ width: 75
 height: 85
 margin-top: -34
 
-
 --- ftd.text: $date
 role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
 style: bold
 text-align: center
 padding-top: 8
-
 
 --- container: dd-container
 
@@ -444,16 +459,12 @@ padding-vertical: 12
 region: h0
 id: header-container
 
-
 --- ftd.column:
 id: head-conatiner
 width: fill
 
 --- ftd.row:
 spacing: 8
-
-
-
 
 --- ftd.text: $title
 role: $fpm.type.heading-small
@@ -510,9 +521,6 @@ color: $fpm.color.main.text
 margin-bottom: 26
 text-align: justify
 
-
-
-
 --- ftd.column:
 if: $demo-video is not null
 width: fill
@@ -546,7 +554,6 @@ width: fill
 
 --- youtube:
 v: $demo-video
-
 
 --- container: main-row
 
@@ -638,6 +645,8 @@ id: presentation-container
 
 
 
+
+
 -- ftd.row presentation-desktop:
 optional caption title:
 optional body body:
@@ -674,7 +683,6 @@ text-align: justify
 id: presentation-container
 width: fill
 
-
 --- container: ftd.main
 
 ---  ftd.column:
@@ -687,7 +695,6 @@ padding-top: 16
 padding-bottom: 24
 padding-horizontal: 24
 border-radius: 20
-
 
 --- ftd.text: Status:
 role: $fpm.type.copy-large
@@ -729,6 +736,14 @@ role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 text-align: center
 width: fill
+
+
+
+
+
+
+
+
 
 
 
@@ -746,7 +761,6 @@ border-radius: 20
 padding-horizontal: 24
 spacing: 10
 
-
 --- ftd.text: $title
 role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
@@ -756,7 +770,6 @@ region: h1
 --- ftd.row:
 width: fill
 spacing: 12
-
 
 --- ftd.column:
 width: 225
@@ -770,7 +783,6 @@ border-radius: 20
 align: center
 height: 240
 margin-left: 40
-
 
 --- ftd.text: Status:
 role: $fpm.type.copy-large
@@ -806,13 +818,12 @@ color: $fpm.color.main.text
 style: semi-bold
 text-align: center
 width: fill
+
 --- ftd.text: $helper
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 text-align: center
 width: fill
-
-
 
 --- container: ftd.main
 
