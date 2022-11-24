@@ -584,7 +584,6 @@ padding-top: 16
 padding-bottom: 24
 padding-horizontal: 24
 border-radius: 20
-align: center
 
 
 --- ftd.text: Status:
@@ -651,12 +650,12 @@ color: $fpm.color.main.text-strong
 width: fill
 region: h1
 
----  ftd.row:
+--- ftd.row:
 width: fill
 spacing: 12
 
 
----  ftd.column:
+--- ftd.column:
 width: 225
 spacing: 12
 id: second-container
@@ -667,6 +666,7 @@ padding-horizontal: 24
 border-radius: 20
 align: center
 height: 240
+margin-left: 40
 
 
 --- ftd.text: Status:
