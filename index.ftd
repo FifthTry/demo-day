@@ -1,5 +1,11 @@
 -- import:fifthtry.github.io/header as h
 -- import:fifthtry.github.io/demo-day/assets 
+-- import:fifthtry.github.io/bling/detail as detail
+
+
+
+
+
 
 
 -- ftd.color blue:
@@ -9,6 +15,11 @@ light: #1E3A4C
 -- ftd.color blue-dark:
 dark: #142733
 light: #142733
+
+
+
+
+
 
 
 -- boolean is-mobile: false
@@ -35,23 +46,6 @@ light: $assets.files.static.brand-logo.svg.light
 
 
 
--- record owner:
-caption name:
-string url:
-string avatar:
-
--- record ft-zen:
-caption name:
-string url:
-string avatar:
-
--- ft-zen abrar: Abrar
-url: abrark.com5
-avatar: logo
-
-
-
-
 
 
 
@@ -60,8 +54,8 @@ avatar: logo
 
 -- demo-day:  Fifthtry
 number: 11th
-date: 22 nov
-youtube-id: rny1EGkqw_M
+date: Nov 22
+demo-video: rny1EGkqw_M
 sidebar: true
 id: demo-id
 
@@ -146,7 +140,9 @@ width: fill
 string number:
 string date:
 boolean in-future: false
-string youtube-id:
+optional string demo-video: rny1EGkqw_M
+optional string planning-video:
+optional string review-video:
 spacing: 32
 boolean sidebar: false
 
@@ -163,7 +159,9 @@ current-page: $current-page
 number: $number
 date: $date
 in-future: $in-future
-youtube-id: $youtube-id
+demo-video: $demo-video
+review-video: $review-video
+planning-video: $planning-video
 sidebar: $sidebar
 
 --- container: ftd.main
@@ -181,7 +179,9 @@ current-page: $current-page
 number: $number
 date: $date
 in-future: $in-future
-youtube-id: $youtube-id
+demo-video: $demo-video
+review-video: $review-video
+planning-video: $planning-video
 sidebar: $sidebar
 
 
@@ -210,7 +210,9 @@ width: fill
 string number:
 string date:
 boolean in-future: false
-string youtube-id:
+optional string demo-video: rny1EGkqw_M
+optional string planning-video:
+optional string review-video:
 spacing: 32
 boolean sidebar:
 
@@ -225,6 +227,8 @@ site-url: $site-url
 site-name: $site-name
 
 --- container: ftd.main
+
+
 
 --- ftd.row:
 width: fill
@@ -244,6 +248,15 @@ min-height: fill
 padding-vertical: $fpm.space.space-4
 max-width: 800
 
+
+--- ftd.column: 
+width: fill
+id: dd-container
+background-color: $blue
+padding-horizontal: 24
+border-radius: 20
+margin-bottom: 24
+
 --- ftd.row:
 width: fill
 padding-vertical: 12
@@ -252,6 +265,13 @@ id: header-container
 
 --- ftd.row:
 spacing: 8
+
+--- ftd.image:
+src: $assets.files.static.presenatation.png
+width: 48
+height: 48
+align: center
+
 
 --- ftd.text: $title
 role: $fpm.type.heading-hero
@@ -269,21 +289,21 @@ color: $fpm.color.main.text-strong
 
 --- ftd.row:
 spacing: 12
-margin-left: 12
+margin-left: 32
+background-image: $assets.files.static.calender.svg
+width: 75
+height: 85
 
---- ftd.text: (
-role: $fpm.type.heading-hero
-color: $fpm.color.main.text-strong
 
 --- ftd.text: $date
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
+style: bold
+text-align: center
+padding-top: 8
 
---- ftd.text: )
-role: $fpm.type.heading-hero
-color: $fpm.color.main.text-strong
 
---- container: demo-container
+--- container: dd-container
 
 --- ftd.text:
 text: $body
@@ -291,8 +311,41 @@ role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 margin-bottom: 26
 
+--- container: dd-container
+
+--- ftd.column:
+if: $demo-video is not null
+width: fill
+
+--- detail.detail: Demo Video
+width: fill
+
 --- youtube:
-v: $youtube-id
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $planning-video is not null
+width: fill
+
+--- detail.detail: Planning Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $review-video is not null
+width: fill
+
+--- detail.detail: Review Video
+width: fill
+
+--- youtube:
+v: $demo-video
 
 --- container: main-row
 
@@ -344,7 +397,9 @@ width: fill
 string number:
 string date:
 boolean in-future: false
-string youtube-id:
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
 spacing: 32
 boolean sidebar:
 
@@ -443,7 +498,7 @@ color: $fpm.color.main.text
 margin-bottom: 26
 
 --- youtube:
-v: $youtube-id
+v: $demo-video
 
 --- container: main-row
 
@@ -893,11 +948,11 @@ toc: $obj
 
 
 -- ftd.iframe youtube:
-caption v:
+caption v: rny1EGkqw_M
 youtube: $v
 height: 400
 width: fill
-margin-bottom: 34
+margin-bottom: 24
 
 
 
