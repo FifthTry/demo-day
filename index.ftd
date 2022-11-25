@@ -101,12 +101,6 @@ groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
 
 
 
--- container: ftd.main
-
--- upcoming-demo-day: Upcoming
-number: 12th
-date: Nov 26
-demo-video: rny1EGkqw_M
 
 
 
@@ -866,8 +860,8 @@ optional fpm.toc-item current-subsection: $sitemap.current-subsection
 optional fpm.toc-item current-page: $sitemap.current-page
 background-color: $fpm.color.main.background.base
 open: true
-id: demo-container
-append-at: demo-container
+id: upcoming-demo-container
+append-at: upcoming-demo-container
 width: fill
 string number:
 string date:
@@ -900,7 +894,7 @@ padding-horizontal: 24
 
 --- ftd.column:
 width: fill
-id: demo-container
+id: upcoming-demo-container
 min-height: fill
 padding-vertical: $fpm.space.space-4
 

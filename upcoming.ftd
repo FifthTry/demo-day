@@ -1,0 +1,29 @@
+-- import: fifthtry.github.io/demo-day as dd
+
+
+
+
+
+
+
+
+
+-- dd.upcoming-demo-day: Upcoming
+number: 12th
+date: Nov 26
+demo-video: rny1EGkqw_M
+id: upcoming-id
+
+
+
+-- container:upcoming-id.upcoming-demo-container.right-sidebar
+
+-- dd.sidebar:
+
+-- container: upcoming-id.upcoming-demo-container.right-sidebar-mobile
+
+-- dd.sidebar:
+
+
+
+
