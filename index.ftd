@@ -1,5 +1,25 @@
 -- import:fifthtry.github.io/header as h
 -- import:fifthtry.github.io/demo-day/assets 
+-- import:fifthtry.github.io/bling/detail as detail
+
+
+
+
+
+
+
+-- ftd.color blue:
+dark: #1E3A4C
+light: #1E3A4C
+
+-- ftd.color blue-dark:
+dark: #142733
+light: #142733
+
+
+
+
+
 
 
 
@@ -29,33 +49,16 @@ light: $assets.files.static.brand-logo.svg.light
 
 
 
--- record owner:
-caption name:
-string url:
-string avatar:
-
--- record ft-zen:
-caption name:
-string url:
-string avatar:
-
--- ft-zen abrar: Abrar
-url: abrark.com5
-avatar: logo
 
 
 
 
 
 
-
-
-
-
--- demo-day:  Fifthtry
+-- past-demo-day:  Fifthtry
 number: 11th
-date: 22 nov
-youtube-id: rny1EGkqw_M
+date: Nov 22
+demo-video: rny1EGkqw_M
 sidebar: true
 id: demo-id
 
@@ -68,9 +71,16 @@ in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
 ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
 including versions of Lorem Ipsum.
 
+
+
+
+
+
+
 -- presentation: Move FifthTry.com to Heroku
 owner: @ft-zens.abrark
 helper: @ft-zens.priyanka
+status: Pending
 
 Currently we are using github pages, now lets switch to
 Heroku so we can start using fpm's auth feature.
@@ -79,6 +89,8 @@ others, and for FifthTry employees it would act as
 planning document. Also implement auth with following
 groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
 
+
+
 -- container: demo-id.demo-container.right-sidebar
 
 -- sidebar:
@@ -86,10 +98,6 @@ groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
 -- container: demo-id.demo-container.right-sidebar-mobile
 
 -- sidebar:
-
-
-
-
 
 
 
@@ -120,9 +128,7 @@ role: $fpm.type.copy-relaxed
 
 
 
-
-
--- ftd.column demo-day:
+-- ftd.column past-demo-day:
 optional caption title:
 optional body body:
 fpm.toc-item list toc: $sitemap.toc
@@ -139,11 +145,15 @@ width: fill
 string number:
 string date:
 boolean in-future: false
-string youtube-id:
+optional string demo-video: rny1EGkqw_M
+optional string planning-video:
+optional string review-video:
 spacing: 32
 boolean sidebar: false
 
---- demo-day-desktop: $title
+
+
+--- past-demo-day-desktop: $title
 id: demo-container
 if: not $is-mobile
 body: $body
@@ -156,12 +166,14 @@ current-page: $current-page
 number: $number
 date: $date
 in-future: $in-future
-youtube-id: $youtube-id
+demo-video: $demo-video
+review-video: $review-video
+planning-video: $planning-video
 sidebar: $sidebar
 
 --- container: ftd.main
 
---- demo-day-mobile: $title
+--- past-demo-day-mobile: $title
 id: demo-container
 if: $is-mobile
 body: $body
@@ -174,7 +186,9 @@ current-page: $current-page
 number: $number
 date: $date
 in-future: $in-future
-youtube-id: $youtube-id
+demo-video: $demo-video
+review-video: $review-video
+planning-video: $planning-video
 sidebar: $sidebar
 
 
@@ -186,7 +200,7 @@ sidebar: $sidebar
 
 
 
--- ftd.column demo-day-desktop:
+-- ftd.column past-demo-day-desktop:
 optional caption title:
 optional body body:
 fpm.toc-item list toc: 
@@ -203,7 +217,9 @@ width: fill
 string number:
 string date:
 boolean in-future: false
-string youtube-id:
+optional string demo-video: rny1EGkqw_M
+optional string planning-video:
+optional string review-video:
 spacing: 32
 boolean sidebar:
 
@@ -237,6 +253,14 @@ min-height: fill
 padding-vertical: $fpm.space.space-4
 max-width: 800
 
+--- ftd.column: 
+width: fill
+id: dd-container
+background-color: $blue
+padding-horizontal: 24
+border-radius: 20
+margin-bottom: 24
+
 --- ftd.row:
 width: fill
 padding-vertical: 12
@@ -245,6 +269,12 @@ id: header-container
 
 --- ftd.row:
 spacing: 8
+
+--- ftd.image:
+src: $assets.files.static.presentation.png
+width: 55
+height: 55
+align: center
 
 --- ftd.text: $title
 role: $fpm.type.heading-hero
@@ -262,21 +292,20 @@ color: $fpm.color.main.text-strong
 
 --- ftd.row:
 spacing: 12
-margin-left: 12
-
---- ftd.text: (
-role: $fpm.type.heading-hero
-color: $fpm.color.main.text-strong
+margin-left: 32
+background-image: $assets.files.static.calender.svg
+width: 75
+height: 85
+margin-top: -34
 
 --- ftd.text: $date
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
+style: bold
+text-align: center
+padding-top: 8
 
---- ftd.text: )
-role: $fpm.type.heading-hero
-color: $fpm.color.main.text-strong
-
---- container: demo-container
+--- container: dd-container
 
 --- ftd.text:
 text: $body
@@ -284,8 +313,41 @@ role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 margin-bottom: 26
 
+--- container: dd-container
+
+--- ftd.column:
+if: $demo-video is not null
+width: fill
+
+--- detail.detail: Demo Video
+width: fill
+
 --- youtube:
-v: $youtube-id
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $planning-video is not null
+width: fill
+
+--- detail.detail: Planning Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $review-video is not null
+width: fill
+
+--- detail.detail: Review Video
+width: fill
+
+--- youtube:
+v: $demo-video
 
 --- container: main-row
 
@@ -320,7 +382,7 @@ border-radius: 8
 
 
 
--- ftd.column demo-day-mobile:
+-- ftd.column past-demo-day-mobile:
 optional caption title:
 optional body body:
 fpm.toc-item list toc: $sitemap.toc
@@ -337,7 +399,9 @@ width: fill
 string number:
 string date:
 boolean in-future: false
-string youtube-id:
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
 spacing: 32
 boolean sidebar:
 
@@ -366,6 +430,14 @@ width: fill
 id: demo-container
 min-height: fill
 padding-vertical: $fpm.space.space-4
+
+--- ftd.column: 
+width: fill
+id: dd-container
+background-color: $blue
+padding-horizontal: 24
+border-radius: 20
+margin-bottom: 24
 
 --- ftd.row:
 width: fill
@@ -399,20 +471,19 @@ spacing: 4
 margin-left: 8
 padding-top: 4
 
---- ftd.text: (
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
-style: bold
+--- ftd.row:
+spacing: 12
+margin-left: 102
+background-image: $assets.files.static.calender.svg
+width: 75
+height: 85
 
 --- ftd.text: $date
-role: $fpm.type.copy-tight
+role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
 style: bold
-
---- ftd.text: )
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
-style: bold
+text-align: center
+padding-top: 8
 
 --- container: header-container
 
@@ -423,19 +494,52 @@ padding-top: $fpm.space.space-2
 
 --- ftd.image:
 src: $assets.files.static.info-icon.svg
-width: 36
+width: 30
+margin-top: -63
 $on-click$: toggle $open-right-sidebar-info
 
---- container: demo-container
+--- container: dd-container
 
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 margin-bottom: 26
+text-align: justify
+
+--- ftd.column:
+if: $demo-video is not null
+width: fill
+
+--- detail.detail: Demo Video
+width: fill
 
 --- youtube:
-v: $youtube-id
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $planning-video is not null
+width: fill
+
+--- detail.detail: Planning Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $review-video is not null
+width: fill
+
+--- detail.detail: Review Video
+width: fill
+
+--- youtube:
+v: $demo-video
 
 --- container: main-row
 
@@ -491,11 +595,477 @@ padding-horizontal: 24
 
 
 
+-- ftd.column upcoming-demo-day:
+optional caption title:
+optional body body:
+fpm.toc-item list toc: $sitemap.toc
+fpm.toc-item list sections: $sitemap.sections
+fpm.toc-item list sub-sections: $sitemap.subsections
+optional fpm.toc-item current-section: $sitemap.current-section
+optional fpm.toc-item current-subsection: $sitemap.current-subsection
+optional fpm.toc-item current-page: $sitemap.current-page
+background-color: $fpm.color.main.background.base
+open: true
+id: upcoming-demo-container
+append-at: upcoming-demo-container
+width: fill
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: rny1EGkqw_M
+optional string planning-video:
+optional string review-video:
+spacing: 32
+boolean sidebar: false
+
+
+
+--- upcoming-demo-day-desktop: $title
+id: upcoming-demo-container
+if: not $is-mobile
+body: $body
+toc: $toc
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+number: $number
+date: $date
+in-future: $in-future
+demo-video: $demo-video
+review-video: $review-video
+planning-video: $planning-video
+sidebar: $sidebar
+
+--- container: ftd.main
+
+--- upcoming-demo-day-mobile: $title
+id: upcoming-demo-container
+if: $is-mobile
+body: $body
+toc: $toc
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+number: $number
+date: $date
+in-future: $in-future
+demo-video: $demo-video
+review-video: $review-video
+planning-video: $planning-video
+sidebar: $sidebar
+
+
+
+
+
+
+
+
+
+
+-- ftd.column upcoming-demo-day-desktop:
+optional caption title:
+optional body body:
+fpm.toc-item list toc: 
+fpm.toc-item list sections: 
+fpm.toc-item list sub-sections: 
+optional fpm.toc-item current-section:
+optional fpm.toc-item current-subsection:
+optional fpm.toc-item current-page:
+background-color: $fpm.color.main.background.base
+open: true
+id: upcoming-demo-container
+append-at: upcoming-demo-container
+width: fill
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: rny1EGkqw_M
+optional string planning-video:
+optional string review-video:
+spacing: 32
+boolean sidebar:
+
+--- h.header: 
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+site-logo: $site-logo
+site-url: $site-url
+site-name: $site-name
+
+--- container: ftd.main
+
+--- ftd.row:
+width: fill
+id: main-row
+spacing: 64
+
+--- render-toc:
+if: $toc is not empty
+toc-obj: $toc
+
+--- container: main-row
+
+--- ftd.column:
+width: fill
+id: upcoming-demo-container
+min-height: fill
+padding-vertical: $fpm.space.space-4
+max-width: 800
+
+--- ftd.column: 
+width: fill
+id: dd-container
+background-color: $blue
+padding-horizontal: 24
+border-radius: 20
+margin-bottom: 24
+
+--- ftd.row:
+width: fill
+padding-vertical: 12
+region: h0
+id: header-container
+
+--- ftd.row:
+spacing: 8
+
+--- ftd.image:
+src: $assets.files.static.clock.png
+width: 55
+height: 55
+align: center
+
+--- ftd.text: $title
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- ftd.text: $number
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- ftd.text: Demo Day
+role: $fpm.type.heading-hero
+color: $fpm.color.main.text-strong
+
+--- container: header-container
+
+--- ftd.row:
+spacing: 12
+margin-left: 32
+background-image: $assets.files.static.calenderr.svg
+width: 75
+height: 85
+margin-top: -34
+
+--- ftd.text: $date
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+style: bold
+text-align: center
+padding-top: 8
+
+--- container: dd-container
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+margin-bottom: 26
+
+--- container: dd-container
+
+--- ftd.column:
+if: $demo-video is not null
+width: fill
+
+--- detail.detail: Demo Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $planning-video is not null
+width: fill
+
+--- detail.detail: Planning Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $review-video is not null
+width: fill
+
+--- detail.detail: Review Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: main-row
+
+--- ftd.column:
+if: $sidebar
+id: right-sidebar
+min-width: 284
+max-width: 284
+z-index: 999
+background-color: $fpm.color.main.background.overlay
+sticky: true
+top: 0
+right: 48
+height: calc 100vh - 0px
+overflow-y: auto
+align: top-right
+margin-right: 48
+padding-left: 24
+padding-top: 4
+padding-right: 16
+padding-bottom: 32
+margin-top: 25
+margin-bottom: 25
+border-radius: 8
+
+
+
+
+
+
+
+
+
+
+-- ftd.column upcoming-demo-day-mobile:
+optional caption title:
+optional body body:
+fpm.toc-item list toc: $sitemap.toc
+fpm.toc-item list sections: $sitemap.sections
+fpm.toc-item list sub-sections: $sitemap.subsections
+optional fpm.toc-item current-section: $sitemap.current-section
+optional fpm.toc-item current-subsection: $sitemap.current-subsection
+optional fpm.toc-item current-page: $sitemap.current-page
+background-color: $fpm.color.main.background.base
+open: true
+id: upcoming-demo-container
+append-at: upcoming-demo-container
+width: fill
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
+spacing: 32
+boolean sidebar:
+
+--- h.header: 
+sections: $sections
+sub-sections: $sub-sections
+current-section: $current-section
+current-subsection: $current-subsection
+current-page: $current-page
+site-logo: $site-logo
+site-url: $site-url
+toc: $toc
+site-name: $site-name
+
+--- container: ftd.main
+
+--- ftd.column:
+width: fill
+id: main-row
+spacing: 48
+padding-bottom: 48
+padding-horizontal: 24
+
+--- ftd.column:
+width: fill
+id: upcoming-demo-container
+min-height: fill
+padding-vertical: $fpm.space.space-4
+
+--- ftd.column: 
+width: fill
+id: dd-container
+background-color: $blue
+padding-horizontal: 24
+border-radius: 20
+margin-bottom: 24
+
+--- ftd.row:
+width: fill
+padding-vertical: 12
+region: h0
+id: header-container
+
+--- ftd.column:
+id: head-conatiner
+width: fill
+
+--- ftd.row:
+spacing: 8
+
+--- ftd.text: $title
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+
+--- ftd.text: $number
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+
+--- ftd.text: Demo Day
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+
+--- container: head-conatiner
+
+--- ftd.row:
+spacing: 4
+margin-left: 8
+padding-top: 4
+
+--- ftd.row:
+spacing: 12
+margin-left: 102
+background-image: $assets.files.static.calender.svg
+width: 75
+height: 85
+
+--- ftd.text: $date
+role: $fpm.type.heading-small
+color: $fpm.color.main.text-strong
+style: bold
+text-align: center
+padding-top: 8
+
+--- container: header-container
+
+--- ftd.column:
+if: $sidebar
+align: center
+padding-top: $fpm.space.space-2
+
+--- ftd.image:
+src: $assets.files.static.info-icon.svg
+width: 30
+margin-top: -63
+$on-click$: toggle $open-right-sidebar-info
+
+--- container: dd-container
+
+--- ftd.text:
+text: $body
+role: $fpm.type.copy-relaxed
+color: $fpm.color.main.text
+margin-bottom: 26
+text-align: justify
+
+--- ftd.column:
+if: $demo-video is not null
+width: fill
+
+--- detail.detail: Demo Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $planning-video is not null
+width: fill
+
+--- detail.detail: Planning Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: dd-container
+
+--- ftd.column:
+if: $review-video is not null
+width: fill
+
+--- detail.detail: Review Video
+width: fill
+
+--- youtube:
+v: $demo-video
+
+--- container: main-row
+
+--- ftd.column:
+if: $open-right-sidebar-info
+anchor: parent
+top: 0
+bottom: 0
+left: 0
+right: 0
+background-color:  $fpm.color.main.background.overlay
+z-index: 1
+width: fill
+$on-click$: $open-right-sidebar-info = false
+
+--- ftd.column:
+width: fill
+
+--- ftd.image:
+src: $assets.files.static.cross.svg
+height: 16
+width: auto
+margin-top: 30
+margin-left: 16
+$on-click$: $open-right-sidebar-info = false 
+
+--- container: main-row
+
+--- ftd.column:
+if: $open-right-sidebar-info
+width: calc 100% - 48px
+height: calc 100vh - 0px
+overflow-y: auto
+align: top-right
+anchor: parent
+right: 0
+top: 0
+background-color: $fpm.color.main.background.step-1
+z-index: 1
+
+--- ftd.column:
+id: right-sidebar-mobile
+width: fill
+padding-vertical: 24
+padding-horizontal: 24
+
+
+
+
+
+
+
+
 -- ftd.column presentation:
 optional caption title:
 optional body body:
 string owner:
 string helper:
+string status:
 width: fill
 open: true
 id: presentation-container
@@ -506,6 +1076,7 @@ if: not $is-mobile
 body: $body
 owner: $owner
 helper: $helper
+status: $status
 id: presentation-container
 
 --- container: ftd.main
@@ -515,6 +1086,7 @@ if: $is-mobile
 body: $body
 owner: $owner
 helper: $helper
+status: $status
 id: presentation-container
 
 
@@ -526,71 +1098,119 @@ id: presentation-container
 
 
 
--- ftd.column presentation-desktop:
+-- ftd.row presentation-desktop:
 optional caption title:
 optional body body:
 string owner:
 string helper:
+string status:
 width: fill
 open: true
 id: presentation-container
 append-at: presentation-container
+background-color: $blue
+border-radius: 20
+padding-vertical: 24
+padding-horizontal: 24
+spacing: 24
+
+--- ftd.column:
+width: percent 72
 
 --- ftd.text: $title
-role: $fpm.type.heading-large
+role: $fpm.type.heading-medium
 color: $fpm.color.main.text-strong
 width: fill
-region: h1
-
----  ftd.row:
-width: fill
-spacing: 12
-margin-bottom: 12
-
---- ftd.text: Owner:
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- ftd.text: $owner
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- container: ftd.main
-
----  ftd.row:
-width: fill
-margin-bottom: 12
-spacing: 12
-
---- ftd.text: Helper:
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- ftd.text: $helper
-role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- container: ftd.main
+margin-bottom: 18
 
 --- ftd.text: 
-text:$body
+text: $body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
+text-align: justify
 
 --- ftd.column:
 id: presentation-container
 width: fill
+
+--- container: ftd.main
+
+---  ftd.column:
+width: percent 28
+spacing: 12
+margin-bottom: 12
+id: second-container
+background-color: $blue-dark
+padding-top: 16
+padding-bottom: 24
+padding-horizontal: 24
+border-radius: 20
+
+--- ftd.text: Status:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+
+--- ftd.text: $status
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+color if $status == Pending: $fpm.color.main.custom.two
+color if $status == Succes: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
+
+--- ftd.text: Owner:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+
+--- ftd.text: $owner
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
+
+--- ftd.text: Helper:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+
+--- ftd.text: $helper
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
+
+
+
+
+
+
+
+
+
+
 
 -- ftd.column presentation-mobile:
 optional caption title:
 optional body body:
 string owner:
 string helper:
-width: fill
+string status:
 open: true
 id: presentation-container
 append-at: presentation-container
+background-color: $blue
+border-radius: 20
+padding-horizontal: 24
+spacing: 10
 
 --- ftd.text: $title
 role: $fpm.type.heading-small
@@ -598,33 +1218,63 @@ color: $fpm.color.main.text-strong
 width: fill
 region: h1
 
----  ftd.row:
+--- ftd.row:
 width: fill
 spacing: 12
-margin-bottom: 12
+
+--- ftd.column:
+width: 225
+spacing: 12
+id: second-container
+background-color: $blue-dark
+padding-top: 16
+padding-bottom: 24
+padding-horizontal: 24
+border-radius: 20
+align: center
+height: 240
+margin-left: 40
+
+--- ftd.text: Status:
+role: $fpm.type.copy-large
+color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
+
+--- ftd.text: $status
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+color if $status == Pending: $fpm.color.main.custom.two
+color if $status == Succes: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
 
 --- ftd.text: Owner:
-role: $fpm.type.copy-tight
+role: $fpm.type.copy-large
 color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
 
 --- ftd.text: $owner
 role: $fpm.type.copy-tight
-color: $fpm.color.main.text
-
---- container: ftd.main
-
----  ftd.row:
+color: $fpm.color.main.cta-primary.base
+text-align: center
 width: fill
-margin-bottom: 12
-spacing: 12
 
 --- ftd.text: Helper:
-role: $fpm.type.copy-tight
+role: $fpm.type.copy-large
 color: $fpm.color.main.text
+style: semi-bold
+text-align: center
+width: fill
 
 --- ftd.text: $helper
 role: $fpm.type.copy-tight
-color: $fpm.color.main.text
+color: $fpm.color.main.cta-primary.base
+text-align: center
+width: fill
 
 --- container: ftd.main
 
@@ -633,6 +1283,7 @@ text:$body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
+text-align: justify
 
 --- ftd.column:
 id: presentation-container
@@ -807,11 +1458,11 @@ toc: $obj
 
 
 -- ftd.iframe youtube:
-caption v:
+caption v: rny1EGkqw_M
 youtube: $v
 height: 400
 width: fill
-margin-bottom: 34
+margin-bottom: 24
 
 
 
