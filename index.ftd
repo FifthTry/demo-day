@@ -272,20 +272,20 @@ spacing: 8
 
 --- ftd.image:
 src: $assets.files.static.presentation.png
-width: 55
-height: 55
-align: center
+width: 50
+height: 50
+margin-top: -5
 
 --- ftd.text: $title
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
 --- ftd.text: $number
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
 --- ftd.text: Demo Day
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
 --- container: header-container
