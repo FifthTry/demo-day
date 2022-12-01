@@ -3,17 +3,13 @@
 -- import:fifthtry.github.io/bling/detail as detail
 
 
--- ftd.color purple: #563c5c
-dark: #563c5c
 
--- ftd.color darkpurple: #13041f
-dark: #13041f
 
--- ftd.color lightpurple: #ebdcf7
-dark: #ebdcf7
 
--- ftd.color mud: #635F05
-dark: #635F05
+
+
+
+
 
 -- past-demo-day:  Fifthtry
 number: 11th
@@ -44,8 +40,6 @@ others, and for FifthTry employees it would act as
 planning document. Also implement auth with following
 groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
 
-
-
 -- container: demo-id.demo-container.right-sidebar
 
 -- sidebar:
@@ -53,6 +47,9 @@ groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
 -- container: demo-id.demo-container.right-sidebar-mobile
 
 -- sidebar:
+
+
+
 
 
 
@@ -83,6 +80,8 @@ role: $fpm.type.copy-relaxed
 
 
 
+
+
 -- ftd.column past-demo-day:
 optional caption title:
 optional body body:
@@ -105,8 +104,6 @@ optional string planning-video:
 optional string review-video:
 spacing: 32
 boolean sidebar: false
-
-
 
 --- past-demo-day-desktop: $title
 id: demo-container
@@ -225,7 +222,6 @@ id: header-container
 spacing: 8
 width: fill
 
-
 --- ftd.image:
 src: $assets.files.static.presentation.png
 width: 50
@@ -236,11 +232,9 @@ margin-top: -5
 role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
-
 --- ftd.text: $number
 role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
-
 
 --- ftd.text: Demo Day
 role: $fpm.type.heading-large
@@ -284,7 +278,6 @@ padding-left: 10
 padding-right: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
-
 
 --- detail.detail: Demo Video
 width: fill
@@ -507,7 +500,6 @@ color: $fpm.color.main.cta-primary.text
 width: fill
 open-one: true
 
-
 --- youtube:
 v: $demo-video
 
@@ -627,8 +619,6 @@ optional string planning-video:
 optional string review-video:
 spacing: 32
 boolean sidebar: false
-
-
 
 --- upcoming-demo-day-desktop: $title
 id: upcoming-demo-container
@@ -784,7 +774,6 @@ padding-top: 8
 
 --- container: dd-container
 
-
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
@@ -804,7 +793,6 @@ padding-left: 10
 padding-right: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
-
 
 --- detail.detail: Demo Video
 width: fill
@@ -1007,7 +995,6 @@ padding-right: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
 
-
 --- detail.detail: Demo Video
 width: fill
 open-one: true
@@ -1091,6 +1078,8 @@ padding-horizontal: 24
 
 
 
+
+
 -- ftd.column presentation:
 optional caption title:
 optional body body:
@@ -1161,17 +1150,13 @@ align: center
 --- ftd.column:
 align: right
 
-
 --- ftd.image:
 src: $assets.files.static.pending.svg
 height: 32
 align: center
 
-
 --- ftd.text: Pending
 color: $fpm.color.main.custom.two
-
-
 
 --- container: ftd.main
 
@@ -1213,7 +1198,6 @@ padding-right: 20
 
 
 
-
 -- ftd.column presentation-mobile:
 optional caption title:
 optional body body:
@@ -1227,7 +1211,6 @@ background-color: $purple
 border-radius: 20
 padding-horizontal: 24
 spacing: 10
-
 
 --- ftd.row:
 width: fill
@@ -1246,11 +1229,8 @@ src: $assets.files.static.pending.svg
 height: 32
 align: center
 
-
 --- ftd.text: Pending
 color: $fpm.color.main.custom.two
-
-
 
 --- container: ftd.main
 
@@ -1264,8 +1244,6 @@ role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
 text-align: justify
-
-
 
 --- container: ftd.main
 
@@ -1290,7 +1268,6 @@ role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 width: fill
 padding-top: 10
-
 
 
 
@@ -1532,3 +1509,15 @@ dark: $assets.files.static.brand-logo.svg.dark
 light: $assets.files.static.brand-logo.svg.light
 
 -- string site-url: /
+
+-- ftd.color purple: #563c5c
+dark: #563c5c
+
+-- ftd.color darkpurple: #13041f
+dark: #13041f
+
+-- ftd.color lightpurple: #ebdcf7
+dark: #ebdcf7
+
+-- ftd.color mud: #635F05
+dark: #635F05
