@@ -3,79 +3,34 @@
 -- import:fifthtry.github.io/bling/detail as detail
 
 
+-- ftd.color purple: #563c5c
+dark: #563c5c
 
+-- ftd.color darkpurple: #13041f
+dark: #13041f
 
+-- ftd.color lightpurple: #ebdcf7
+dark: #ebdcf7
 
-
-
--- ftd.color blue:
-dark: #1E3A4C
-light: #1E3A4C
-
--- ftd.color blue-dark:
-dark: #142733
-light: #142733
-
-
-
-
-
-
-
-
-
-
--- boolean is-mobile: false
-
--- boolean show-section: false
-
--- is-mobile: true
-if: $ftd.device == mobile
-
--- boolean open-right-sidebar-info: false
-
--- fpm.sitemap-data sitemap:
-$processor$: sitemap
-
--- optional string site-name: 
-
--- ftd.image-src site-logo:
-dark: $assets.files.static.brand-logo.svg.dark
-light: $assets.files.static.brand-logo.svg.light
-
--- string site-url: /
-
-
-
-
-
-
-
-
-
-
+-- ftd.color mud: #635F05
+dark: #635F05
 
 -- past-demo-day:  Fifthtry
 number: 11th
 date: Nov 22
 demo-video: rny1EGkqw_M
+planning-video: rny1EGkqw_M
+review-video: rny1EGkqw_M
 sidebar: true
 id: demo-id
 
-Lorem Ipsum is simply {dd: 22 nov} text of the printing and typesetting industry. L\
-orem Ipsum has been the industry's standard dummy text ever since the 1500s,
+Lorem Ipsum is simply {dd: 22 nov} text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 when an unknown printer took a galley of type and scrambled it to make a type
 specimen book. It has survived not only five centuries, but also the leap int
 o electronic typesetting, remaining essentially unchanged. It was popularised
 in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
 ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
 including versions of Lorem Ipsum.
-
-
-
-
-
-
 
 -- presentation: Move FifthTry.com to Heroku
 owner: @ft-zens.abrark
@@ -251,14 +206,13 @@ width: fill
 id: demo-container
 min-height: fill
 padding-vertical: $fpm.space.space-4
-max-width: 800
 
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $blue
+background-color: $darkpurple
 padding-horizontal: 24
-border-radius: 20
+border-radius: 10
 margin-bottom: 24
 
 --- ftd.row:
@@ -269,6 +223,8 @@ id: header-container
 
 --- ftd.row:
 spacing: 8
+width: fill
+
 
 --- ftd.image:
 src: $assets.files.static.presentation.png
@@ -280,9 +236,11 @@ margin-top: -5
 role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
+
 --- ftd.text: $number
 role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
+
 
 --- ftd.text: Demo Day
 role: $fpm.type.heading-large
@@ -292,7 +250,6 @@ color: $fpm.color.main.text-strong
 
 --- ftd.row:
 spacing: 12
-margin-left: 32
 background-image: $assets.files.static.calender.svg
 width: 75
 height: 85
@@ -309,18 +266,29 @@ padding-top: 8
 
 --- ftd.text:
 text: $body
-role: $fpm.type.copy-relaxed
-color: $fpm.color.main.text
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text-strong
 margin-bottom: 26
+text-align: justify
 
 --- container: dd-container
 
 --- ftd.column:
 if: $demo-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.custom.four
+border-radius: 4
+padding-top: 10
+padding-left: 10
+padding-right: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
+
 
 --- detail.detail: Demo Video
 width: fill
+open-one: true
 
 --- youtube:
 v: $demo-video
@@ -330,6 +298,14 @@ v: $demo-video
 --- ftd.column:
 if: $planning-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.custom.four
+border-radius: 4
+padding-right: 10
+padding-top: 10
+padding-left: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Planning Video
 width: fill
@@ -342,6 +318,14 @@ v: $demo-video
 --- ftd.column:
 if: $review-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.custom.four
+border-radius: 4
+padding-right: 10
+padding-top: 10
+padding-left: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Review Video
 width: fill
@@ -434,7 +418,7 @@ padding-vertical: $fpm.space.space-4
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $blue
+background-color: $darkpurple
 padding-horizontal: 24
 border-radius: 20
 margin-bottom: 24
@@ -451,6 +435,7 @@ width: fill
 
 --- ftd.row:
 spacing: 8
+width: fill
 
 --- ftd.text: $title
 role: $fpm.type.heading-small
@@ -467,16 +452,15 @@ color: $fpm.color.main.text-strong
 --- container: head-conatiner
 
 --- ftd.row:
-spacing: 4
-margin-left: 8
 padding-top: 4
+width: fill
 
 --- ftd.row:
 spacing: 12
-margin-left: 102
 background-image: $assets.files.static.calender.svg
 width: 75
 height: 85
+margin-left: 130
 
 --- ftd.text: $date
 role: $fpm.type.heading-small
@@ -502,7 +486,7 @@ $on-click$: toggle $open-right-sidebar-info
 
 --- ftd.text:
 text: $body
-role: $fpm.type.copy-relaxed
+role: $fpm.type.copy-tight
 color: $fpm.color.main.text
 margin-bottom: 26
 text-align: justify
@@ -510,9 +494,19 @@ text-align: justify
 --- ftd.column:
 if: $demo-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.custom.four
+border-radius: 4
+padding-right: 10
+padding-top: 10
+padding-left: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Demo Video
 width: fill
+open-one: true
+
 
 --- youtube:
 v: $demo-video
@@ -522,6 +516,14 @@ v: $demo-video
 --- ftd.column:
 if: $planning-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.custom.four
+border-radius: 4
+padding-right: 10
+padding-top: 10
+padding-left: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Planning Video
 width: fill
@@ -534,6 +536,14 @@ v: $demo-video
 --- ftd.column:
 if: $review-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.custom.four
+border-radius: 4
+padding-right: 10
+padding-top: 10
+padding-left: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Review Video
 width: fill
@@ -723,7 +733,7 @@ max-width: 800
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $blue
+background-color: $fpm.color.main.shadow
 padding-horizontal: 24
 border-radius: 20
 margin-bottom: 24
@@ -736,30 +746,30 @@ id: header-container
 
 --- ftd.row:
 spacing: 8
+width: fill
 
 --- ftd.image:
 src: $assets.files.static.clock.png
-width: 55
-height: 55
+width: 50
+height: 50
 align: center
 
 --- ftd.text: $title
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
 --- ftd.text: $number
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
 --- ftd.text: Demo Day
-role: $fpm.type.heading-hero
+role: $fpm.type.heading-large
 color: $fpm.color.main.text-strong
 
 --- container: header-container
 
 --- ftd.row:
 spacing: 12
-margin-left: 32
 background-image: $assets.files.static.calenderr.svg
 width: 75
 height: 85
@@ -774,10 +784,11 @@ padding-top: 8
 
 --- container: dd-container
 
+
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
-color: $fpm.color.main.text
+color: $fpm.color.main.text-strong
 margin-bottom: 26
 
 --- container: dd-container
@@ -785,9 +796,19 @@ margin-bottom: 26
 --- ftd.column:
 if: $demo-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.custom.four
+border-radius: 4
+padding-top: 10
+padding-left: 10
+padding-right: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
+
 
 --- detail.detail: Demo Video
 width: fill
+open-one: true
 
 --- youtube:
 v: $demo-video
@@ -901,7 +922,7 @@ padding-vertical: $fpm.space.space-4
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $blue
+background-color: $fpm.color.main.shadow
 padding-horizontal: 24
 border-radius: 20
 margin-bottom: 24
@@ -940,10 +961,10 @@ padding-top: 4
 
 --- ftd.row:
 spacing: 12
-margin-left: 102
-background-image: $assets.files.static.calender.svg
+background-image: $assets.files.static.calenderr.svg
 width: 75
 height: 85
+margin-left: 130
 
 --- ftd.text: $date
 role: $fpm.type.heading-small
@@ -970,16 +991,26 @@ $on-click$: toggle $open-right-sidebar-info
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
-color: $fpm.color.main.text
+color: $fpm.color.main.text-strong
 margin-bottom: 26
 text-align: justify
 
 --- ftd.column:
 if: $demo-video is not null
 width: fill
+border-width: 2
+border-color: $fpm.color.main.border
+border-radius: 4
+padding-top: 10
+padding-left: 10
+padding-right: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
+
 
 --- detail.detail: Demo Video
 width: fill
+open-one: true
 
 --- youtube:
 v: $demo-video
@@ -1098,7 +1129,7 @@ id: presentation-container
 
 
 
--- ftd.row presentation-desktop:
+-- ftd.column presentation-desktop:
 optional caption title:
 optional body body:
 string owner:
@@ -1108,85 +1139,70 @@ width: fill
 open: true
 id: presentation-container
 append-at: presentation-container
-background-color: $blue
-border-radius: 20
+border-radius: 10
 padding-vertical: 24
 padding-horizontal: 24
 spacing: 24
+background-color: $purple
 
 --- ftd.column:
-width: percent 72
+width: fill
+min-height: fill
+
+--- ftd.row:
+width: fill
 
 --- ftd.text: $title
-role: $fpm.type.heading-medium
-color: $fpm.color.main.text-strong
+role: $fpm.type.heading-large
 width: fill
-margin-bottom: 18
-
---- ftd.text: 
-text: $body
-role: $fpm.type.copy-relaxed
-color: $fpm.color.main.text
-width: fill
-text-align: justify
+color: $fpm.color.main.cta-secondary.text
+align: center
 
 --- ftd.column:
-id: presentation-container
-width: fill
+align: right
+
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 32
+align: center
+
+
+--- ftd.text: Pending
+color: $fpm.color.main.custom.two
+
+
 
 --- container: ftd.main
 
----  ftd.column:
-width: percent 28
-spacing: 12
-margin-bottom: 12
-id: second-container
-background-color: $blue-dark
-padding-top: 16
-padding-bottom: 24
-padding-horizontal: 24
-border-radius: 20
-
---- ftd.text: Status:
-role: $fpm.type.copy-large
-color: $fpm.color.main.text
-style: semi-bold
-text-align: center
-width: fill
-
---- ftd.text: $status
+--- ftd.text: 
+text: $body
 role: $fpm.type.copy-tight
-color: $fpm.color.main.cta-primary.base
-color if $status == Pending: $fpm.color.main.custom.two
-color if $status == Succes: $fpm.color.main.cta-primary.base
-text-align: center
+color: $lightpurple
+width: fill
+text-align: justify
+
+--- ftd.row:
+id: presentation-container
 width: fill
 
---- ftd.text: Owner:
-role: $fpm.type.copy-large
-color: $fpm.color.main.text
-style: semi-bold
-text-align: center
-width: fill
+--- ftd.image:
+src: $assets.files.static.tag.svg
+height: 40
+align: left
 
 --- ftd.text: $owner
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
-text-align: center
-width: fill
-
---- ftd.text: Helper:
-role: $fpm.type.copy-large
-color: $fpm.color.main.text
-style: semi-bold
-text-align: center
-width: fill
+padding-top: 10
+padding-right: 20
+padding-left: $fpm.space.space-2
 
 --- ftd.text: $helper
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
-text-align: center
-width: fill
+padding-top: 10
+padding-right: 20
 
 
 
@@ -1207,76 +1223,40 @@ string status:
 open: true
 id: presentation-container
 append-at: presentation-container
-background-color: $blue
+background-color: $purple
 border-radius: 20
 padding-horizontal: 24
 spacing: 10
 
+
+--- ftd.row:
+width: fill
+
 --- ftd.text: $title
 role: $fpm.type.heading-small
-color: $fpm.color.main.text-strong
+color: $fpm.color.main.cta-secondary.text
 width: fill
 region: h1
+
+--- ftd.column:
+align: center
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 32
+align: center
+
+
+--- ftd.text: Pending
+color: $fpm.color.main.custom.two
+
+
+
+--- container: ftd.main
 
 --- ftd.row:
 width: fill
 spacing: 12
-
---- ftd.column:
-width: 225
-spacing: 12
-id: second-container
-background-color: $blue-dark
-padding-top: 16
-padding-bottom: 24
-padding-horizontal: 24
-border-radius: 20
-align: center
-height: 240
-margin-left: 40
-
---- ftd.text: Status:
-role: $fpm.type.copy-large
-color: $fpm.color.main.text
-style: semi-bold
-text-align: center
-width: fill
-
---- ftd.text: $status
-role: $fpm.type.copy-tight
-color: $fpm.color.main.cta-primary.base
-color if $status == Pending: $fpm.color.main.custom.two
-color if $status == Succes: $fpm.color.main.cta-primary.base
-text-align: center
-width: fill
-
---- ftd.text: Owner:
-role: $fpm.type.copy-large
-color: $fpm.color.main.text
-style: semi-bold
-text-align: center
-width: fill
-
---- ftd.text: $owner
-role: $fpm.type.copy-tight
-color: $fpm.color.main.cta-primary.base
-text-align: center
-width: fill
-
---- ftd.text: Helper:
-role: $fpm.type.copy-large
-color: $fpm.color.main.text
-style: semi-bold
-text-align: center
-width: fill
-
---- ftd.text: $helper
-role: $fpm.type.copy-tight
-color: $fpm.color.main.cta-primary.base
-text-align: center
-width: fill
-
---- container: ftd.main
 
 --- ftd.text: 
 text:$body
@@ -1285,9 +1265,33 @@ color: $fpm.color.main.text
 width: fill
 text-align: justify
 
---- ftd.column:
+
+
+--- container: ftd.main
+
+--- ftd.row:
 id: presentation-container
 width: fill
+margin-bottom: 25
+
+--- ftd.image:
+src: $assets.files.static.tag.svg
+height: 40
+align: left
+
+--- ftd.text: $owner
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+width: fill
+padding-top: 10
+
+--- ftd.text: $helper
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+width: fill
+padding-top: 10
+
+
 
 
 
@@ -1491,3 +1495,40 @@ The code for this workshop can be found on Github:
 
 The next remote workshop would be happening on **4th Nov 2022**. [Learn more
 here](https://fifthtry.com/events/).
+
+-- ftd.color blue:
+dark: #1E3A4C
+light: #1E3A4C
+
+-- ftd.color blue-dark:
+dark: #142733
+light: #142733
+
+
+
+
+
+
+
+
+
+
+-- boolean is-mobile: false
+
+-- boolean show-section: false
+
+-- is-mobile: true
+if: $ftd.device == mobile
+
+-- boolean open-right-sidebar-info: false
+
+-- fpm.sitemap-data sitemap:
+$processor$: sitemap
+
+-- optional string site-name: 
+
+-- ftd.image-src site-logo:
+dark: $assets.files.static.brand-logo.svg.dark
+light: $assets.files.static.brand-logo.svg.light
+
+-- string site-url: /
