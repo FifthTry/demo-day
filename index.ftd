@@ -271,7 +271,7 @@ text-align: justify
 if: $demo-video is not null
 width: fill
 border-width: 2
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.background.code
 border-radius: 4
 padding-top: 10
 padding-left: 10
@@ -292,7 +292,7 @@ v: $demo-video
 if: $planning-video is not null
 width: fill
 border-width: 2
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.background.code
 border-radius: 4
 padding-right: 10
 padding-top: 10
@@ -312,7 +312,7 @@ v: $demo-video
 if: $review-video is not null
 width: fill
 border-width: 2
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.background.code
 border-radius: 4
 padding-right: 10
 padding-top: 10
