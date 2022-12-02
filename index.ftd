@@ -281,7 +281,7 @@ color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Demo Video
 width: fill
-open-one: true
+is-open: true
 
 --- youtube:
 v: $demo-video
@@ -498,7 +498,7 @@ color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Demo Video
 width: fill
-open-one: true
+is-open: true
 
 --- youtube:
 v: $demo-video
@@ -796,7 +796,7 @@ color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Demo Video
 width: fill
-open-one: true
+is-open: true
 
 --- youtube:
 v: $demo-video
@@ -997,7 +997,7 @@ color: $fpm.color.main.cta-primary.text
 
 --- detail.detail: Demo Video
 width: fill
-open-one: true
+is-open: true
 
 --- youtube:
 v: $demo-video
