@@ -24,9 +24,9 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/demo-day/main
 
 -- fpm.sitemap:
 
-#Home: /
+#Home: /index.html
 
-## Demo: /
+## Demo: /index.html
 
-- Presentation: /
-- Upcoming:/upcoming
+- Presentation: /index.html
+- Upcoming: /upcoming/
