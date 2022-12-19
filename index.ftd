@@ -270,7 +270,7 @@ text-align: justify
 --- ftd.column:
 if: $demo-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.custom.four
 border-radius: 4
 padding-top: 10
@@ -296,7 +296,7 @@ v: $demo-video
 --- ftd.column:
 if: $planning-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.custom.four
 border-radius: 4
 padding-right: 10
@@ -321,7 +321,7 @@ v: $demo-video
 --- ftd.column:
 if: $review-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.custom.four
 border-radius: 4
 padding-right: 10
@@ -502,7 +502,7 @@ text-align: justify
 --- ftd.column:
 if: $demo-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.custom.four
 border-radius: 4
 padding-right: 10
@@ -528,7 +528,7 @@ v: $demo-video
 --- ftd.column:
 if: $planning-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.custom.four
 border-radius: 4
 padding-right: 10
@@ -553,7 +553,7 @@ v: $demo-video
 --- ftd.column:
 if: $review-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.custom.four
 border-radius: 4
 padding-right: 10
@@ -815,7 +815,7 @@ margin-bottom: 26
 --- ftd.column:
 if: $demo-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.border
 border-radius: 4
 padding-top: 10
@@ -1031,7 +1031,7 @@ text-align: justify
 --- ftd.column:
 if: $demo-video is not null
 width: fill
-border-width: 2
+border-width: 1
 border-color: $fpm.color.main.border
 border-radius: 4
 padding-top: 10
