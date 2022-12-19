@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8"><base href="/demo-day/">
+        <meta charset="UTF-8"><base href="/">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <title>static/presentation-icon.png.ftd</title>
         <script type="ftd" id="ftd-data">{
@@ -2765,6 +2765,26 @@ function filter_keys(data, filter_fn) {
 }
 function http(id, request_data, referenced_data) {
     let method = request_data.method? request_data.method.trim().toUpperCase(): "GET";
+
+    if (method == "GET") {
+        let query_parameters = new URLSearchParams();
+        for (let [header, value] of Object.entries(request_data)) {
+            if (header != "url" && header != "function" && header != "method")
+            {
+                query_parameters.set(header, value);
+            }
+       }
+       let query_string = query_parameters.toString();
+       if (query_string) {
+           let get_url = request_data.url + "?" + query_parameters.toString();
+           window.location.href = get_url;
+       }
+       else{
+           window.location.href = request_data.url;
+       }
+       return;
+    }
+
     let xhr = new XMLHttpRequest();
     xhr.open(method, request_data.url);
     xhr.setRequestHeader("Accept", "application/json");
