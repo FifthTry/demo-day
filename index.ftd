@@ -285,6 +285,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Demo Video
+color: $fpm.color.main.custom.four
 width: fill
 is-open: true
 
@@ -297,7 +298,7 @@ v: $demo-video
 if: $planning-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.custom.three
 border-radius: 4
 padding-right: 10
 padding-top: 10
@@ -311,6 +312,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Planning Video
+color: $fpm.color.main.custom.three
 width: fill
 
 --- youtube:
@@ -322,7 +324,7 @@ v: $demo-video
 if: $review-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.border-strong
 border-radius: 4
 padding-right: 10
 padding-top: 10
@@ -336,6 +338,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Review Video
+color: $fpm.color.main.border-strong
 width: fill
 
 --- youtube:
@@ -816,7 +819,7 @@ margin-bottom: 26
 if: $demo-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.border
+border-color: $fpm.color.main.info.border
 border-radius: 4
 padding-top: 10
 padding-left: 10
@@ -830,6 +833,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Demo Video
+color: $fpm.color.main.info.base
 width: fill
 is-open: true
 
