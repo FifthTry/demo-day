@@ -261,7 +261,7 @@ padding-top: 8
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-tight
-color: $fpm.color.main.text-strong
+color: $fpm.color.main.text
 margin-bottom: 26
 text-align: justify
 
@@ -810,7 +810,7 @@ padding-top: 8
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
-color: $fpm.color.main.text-strong
+color: $fpm.color.main.info.base
 margin-bottom: 26
 
 --- container: dd-container
