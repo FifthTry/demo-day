@@ -279,6 +279,11 @@ padding-right: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Demo Video
 width: fill
 is-open: true
@@ -300,6 +305,11 @@ padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Planning Video
 width: fill
 
@@ -319,6 +329,11 @@ padding-top: 10
 padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
+
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
 
 --- detail.detail: Review Video
 width: fill
@@ -496,6 +511,11 @@ padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Demo Video
 width: fill
 is-open: true
@@ -517,6 +537,11 @@ padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Planning Video
 width: fill
 
@@ -536,6 +561,11 @@ padding-top: 10
 padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
+
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
 
 --- detail.detail: Review Video
 width: fill
@@ -794,6 +824,11 @@ padding-right: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Demo Video
 width: fill
 is-open: true
@@ -807,6 +842,11 @@ v: $demo-video
 if: $planning-video is not null
 width: fill
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Planning Video
 width: fill
 
@@ -818,6 +858,11 @@ v: $demo-video
 --- ftd.column:
 if: $review-video is not null
 width: fill
+
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
 
 --- detail.detail: Review Video
 width: fill
@@ -995,6 +1040,11 @@ padding-right: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Demo Video
 width: fill
 is-open: true
@@ -1008,6 +1058,11 @@ v: $demo-video
 if: $planning-video is not null
 width: fill
 
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
+
 --- detail.detail: Planning Video
 width: fill
 
@@ -1019,6 +1074,11 @@ v: $demo-video
 --- ftd.column:
 if: $review-video is not null
 width: fill
+
+--- ftd.column:
+width: fill
+id: detail
+margin-bottom: -16
 
 --- detail.detail: Review Video
 width: fill
