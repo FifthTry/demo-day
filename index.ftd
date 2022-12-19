@@ -1154,6 +1154,7 @@ width: fill
 open: true
 id: presentation-container
 append-at: presentation-container
+margin-bottom: $fpm.space.space-6
 
 --- presentation-desktop: $title
 if: not $is-mobile 
