@@ -211,9 +211,7 @@ toc-obj: $toc
 width: fill
 id: demo-container
 min-height: fill
-padding-vertical: $fpm.space.space-4
-background-color: $darkpurple
-padding-horizontal: 24
+
 
 --- ftd.column: 
 width: fill
@@ -221,6 +219,8 @@ id: dd-container
 background-color: $darkpurple
 border-radius: 10
 margin-bottom: 24
+padding-vertical: $fpm.space.space-4
+padding-horizontal: 24
 
 --- ftd.row:
 width: fill
