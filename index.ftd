@@ -100,6 +100,7 @@ append-at: demo-container
 width: fill
 string number:
 string date:
+optional string year:
 boolean in-future: false
 optional string demo-video: rny1EGkqw_M
 optional string planning-video:
@@ -121,6 +122,7 @@ current-subsection: $current-subsection
 current-page: $current-page
 number: $number
 date: $date
+year: $year
 in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
@@ -143,6 +145,7 @@ current-subsection: $current-subsection
 current-page: $current-page
 number: $number
 date: $date
+year: $year
 in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
@@ -168,6 +171,7 @@ fpm.toc-item list sub-sections:
 optional fpm.toc-item current-section:
 optional fpm.toc-item current-subsection:
 optional fpm.toc-item current-page:
+string year:
 background-color: $fpm.color.main.background.base
 open: true
 id: demo-container
@@ -224,7 +228,7 @@ padding-horizontal: 24
 
 --- ftd.row:
 width: fill
-padding-vertical: 12
+padding-bottom: 12
 region: h0
 id: header-container
 
@@ -252,7 +256,7 @@ color: $fpm.color.main.text-strong
 
 --- container: header-container
 
---- ftd.row:
+--- ftd.column:
 spacing: 12
 background-image: $assets.files.static.calender.svg
 width: 76
@@ -260,11 +264,19 @@ height: 85
 margin-top: -34
 
 --- ftd.text: $date
+role: $fpm.type.copy-tight
+color: $fpm.color.main.text-strong
+style: bold
+text-align: center
+width: fill
+padding-top: 15
+
+--- ftd.text: $year
 role: $fpm.type.copy-large
 color: $fpm.color.main.text-strong
 style: bold
 text-align: center
-padding-top: 16
+width: fill
 
 --- container: dd-container
 
@@ -433,6 +445,7 @@ border-radius: 8
 -- ftd.column past-demo-day-mobile:
 optional caption title:
 optional body body:
+string year:
 fpm.toc-item list toc: $sitemap.toc
 fpm.toc-item list sections: $sitemap.sections
 fpm.toc-item list sub-sections: $sitemap.subsections
@@ -519,21 +532,30 @@ color: $fpm.color.main.text-strong
 
 --- ftd.row:
 padding-top: 4
-width: fill
+align: center
+padding-left: 50
 
---- ftd.row:
+--- ftd.column:
 spacing: 12
 background-image: $assets.files.static.calender.svg
 width: 75
 height: 85
-margin-left: 130
+
 
 --- ftd.text: $date
-role: $fpm.type.heading-small
+role: $fpm.type.copy-tight
 color: $fpm.color.main.text-strong
 style: bold
 text-align: center
-padding-top: 8
+width: fill
+padding-top: 15
+
+--- ftd.text: $year
+role: $fpm.type.copy-large
+color: $fpm.color.main.text-strong
+style: bold
+text-align: center
+width: fill
 
 --- container: header-container
 
@@ -1314,12 +1336,35 @@ min-height: fill
 --- ftd.column:
 width: fill
 spacing: 12
+id: kkk
+
+--- ftd.row:
+width: fill
+
 
 --- ftd.text: $title
 role: $fpm.type.heading-large
 width: fill
 color: $fpm.color.main.cta-secondary.text
 align: center
+
+--- ftd.row:
+id: kk
+align: center
+spacing: 8
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 32
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.custom.two
+width: fill
+white-space: nowrap
+align: center
+
+--- container: kkk
 
 --- ftd.text: 
 text: $body
@@ -1343,8 +1388,9 @@ id: profile-container
 
 --- ftd.image:
 src: $assets.files.static.tag.svg
-height: 40
-align: left
+height: 24
+width: 24
+margin-right: 8
 
 --- ftd.row:
 spacing: 8
@@ -1395,32 +1441,6 @@ role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 
 
-
-
---- container: ftd.main
-
---- ftd.column:
-
---- ftd.column:
-align: right
-id: kk
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 32
-align: center
-
---- container: kk
-
---- ftd.row:
-width: fill
-max-width: 72
-wrap: true
-
---- ftd.text: $status
-color: $fpm.color.main.custom.two
-text-align: center
-
 --- container: ftd.main
 
 
@@ -1446,6 +1466,7 @@ append-at: presentation-container
 background-color: $purple
 border-radius: 20
 padding-horizontal: 24
+padding-bottom: 20
 spacing: 10
 
 --- ftd.row:
@@ -1467,6 +1488,7 @@ align: center
 
 --- ftd.text: $status
 color: $fpm.color.main.custom.two
+white-space: nowrap
 
 --- container: ftd.main
 
@@ -1500,13 +1522,16 @@ width: fill
 
 --- ftd.image:
 src: $assets.files.static.tag.svg
-height: 40
-align: left
+height: 24
+width: 24
+margin-right: 8
 
---- ftd.column: 
+
+--- ftd.row: 
 width: fill
+align: center
 id: profile-container
-spacing: 4
+spacing: 12
 
 --- ftd.row:
 spacing: 8
@@ -1523,7 +1548,7 @@ if: $owner-avatar is not null
 src: $helper-avatar
 width: 20
 height: 20
-
+border-radius: 100
 
 
 --- ftd.text: $owner
