@@ -335,7 +335,7 @@ v: $demo-video
 
 --- ftd.row:
 anchor: parent
-right: 0
+right: 12
 top: 11
 width: 92
 
@@ -343,6 +343,7 @@ width: 92
 if: $planning-date is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.custom.three
+white-space: nowrap
 
 --- container: dd-container
 
@@ -380,7 +381,7 @@ v: $demo-video
 
 --- ftd.row:
 anchor: parent
-right: 0
+right: 12
 top: 11
 width: 92
 
@@ -388,6 +389,7 @@ width: 92
 if: $review-date is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.border-strong
+white-space: nowrap
 
 --- container: demo-container
 
@@ -612,7 +614,7 @@ v: $demo-video
 
 --- ftd.row:
 anchor: parent
-right: 0
+right: 12
 top: 11
 width: 92
 
@@ -620,7 +622,7 @@ width: 92
 if: $planning-date is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.custom.three
-
+white-space: nowrap
 
 --- container: dd-container
 
@@ -653,7 +655,7 @@ v: $demo-video
 
 --- ftd.row:
 anchor: parent
-right: 0
+right: 12
 top: 11
 width: 92
 
@@ -661,7 +663,7 @@ width: 92
 if: $review-date is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.border-strong
-
+white-space: nowrap
 
 --- container: main-row
 
@@ -671,7 +673,7 @@ anchor: parent
 top: 0
 bottom: 0
 left: 0
-right: 0
+right: 12
 background-color:  $fpm.color.main.background.overlay
 z-index: 1
 width: fill
@@ -697,7 +699,7 @@ height: calc 100vh - 0px
 overflow-y: auto
 align: top-right
 anchor: parent
-right: 0
+right: 12
 top: 0
 background-color: $fpm.color.main.background.step-1
 z-index: 1
@@ -1188,7 +1190,7 @@ anchor: parent
 top: 0
 bottom: 0
 left: 0
-right: 0
+right: 12
 background-color:  $fpm.color.main.background.overlay
 z-index: 1
 width: fill
@@ -1214,7 +1216,7 @@ height: calc 100vh - 0px
 overflow-y: auto
 align: top-right
 anchor: parent
-right: 0
+right: 12
 top: 0
 background-color: $fpm.color.main.background.step-1
 z-index: 1
@@ -1386,6 +1388,7 @@ if: $helper-avatar is not null
 src: $helper-avatar
 width: 20
 height: 20
+border-radius: 100
 
 --- ftd.text: $helper
 role: $fpm.type.copy-tight
@@ -1545,7 +1548,7 @@ if: $helper-avatar is not null
 src: $helper-avatar
 width: 20
 height: 20
-
+border-radius: 100
 
 --- ftd.text: $helper
 role: $fpm.type.copy-tight
