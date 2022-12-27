@@ -91,22 +91,23 @@ fpm.toc-item list sub-sections: $sitemap.subsections
 optional fpm.toc-item current-section: $sitemap.current-section
 optional fpm.toc-item current-subsection: $sitemap.current-subsection
 optional fpm.toc-item current-page: $sitemap.current-page
+string number:
+string date:
+optional string year:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video: 
+optional string review-video: 
+optional string demo-date: 
+optional string planning-date:
+optional string review-date:
+boolean sidebar: false
+spacing: 32
 background-color: $fpm.color.main.background.base
 open: true
 id: demo-container
 append-at: demo-container
 width: fill
-string number:
-string date:
-optional string year:
-boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video:
-optional string planning-date:
-optional string review-date:
-optional string review-video:
-spacing: 32
-boolean sidebar: false
 
 --- past-demo-day-desktop: $title
 id: demo-container
@@ -124,6 +125,9 @@ in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
 planning-video: $planning-video
+demo-date: $demo-date
+planning-date: $planning-date
+review-date: $review-date
 sidebar: $sidebar
 
 --- container: ftd.main
@@ -144,6 +148,9 @@ in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
 planning-video: $planning-video
+demo-date: $demo-date
+planning-date: $planning-date
+review-date: $review-date
 sidebar: $sidebar
 
 
@@ -164,19 +171,22 @@ fpm.toc-item list sub-sections:
 optional fpm.toc-item current-section:
 optional fpm.toc-item current-subsection:
 optional fpm.toc-item current-page:
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean sidebar:
 background-color: $fpm.color.main.background.base
 open: true
 id: demo-container
 append-at: demo-container
 width: fill
-string number:
-string date:
-boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video:
-optional string review-video:
 spacing: 32
-boolean sidebar:
 
 --- h.header: 
 sections: $sections
@@ -287,12 +297,14 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Demo Video
+--- detail.detail: Demo Meeting
 color: $fpm.color.main.text-strong
+info-right: $demo-date
 width: fill
 is-open: true
 
 --- youtube:
+if: $demo-video is not null
 v: $demo-video
 
 --- container: dd-container
@@ -314,12 +326,14 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Planning Video
+--- detail.detail: Planning Meeting
+info-right: $planning-date
 color: $fpm.color.main.custom.three
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $planning-video is not null
+v: $planning-video
 
 --- container: dd-container
 
@@ -340,12 +354,14 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Review Video
+--- detail.detail: Review Meeting
+info-right: $review-date
 color: $fpm.color.main.border-strong
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $review-video is not null
+v: $review-video
 
 --- container: main-row
 
@@ -389,19 +405,22 @@ fpm.toc-item list sub-sections: $sitemap.subsections
 optional fpm.toc-item current-section: $sitemap.current-section
 optional fpm.toc-item current-subsection: $sitemap.current-subsection
 optional fpm.toc-item current-page: $sitemap.current-page
-background-color: $fpm.color.main.background.base
-open: true
-id: demo-container
-append-at: demo-container
-width: fill
 string number:
 string date:
 boolean in-future: false
 optional string demo-video: 
 optional string planning-video:
 optional string review-video:
-spacing: 32
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
 boolean sidebar:
+background-color: $fpm.color.main.background.base
+open: true
+id: demo-container
+append-at: demo-container
+width: fill
+spacing: 32
 
 --- h.header: 
 sections: $sections
@@ -522,11 +541,13 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Demo Video
+--- detail.detail: Demo Meeting
+info-right: $demo-date
 width: fill
 is-open: true
 
 --- youtube:
+if: $demo-video is not null
 v: $demo-video
 
 --- container: dd-container
@@ -548,11 +569,13 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Planning Video
+--- detail.detail: Planning Meeting
+info-right: $planning-date
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $planning-video is not null
+v: $planning-video
 
 --- container: dd-container
 
@@ -573,11 +596,13 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Review Video
+--- detail.detail: Review Meeting
+info-right: $review-date
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $review-video is not null
+v: $review-video
 
 --- container: main-row
 
@@ -642,20 +667,23 @@ fpm.toc-item list sub-sections: $sitemap.subsections
 optional fpm.toc-item current-section: $sitemap.current-section
 optional fpm.toc-item current-subsection: $sitemap.current-subsection
 optional fpm.toc-item current-page: $sitemap.current-page
+string number:
+string date:
+optional string year:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video: 
+optional string review-video: 
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean sidebar: false
 background-color: $fpm.color.main.background.base
 open: true
 id: upcoming-demo-container
 append-at: upcoming-demo-container
 width: fill
-string number:
-string date:
-optional string year:
-boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video:
-optional string review-video:
 spacing: 32
-boolean sidebar: false
 
 --- upcoming-demo-day-desktop: $title
 id: upcoming-demo-container
@@ -673,6 +701,9 @@ in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
 planning-video: $planning-video
+demo-date: $demo-date
+planning-date: $planning-date
+review-date: $review-date
 sidebar: $sidebar
 
 --- container: ftd.main
@@ -693,6 +724,9 @@ in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
 planning-video: $planning-video
+demo-date: $demo-date
+planning-date: $planning-date
+review-date: $review-date
 sidebar: $sidebar
 
 
@@ -713,19 +747,22 @@ fpm.toc-item list sub-sections:
 optional fpm.toc-item current-section:
 optional fpm.toc-item current-subsection:
 optional fpm.toc-item current-page:
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean sidebar:
 background-color: $fpm.color.main.background.base
 open: true
 id: upcoming-demo-container
 append-at: upcoming-demo-container
 width: fill
-string number:
-string date:
-boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video:
-optional string review-video:
 spacing: 32
-boolean sidebar:
 
 --- h.header: 
 sections: $sections
@@ -760,7 +797,7 @@ max-width: 800
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $fpm.color.main.shadow
+background-color: $fpm.color.main.background.step-1
 padding-horizontal: 24
 border-radius: 4
 margin-bottom: 24
@@ -836,12 +873,14 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Demo Video
+--- detail.detail: Demo Meeting
+info-right: $demo-date
 color: $fpm.color.main.text-strong
 width: fill
 is-open: true
 
 --- youtube:
+if: $demo-video is not null
 v: $demo-video
 
 --- container: dd-container
@@ -849,34 +888,54 @@ v: $demo-video
 --- ftd.column:
 if: $planning-video is not null
 width: fill
+border-width: 1
+border-color: $fpm.color.main.border
+border-radius: 4
+padding-top: 10
+padding-left: 10
+padding-right: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- ftd.column:
 width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Planning Video
+--- detail.detail: Planning Meeting
+info-right: $planning-date
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $planning-video is not null
+v: $planning-video
 
 --- container: dd-container
 
 --- ftd.column:
 if: $review-video is not null
 width: fill
+border-width: 1
+border-color: $fpm.color.main.border
+border-radius: 4
+padding-top: 10
+padding-left: 10
+padding-right: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- ftd.column:
 width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Review Video
+--- detail.detail: Review Meeting
+info-right: $review-date
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $review-video is not null
+v: $review-video
 
 --- container: main-row
 
@@ -920,19 +979,22 @@ fpm.toc-item list sub-sections: $sitemap.subsections
 optional fpm.toc-item current-section: $sitemap.current-section
 optional fpm.toc-item current-subsection: $sitemap.current-subsection
 optional fpm.toc-item current-page: $sitemap.current-page
-background-color: $fpm.color.main.background.base
-open: true
-id: upcoming-demo-container
-append-at: upcoming-demo-container
-width: fill
 string number:
 string date:
 boolean in-future: false
 optional string demo-video: 
 optional string planning-video:
 optional string review-video:
-spacing: 32
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
 boolean sidebar:
+background-color: $fpm.color.main.background.base
+open: true
+id: upcoming-demo-container
+append-at: upcoming-demo-container
+width: fill
+spacing: 32
 
 --- h.header: 
 sections: $sections
@@ -963,7 +1025,7 @@ padding-vertical: $fpm.space.space-4
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $fpm.color.main.shadow
+background-color: $fpm.color.main.background.step-1
 padding-horizontal: 24
 border-radius: 4
 margin-bottom: 24
@@ -1053,11 +1115,13 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Demo Video
+--- detail.detail: Demo Meeting
+info-right: $demo-date
 width: fill
 is-open: true
 
 --- youtube:
+if: $demo-video is not null
 v: $demo-video
 
 --- container: dd-container
@@ -1071,11 +1135,13 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Planning Video
+--- detail.detail: Planning Meeting
+info-right: $planning-date
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $planning-video is not null
+v: $planning-video
 
 --- container: dd-container
 
@@ -1088,11 +1154,13 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Review Video
+--- detail.detail: Review Meeting
+info-right: $review-date
 width: fill
 
 --- youtube:
-v: $demo-video
+if: $review-video is not null
+v: $review-video
 
 --- container: main-row
 
@@ -1217,23 +1285,90 @@ border-radius: 10
 padding-vertical: 24
 padding-horizontal: 24
 spacing: 24
-background-color: $fpm.color.main.background.code
+background-color: $fpm.color.main.background.step-1
 
 --- ftd.column:
 width: fill
 min-height: fill
 
---- ftd.column:
+--- ftd.row:
 width: fill
-id: fifth-container
+id: card-block
+
+--- ftd.column:
+width: percent 20
+id: picture-area
+spacing: 20
+padding-right: $fpm.space.space-6
+
+--- ftd.column:
+if: $owner is not null
+spacing: 8
+align: center
+
+--- ftd.image:
+if: $owner-avatar is null
+src: $assets.files.static.avatar.png
+width: 64
+height: 64
+border-radius: 100
+
+--- ftd.image:
+if: $owner-avatar is not null
+src: $owner-avatar
+width: 64
+height: 64
+border-radius: 100
+
+--- ftd.text: $owner
+role: $fpm.type.copy-tight
+color: $fpm.color.main.cta-primary.base
+align: center
+margin-top: $fpm.space.space-3
+
+--- container: picture-area
+
+--- ftd.column:
+spacing: 12
+if: $helper is not null
+align: center
+
+--- ftd.image:
+if: $helper-avatar is null
+src: $assets.files.static.avatar.png
+width: 42
+height: 42
+border-radius: 100
+align: center
+
+--- ftd.image:
+if: $helper-avatar is not null
+src: $helper-avatar
+width: 42
+height: 42
+border-radius: 100
+align: center
+
+--- ftd.text: $helper
+role: $fpm.type.fine-print
+color: $fpm.color.main.text
+align: center
+
+--- container: card-block
+
+--- ftd.column:
+width: percent 80
+id: content-area
 
 --- ftd.row:
 width: fill
 
 --- ftd.text: $title
 role: $fpm.type.heading-medium
-width: fill
 color: $fpm.color.main.cta-secondary.text
+width: fill
+margin-top: $fpm.space.space-2
+margin-bottom: $fpm.space.space-2
 
 --- ftd.row:
 id: forth-container
@@ -1385,7 +1520,7 @@ spacing: 4
 
 --- ftd.image:
 src: $assets.files.static.pending.svg
-height: 20
+height: 24
 align: center
 
 --- ftd.text: $status
@@ -1417,13 +1552,7 @@ width: fill
 white-space: nowrap
 align: center
 
---- container: fifth-container
-
---- ftd.column:
-width: fill
-id: presentation-container
-
---- container: ftd.main
+--- container: content-area
 
 --- ftd.text: 
 text: $body
@@ -1431,76 +1560,18 @@ role: $fpm.type.copy-tight
 color: $fpm.color.main.text
 width: fill
 text-align: justify
+margin-top: $fpm.space.space-2
 
 --- ftd.column:
-id: present-container
 width: fill
-
---- container: present-container
-
---- ftd.row:
-width: fill
-id: profile-container
-margin-top: 24
-
-/--- ftd.image:
-src: $assets.files.static.tag.svg
-height: 24
-width: 24
-margin-right: 8
-
---- ftd.row:
-spacing: 8
-margin-right: 12
-align: center
-if: $owner is not null
-
---- ftd.image:
-if: $owner-avatar is null
-src: $assets.files.static.avatar.png
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.image:
-if: $owner-avatar is not null
-src: $owner-avatar
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.text: $owner
-role: $fpm.type.copy-tight
-color: $fpm.color.main.cta-primary.base
-
---- container: profile-container
-
---- ftd.row:
-spacing: 8
-align: center
-if: $helper is not null
-margin-left: $fpm.space.space-4
-
---- ftd.image:
-if: $helper-avatar is null
-src: $assets.files.static.avatar.png
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.image:
-if: $helper-avatar is not null
-src: $helper-avatar
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.text: $helper
-role: $fpm.type.copy-tight
-color: $fpm.color.main.cta-primary.base
+id: presentation-container
 
 
---- container: ftd.main
+
+
+
+
+
 
 
 
@@ -1775,7 +1846,7 @@ border-radius: 100
 
 --- ftd.image:
 if: $owner-avatar is not null
-src: $helper-avatar
+src: $owner-avatar
 width: 20
 height: 20
 border-radius: 100
@@ -1983,7 +2054,8 @@ toc: $obj
 
 
 -- ftd.iframe youtube:
-caption v: rny1EGkqw_M
+optional caption v: 
+if: $v is not null
 youtube: $v
 height: 400
 width: fill
