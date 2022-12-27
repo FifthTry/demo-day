@@ -13,11 +13,9 @@
 
 -- past-demo-day:  Fifthtry
 number: 11th
-date: 22 Nov 2022
+date: Nov 22
 demo-video: rny1EGkqw_M
 planning-video: rny1EGkqw_M
-planning-date: 22 Dec 2922
-review-date: 22 Dec 2922
 review-video: rny1EGkqw_M
 sidebar: true
 id: demo-id
@@ -104,9 +102,9 @@ optional string year:
 boolean in-future: false
 optional string demo-video: rny1EGkqw_M
 optional string planning-video:
-optional string review-video:
 optional string planning-date:
 optional string review-date:
+optional string review-video:
 spacing: 32
 boolean sidebar: false
 
@@ -122,14 +120,11 @@ current-subsection: $current-subsection
 current-page: $current-page
 number: $number
 date: $date
-year: $year
 in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
 planning-video: $planning-video
 sidebar: $sidebar
-planning-date: $planning-date
-review-date: $review-date
 
 --- container: ftd.main
 
@@ -145,14 +140,12 @@ current-subsection: $current-subsection
 current-page: $current-page
 number: $number
 date: $date
-year: $year
 in-future: $in-future
 demo-video: $demo-video
 review-video: $review-video
 planning-video: $planning-video
 sidebar: $sidebar
-planning-date: $planning-date
-review-date: $review-date
+
 
 
 
@@ -171,7 +164,6 @@ fpm.toc-item list sub-sections:
 optional fpm.toc-item current-section:
 optional fpm.toc-item current-subsection:
 optional fpm.toc-item current-page:
-string year:
 background-color: $fpm.color.main.background.base
 open: true
 id: demo-container
@@ -183,8 +175,6 @@ boolean in-future: false
 optional string demo-video: rny1EGkqw_M
 optional string planning-video:
 optional string review-video:
-optional string planning-date:
-optional string review-date:
 spacing: 32
 boolean sidebar:
 
@@ -215,20 +205,19 @@ toc-obj: $toc
 width: fill
 id: demo-container
 min-height: fill
-
+padding-vertical: $fpm.space.space-4
 
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $darkpurple
+background-color: $fpm.color.main.background.step-1
+padding-horizontal: 24
 border-radius: 10
 margin-bottom: 24
-padding-vertical: $fpm.space.space-4
-padding-horizontal: 24
 
 --- ftd.row:
 width: fill
-padding-bottom: 12
+padding-vertical: 12
 region: h0
 id: header-container
 
@@ -256,27 +245,19 @@ color: $fpm.color.main.text-strong
 
 --- container: header-container
 
---- ftd.column:
+--- ftd.row:
 spacing: 12
 background-image: $assets.files.static.calender.svg
-width: 76
+width: 75
 height: 85
 margin-top: -34
 
 --- ftd.text: $date
-role: $fpm.type.copy-tight
+role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
 style: bold
 text-align: center
-width: fill
-padding-top: 15
-
---- ftd.text: $year
-role: $fpm.type.copy-large
-color: $fpm.color.main.text-strong
-style: bold
-text-align: center
-width: fill
+padding-top: 8
 
 --- container: dd-container
 
@@ -293,7 +274,7 @@ text-align: justify
 if: $demo-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.border
 border-radius: 4
 padding-top: 10
 padding-left: 10
@@ -307,10 +288,9 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Demo Video
-color: $fpm.color.main.custom.four
+color: $fpm.color.main.text-strong
 width: fill
 is-open: true
-padding: 0
 
 --- youtube:
 v: $demo-video
@@ -321,41 +301,25 @@ v: $demo-video
 if: $planning-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.three
+border-color: $fpm.color.main.border
 border-radius: 4
+padding-right: 10
 padding-top: 10
 padding-left: 10
-padding-right: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
-id: past-demos-container
 
---- ftd.row:
+--- ftd.column:
 width: fill
-id: detail-one
+id: detail
 margin-bottom: -16
 
---- detail.detail: Planning Meeting
+--- detail.detail: Planning Video
 color: $fpm.color.main.custom.three
 width: fill
-padding: 0
 
 --- youtube:
 v: $demo-video
-
---- container: past-demos-container
-
---- ftd.row:
-anchor: parent
-right: 12
-top: 11
-width: 92
-
---- ftd.text: $planning-date
-if: $planning-date is not null
-role: $fpm.type.copy-tight
-color: $fpm.color.main.custom.three
-white-space: nowrap
 
 --- container: dd-container
 
@@ -363,51 +327,25 @@ white-space: nowrap
 if: $review-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.border-strong
 border-radius: 4
 padding-right: 10
 padding-top: 10
 padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
-id: past-demos-container
 
 --- ftd.column:
 width: fill
+id: detail
 margin-bottom: -16
-id: video-container
 
---- ftd.row:
-width: fill
-
---- detail.detail: Review Meeting
+--- detail.detail: Review Video
 color: $fpm.color.main.border-strong
 width: fill
-padding: 0
-
 
 --- youtube:
 v: $demo-video
-
---- container: past-demos-container
-
---- ftd.row:
-anchor: parent
-right: 12
-top: 11
-width: 92
-
---- ftd.text: $review-date
-if: $review-date is not null
-role: $fpm.type.copy-tight
-color: $fpm.color.main.border-strong
-white-space: nowrap
-
---- container: demo-container
-
---- ftd.column:
-width: fill
-
 
 --- container: main-row
 
@@ -445,7 +383,6 @@ border-radius: 8
 -- ftd.column past-demo-day-mobile:
 optional caption title:
 optional body body:
-string year:
 fpm.toc-item list toc: $sitemap.toc
 fpm.toc-item list sections: $sitemap.sections
 fpm.toc-item list sub-sections: $sitemap.subsections
@@ -463,8 +400,6 @@ boolean in-future: false
 optional string demo-video: 
 optional string planning-video:
 optional string review-video:
-optional string planning-date:
-optional string review-date:
 spacing: 32
 boolean sidebar:
 
@@ -497,9 +432,9 @@ padding-vertical: $fpm.space.space-4
 --- ftd.column: 
 width: fill
 id: dd-container
-background-color: $darkpurple
+background-color: $fpm.color.main.background.step-1
 padding-horizontal: 24
-border-radius: 20
+border-radius: 4
 margin-bottom: 24
 
 --- ftd.row:
@@ -532,30 +467,21 @@ color: $fpm.color.main.text-strong
 
 --- ftd.row:
 padding-top: 4
-align: center
-padding-left: 50
+width: fill
 
---- ftd.column:
+--- ftd.row:
 spacing: 12
 background-image: $assets.files.static.calender.svg
 width: 75
 height: 85
-
+margin-left: 130
 
 --- ftd.text: $date
-role: $fpm.type.copy-tight
+role: $fpm.type.heading-small
 color: $fpm.color.main.text-strong
 style: bold
 text-align: center
-width: fill
-padding-top: 15
-
---- ftd.text: $year
-role: $fpm.type.copy-large
-color: $fpm.color.main.text-strong
-style: bold
-text-align: center
-width: fill
+padding-top: 8
 
 --- container: header-container
 
@@ -583,7 +509,7 @@ text-align: justify
 if: $demo-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.border
 border-radius: 4
 padding-right: 10
 padding-top: 10
@@ -599,11 +525,9 @@ margin-bottom: -16
 --- detail.detail: Demo Video
 width: fill
 is-open: true
-padding: 0
 
 --- youtube:
 v: $demo-video
-
 
 --- container: dd-container
 
@@ -611,14 +535,13 @@ v: $demo-video
 if: $planning-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.three
+border-color: $fpm.color.main.border
 border-radius: 4
 padding-right: 10
 padding-top: 10
 padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
-id: past-demos-container
 
 --- ftd.column:
 width: fill
@@ -627,24 +550,9 @@ margin-bottom: -16
 
 --- detail.detail: Planning Video
 width: fill
-color:$fpm.color.main.custom.three
 
 --- youtube:
 v: $demo-video
-
---- container: past-demos-container
-
---- ftd.row:
-anchor: parent
-right: 12
-top: 11
-width: 92
-
---- ftd.text: $planning-date
-if: $planning-date is not null
-role: $fpm.type.copy-tight
-color: $fpm.color.main.custom.three
-white-space: nowrap
 
 --- container: dd-container
 
@@ -652,14 +560,13 @@ white-space: nowrap
 if: $review-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.custom.four
+border-color: $fpm.color.main.border
 border-radius: 4
 padding-right: 10
 padding-top: 10
 padding-left: 10
 margin-bottom: 20
 color: $fpm.color.main.cta-primary.text
-id: past-demos-container
 
 --- ftd.column:
 width: fill
@@ -668,24 +575,9 @@ margin-bottom: -16
 
 --- detail.detail: Review Video
 width: fill
-color:$fpm.color.main.border-strong
 
 --- youtube:
 v: $demo-video
-
---- container: past-demos-container
-
---- ftd.row:
-anchor: parent
-right: 12
-top: 11
-width: 92
-
---- ftd.text: $review-date
-if: $review-date is not null
-role: $fpm.type.copy-tight
-color: $fpm.color.main.border-strong
-white-space: nowrap
 
 --- container: main-row
 
@@ -695,7 +587,7 @@ anchor: parent
 top: 0
 bottom: 0
 left: 0
-right: 12
+right: 0
 background-color:  $fpm.color.main.background.overlay
 z-index: 1
 width: fill
@@ -721,7 +613,7 @@ height: calc 100vh - 0px
 overflow-y: auto
 align: top-right
 anchor: parent
-right: 12
+right: 0
 top: 0
 background-color: $fpm.color.main.background.step-1
 z-index: 1
@@ -757,6 +649,7 @@ append-at: upcoming-demo-container
 width: fill
 string number:
 string date:
+optional string year:
 boolean in-future: false
 optional string demo-video: rny1EGkqw_M
 optional string planning-video:
@@ -869,7 +762,7 @@ width: fill
 id: dd-container
 background-color: $fpm.color.main.shadow
 padding-horizontal: 24
-border-radius: 20
+border-radius: 4
 margin-bottom: 24
 
 --- ftd.row:
@@ -930,7 +823,7 @@ margin-bottom: 26
 if: $demo-video is not null
 width: fill
 border-width: 1
-border-color: $fpm.color.main.info.border
+border-color: $fpm.color.main.border
 border-radius: 4
 padding-top: 10
 padding-left: 10
@@ -944,10 +837,9 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Demo Video
-color: $fpm.color.main.info.base
+color: $fpm.color.main.text-strong
 width: fill
 is-open: true
-padding: 0
 
 --- youtube:
 v: $demo-video
@@ -1073,7 +965,7 @@ width: fill
 id: dd-container
 background-color: $fpm.color.main.shadow
 padding-horizontal: 24
-border-radius: 20
+border-radius: 4
 margin-bottom: 24
 
 --- ftd.row:
@@ -1164,7 +1056,6 @@ margin-bottom: -16
 --- detail.detail: Demo Video
 width: fill
 is-open: true
-padding: 0
 
 --- youtube:
 v: $demo-video
@@ -1199,7 +1090,6 @@ margin-bottom: -16
 
 --- detail.detail: Review Video
 width: fill
-padding: 0
 
 --- youtube:
 v: $demo-video
@@ -1212,7 +1102,7 @@ anchor: parent
 top: 0
 bottom: 0
 left: 0
-right: 12
+right: 0
 background-color:  $fpm.color.main.background.overlay
 z-index: 1
 width: fill
@@ -1238,7 +1128,7 @@ height: calc 100vh - 0px
 overflow-y: auto
 align: top-right
 anchor: parent
-right: 12
+right: 0
 top: 0
 background-color: $fpm.color.main.background.step-1
 z-index: 1
@@ -1261,13 +1151,13 @@ padding-horizontal: 24
 -- ftd.column presentation:
 optional caption title:
 optional body body:
-string owner:
-string helper:
-string status:
+optional string owner:
+optional string helper:
 optional ftd.image-src owner-avatar:
 optional ftd.image-src helper-avatar:
 optional string owner-profile:
 optional string helper-profile:
+string status:
 width: fill
 open: true
 id: presentation-container
@@ -1309,16 +1199,16 @@ id: presentation-container
 
 
 
--- ftd.row presentation-desktop:
+-- ftd.column presentation-desktop:
 optional caption title:
 optional body body:
-string owner:
-string helper:
-string status:
+optional string owner:
+optional string helper:
 optional ftd.image-src owner-avatar:
 optional ftd.image-src helper-avatar:
 optional string owner-profile:
 optional string helper-profile:
+string status:
 width: fill
 open: true
 id: presentation-container
@@ -1327,7 +1217,7 @@ border-radius: 10
 padding-vertical: 24
 padding-horizontal: 24
 spacing: 24
-background-color: $purple
+background-color: $fpm.color.main.background.code
 
 --- ftd.column:
 width: fill
@@ -1341,10 +1231,10 @@ id: fifth-container
 width: fill
 
 --- ftd.text: $title
-role: $fpm.type.heading-large
+role: $fpm.type.heading-medium
 width: fill
 color: $fpm.color.main.cta-secondary.text
-align: center
+margin-top: -10
 
 --- ftd.row:
 id: forth-container
@@ -1357,7 +1247,7 @@ right: -24
 --- ftd.row:
 if: $status == Done
 background-color: $fpm.color.main.success.text
-border-radius: 20
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1379,7 +1269,7 @@ align: center
 --- ftd.row:
 if: $status == In Progress
 background-color: $fpm.color.main.cta-secondary.base
-border-radius: 20
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1400,8 +1290,8 @@ align: center
 
 --- ftd.row:
 if: $status == Half Done
-background-color: $fpm.color.main.custom.two
-border-radius: 20
+background-color: $fpm.color.main.error.base
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1422,8 +1312,8 @@ align: center
 
 --- ftd.row:
 if: $status == Experimenting
-background-color: $fpm.color.main.custom.one
-border-radius: 20
+background-color: $fpm.color.main.accent.secondary
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1444,8 +1334,8 @@ align: center
 
 --- ftd.row:
 if: $status == Pending
-background-color: $fpm.color.main.cta-tertiary.base
-border-radius: 20
+background-color: $fpm.color.main.error.base
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1467,7 +1357,7 @@ align: center
 --- ftd.row:
 if: $status == Not Sure
 background-color: $fpm.color.main.background.step-2
-border-radius: 20
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1489,7 +1379,7 @@ align: center
 --- ftd.row:
 if: $status == On Track
 background-color: $fpm.color.main.cta-primary.base
-border-radius: 20
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1511,7 +1401,7 @@ align: center
 --- ftd.row:
 if: $status == Carry Over
 background-color: $fpm.color.main.custom.ten
-border-radius: 20
+border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
@@ -1530,82 +1420,35 @@ align: center
 
 --- container: fifth-container
 
+--- ftd.column:
+width: fill
+id: presentation-container
+
+--- container: ftd.main
+
 --- ftd.text: 
 text: $body
 role: $fpm.type.copy-tight
-color: $lightpurple
+color: $fpm.color.main.text
 width: fill
 text-align: justify
-margin-top: 12
-
---- ftd.column:
-id: present-container
-width: fill
-
---- ftd.column:
-id: presentation-container
-width: fill
-
---- container: present-container
 
 --- ftd.row:
 width: fill
-id: profile-container
-margin-top: 24
-
---- ftd.image:
-src: $assets.files.static.tag.svg
-height: 24
-width: 24
-margin-right: 8
-
---- ftd.row:
-spacing: 8
-margin-right: 12
-align: center
-
---- ftd.image:
-if: $owner-avatar is null
-src: $assets.files.static.avatar.png
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.image:
-if: $owner-avatar is not null
-src: $owner-avatar
-width: 20
-height: 20
-border-radius: 100
 
 --- ftd.text: $owner
+if: $owner is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
-
---- container: profile-container
-
---- ftd.row:
-spacing: 8
-align: center
-
---- ftd.image:
-if: $helper-avatar is null
-src: $assets.files.static.avatar.png
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.image:
-if: $helper-avatar is not null
-src: $helper-avatar
-width: 20
-height: 20
-border-radius: 100
+padding-top: $fpm.space.space-3
+padding-right: $fpm.space.space-4
 
 --- ftd.text: $helper
+if: $helper is not null
 role: $fpm.type.copy-tight
-color: $fpm.color.main.cta-primary.base
-
+color: $fpm.color.main.accent.secondary
+padding-top: $fpm.space.space-3
+padding-right: $fpm.space.space-4
 
 --- container: ftd.main
 
@@ -1619,217 +1462,40 @@ color: $fpm.color.main.cta-primary.base
 -- ftd.column presentation-mobile:
 optional caption title:
 optional body body:
-string owner:
-string helper:
-string status:
-optional string owner-profile:
-optional string helper-profile:
+optional string owner:
+optional string helper:
 optional ftd.image-src owner-avatar:
 optional ftd.image-src helper-avatar:
+optional string owner-profile:
+optional string helper-profile:
+string status:
 open: true
-width: fill
 id: presentation-container
 append-at: presentation-container
-background-color: $purple
-border-radius: 20
+background-color: $fpm.color.main.background.step-2
+border-radius: 4
 padding-horizontal: 24
-padding-bottom: 20
 spacing: 10
 
 --- ftd.row:
 width: fill
-
 
 --- ftd.text: $title
 role: $fpm.type.heading-small
 color: $fpm.color.main.cta-secondary.text
 width: fill
 region: h1
-margin-top: 28
 
---- container: ftd.main
-
---- ftd.row:
-id: forth-container
-spacing: 8
-anchor: parent
-top: -9
-right: 1
-
-
---- ftd.row:
-if: $status == Done
-background-color: $fpm.color.main.success.text
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
+--- ftd.column:
+align: center
 
 --- ftd.image:
 src: $assets.files.static.pending.svg
-height: 20
+height: 24
 align: center
 
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
-
---- container: forth-container
-
---- ftd.row:
-if: $status == In Progress
-background-color: $fpm.color.main.cta-secondary.base
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 20
-align: center
-
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
-
---- container: forth-container
-
---- ftd.row:
-if: $status == Half Done
-background-color: $fpm.color.main.custom.two
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 20
-align: center
-
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
-
---- container: forth-container
-
---- ftd.row:
-if: $status == Experimenting
-background-color: $fpm.color.main.custom.one
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 20
-align: center
-
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
-
---- container: forth-container
-
---- ftd.row:
-if: $status == Pending
-background-color: $fpm.color.main.cta-tertiary.base
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 20
-align: center
-
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
-
---- container: forth-container
-
---- ftd.row:
-if: $status == Not Sure
-background-color: $fpm.color.main.background.step-2
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 20
-align: center
-
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
-
---- container: forth-container
-
---- ftd.row:
-if: $status == On Track
-background-color: $fpm.color.main.cta-primary.base
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 20
-align: center
-
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
-
---- container: forth-container
-
---- ftd.row:
-if: $status == Carry Over
-background-color: $fpm.color.main.custom.ten
-border-radius: 20
-padding-vertical: 4
-padding-horizontal: 6
-spacing: 4
-
---- ftd.image:
-src: $assets.files.static.pending.svg
-height: 20
-align: center
-
---- ftd.text: $status
-color: $fpm.color.main.background.step-1
-role: $fpm.type.copy-tight
-width: fill
-white-space: nowrap
-align: center
+--- ftd.text: Pending
+color: $fpm.color.main.custom.two
 
 --- container: ftd.main
 
@@ -1838,7 +1504,7 @@ width: fill
 spacing: 12
 
 --- ftd.text: 
-text: $body
+text:$body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
@@ -1846,79 +1512,26 @@ text-align: justify
 
 --- container: ftd.main
 
---- ftd.column:
-id: present-container
-width: fill
-
---- ftd.column: 
+--- ftd.row:
 id: presentation-container
 width: fill
 margin-bottom: 25
 
---- container: present-container
-
---- ftd.row:
-width: fill
-
---- ftd.image:
-src: $assets.files.static.tag.svg
-height: 24
-width: 24
-margin-right: 8
-
---- ftd.row: 
-width: fill
-align: center
-id: profile-container
-spacing: 12
-
---- ftd.row:
-spacing: 8
-
---- ftd.image:
-if: $owner-avatar is null
-src: $assets.files.static.avatar.png
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.image:
-if: $owner-avatar is not null
-src: $helper-avatar
-width: 20
-height: 20
-border-radius: 100
-
 --- ftd.text: $owner
+if: $owner is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 width: fill
-
---- container: profile-container
-
---- ftd.row:
-spacing: 8
-
---- ftd.image:
-if: $helper-avatar is null
-src: $assets.files.static.avatar.png
-width: 20
-height: 20
-border-radius: 100
-
---- ftd.image:
-if: $helper-avatar is not null
-src: $helper-avatar
-width: 20
-height: 20
-border-radius: 100
+padding-top: 10
 
 --- ftd.text: $helper
+if: $helper is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 width: fill
+padding-top: 10
 
---- container: presentation-container
+
 
 
 
@@ -2092,7 +1705,7 @@ caption v: rny1EGkqw_M
 youtube: $v
 height: 400
 width: fill
-
+margin-bottom: 24
 
 
 
@@ -2158,15 +1771,3 @@ dark: $assets.files.static.brand-logo.svg.dark
 light: $assets.files.static.brand-logo.svg.light
 
 -- string site-url: /
-
--- ftd.color purple: #563c5c
-dark: #563c5c
-
--- ftd.color darkpurple: #13041f
-dark: #13041f
-
--- ftd.color lightpurple: #ebdcf7
-dark: #ebdcf7
-
--- ftd.color mud: #635F05
-dark: #635F05
