@@ -1432,22 +1432,73 @@ color: $fpm.color.main.text
 width: fill
 text-align: justify
 
---- ftd.row:
+--- ftd.column:
+id: present-container
 width: fill
 
---- ftd.text: $owner
+--- container: present-container
+
+--- ftd.row:
+width: fill
+id: profile-container
+margin-top: 24
+
+/--- ftd.image:
+src: $assets.files.static.tag.svg
+height: 24
+width: 24
+margin-right: 8
+
+--- ftd.row:
+spacing: 8
+margin-right: 12
+align: center
 if: $owner is not null
+
+--- ftd.image:
+if: $owner-avatar is null
+src: $assets.files.static.avatar.png
+width: 20
+height: 20
+border-radius: 100
+
+--- ftd.image:
+if: $owner-avatar is not null
+src: $owner-avatar
+width: 20
+height: 20
+border-radius: 100
+
+--- ftd.text: $owner
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
-padding-top: $fpm.space.space-3
-padding-right: $fpm.space.space-4
+
+--- container: profile-container
+
+--- ftd.row:
+spacing: 8
+align: center
+if: $helper is not null
+margin-left: $fpm.space.space-4
+
+--- ftd.image:
+if: $helper-avatar is null
+src: $assets.files.static.avatar.png
+width: 20
+height: 20
+border-radius: 100
+
+--- ftd.image:
+if: $helper-avatar is not null
+src: $helper-avatar
+width: 20
+height: 20
+border-radius: 100
 
 --- ftd.text: $helper
-if: $helper is not null
 role: $fpm.type.copy-tight
-color: $fpm.color.main.accent.secondary
-padding-top: $fpm.space.space-3
-padding-right: $fpm.space.space-4
+color: $fpm.color.main.cta-primary.base
+
 
 --- container: ftd.main
 
@@ -1463,17 +1514,19 @@ optional caption title:
 optional body body:
 optional string owner:
 optional string helper:
-optional ftd.image-src owner-avatar:
-optional ftd.image-src helper-avatar:
+optional string status:
 optional string owner-profile:
 optional string helper-profile:
-string status:
+optional ftd.image-src owner-avatar:
+optional ftd.image-src helper-avatar:
 open: true
+width: fill
 id: presentation-container
 append-at: presentation-container
-background-color: $fpm.color.main.background.step-2
-border-radius: 4
+background-color: $fpm.color.main.background.code
+border-radius: 20
 padding-horizontal: 24
+padding-bottom: 20
 spacing: 10
 
 --- ftd.row:
@@ -1484,17 +1537,190 @@ role: $fpm.type.heading-small
 color: $fpm.color.main.cta-secondary.text
 width: fill
 region: h1
+margin-top: 28
 
---- ftd.column:
-align: center
+--- container: ftd.main
+
+--- ftd.row:
+id: forth-container
+spacing: 8
+anchor: parent
+top: -9
+right: 1
+
+--- ftd.row:
+if: $status == Done
+background-color: $fpm.color.main.success.text
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
 
 --- ftd.image:
 src: $assets.files.static.pending.svg
-height: 24
+height: 20
 align: center
 
---- ftd.text: Pending
-color: $fpm.color.main.custom.two
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
+
+--- container: forth-container
+
+--- ftd.row:
+if: $status == In Progress
+background-color: $fpm.color.main.cta-secondary.base
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 20
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
+
+--- container: forth-container
+
+--- ftd.row:
+if: $status == Half Done
+background-color: $fpm.color.main.error.base
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 20
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
+
+--- container: forth-container
+
+--- ftd.row:
+if: $status == Experimenting
+background-color: $fpm.color.main.accent.secondary
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 20
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
+
+--- container: forth-container
+
+--- ftd.row:
+if: $status == Pending
+background-color: $fpm.color.main.error.base
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 20
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
+
+--- container: forth-container
+
+--- ftd.row:
+if: $status == Not Sure
+background-color: $fpm.color.main.background.step-2
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 20
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
+
+--- container: forth-container
+
+--- ftd.row:
+if: $status == On Track
+background-color: $fpm.color.main.cta-primary.base
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 20
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
+
+--- container: forth-container
+
+--- ftd.row:
+if: $status == Carry Over
+background-color: $fpm.color.main.custom.ten
+border-radius: 4
+padding-vertical: 4
+padding-horizontal: 6
+spacing: 4
+
+--- ftd.image:
+src: $assets.files.static.pending.svg
+height: 20
+align: center
+
+--- ftd.text: $status
+color: $fpm.color.main.background.step-1
+role: $fpm.type.copy-tight
+width: fill
+white-space: nowrap
+align: center
 
 --- container: ftd.main
 
@@ -1503,7 +1729,7 @@ width: fill
 spacing: 12
 
 --- ftd.text: 
-text:$body
+text: $body
 role: $fpm.type.copy-relaxed
 color: $fpm.color.main.text
 width: fill
@@ -1511,24 +1737,81 @@ text-align: justify
 
 --- container: ftd.main
 
---- ftd.row:
+--- ftd.column:
+id: present-container
+width: fill
+
+--- ftd.column: 
 id: presentation-container
 width: fill
 margin-bottom: 25
 
+--- container: present-container
+
+--- ftd.row:
+width: fill
+
+/--- ftd.image:
+src: $assets.files.static.tag.svg
+height: 24
+width: 24
+margin-right: 8
+
+--- ftd.row: 
+width: fill
+align: center
+id: profile-container
+spacing: 12
+
+--- ftd.row:
+spacing: 8
+
+--- ftd.image:
+if: $owner-avatar is null
+src: $assets.files.static.avatar.png
+width: 20
+height: 20
+border-radius: 100
+
+--- ftd.image:
+if: $owner-avatar is not null
+src: $helper-avatar
+width: 20
+height: 20
+border-radius: 100
+
 --- ftd.text: $owner
-if: $owner is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 width: fill
-padding-top: 10
+
+--- container: profile-container
+
+--- ftd.row:
+spacing: 8
+if: $helper is not null
+margin-left: $fpm.space.space-4
+
+--- ftd.image:
+if: $helper-avatar is null
+src: $assets.files.static.avatar.png
+width: 20
+height: 20
+border-radius: 100
+
+--- ftd.image:
+if: $helper-avatar is not null
+src: $helper-avatar
+width: 20
+height: 20
+border-radius: 100
 
 --- ftd.text: $helper
-if: $helper is not null
 role: $fpm.type.copy-tight
 color: $fpm.color.main.cta-primary.base
 width: fill
-padding-top: 10
+
+--- container: presentation-container
 
 
 
