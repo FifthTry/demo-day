@@ -851,7 +851,7 @@ padding-top: 8
 --- ftd.text:
 text: $body
 role: $fpm.type.copy-relaxed
-color: $fpm.color.main.info.base
+color: $fpm.color.main.text
 margin-bottom: 26
 
 --- container: dd-container
@@ -2090,14 +2090,6 @@ The code for this workshop can be found on Github:
 
 The next remote workshop would be happening on **4th Nov 2022**. [Learn more
 here](https://fifthtry.com/events/).
-
--- ftd.color blue:
-dark: #1E3A4C
-light: #1E3A4C
-
--- ftd.color blue-dark:
-dark: #142733
-light: #142733
 
 
 
