@@ -8,7 +8,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/demo-day/main
 -- fpm.dependency: fifthtry.github.io/header as h
 -- fpm.dependency: fifthtry.github.io/color-doc as cs
 
--- fpm.dependency: fifthtry.github.io/lato-font as lato
+
 -- fpm.dependency: fifthtry.github.io/admonitions as cbox
 -- fpm.dependency: fifthtry.github.io/bling 
 
@@ -30,3 +30,4 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/demo-day/main
 
 - Presentation: /index.html
 - Upcoming: /upcoming/
+
