@@ -1286,6 +1286,8 @@ padding-vertical: 24
 padding-horizontal: 24
 spacing: 24
 background-color: $fpm.color.main.background.step-1
+border-width: 1
+border-color: $fpm.color.main.border
 
 --- ftd.column:
 width: fill
