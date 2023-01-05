@@ -11,12 +11,15 @@
 
 
 
--- past-demo-day:  Fifthtry
-number: #13
-date: 02 Dec 
-year: 2022
-demo-video: vOEO7hxvSSw
-demo-date: 02nd Dec 2022
+-- past-demo-day: Fifthtry
+number: 11th
+date: Nov 22
+demo-date: 22 Nov 2022
+demo-video: rny1EGkqw_M
+planning-video: rny1EGkqw_M
+planning-date: 25 Nov 2022
+review-video: rny1EGkqw_M
+review-date: 30 Nov 2022
 sidebar: true
 id: demo-id
 
@@ -28,10 +31,13 @@ in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
 ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
 including versions of Lorem Ipsum.
 
+
+
+
+
 -- presentation: Move FifthTry.com to Heroku
-owner: @Abrark
-owner-avatar: $assets.files.static.abrar.jpg
-helper: @Priyanka
+owner: Abrar K
+helper: Priyanka
 status: Pending
 
 Currently we are using github pages, now lets switch to
@@ -40,6 +46,10 @@ This document will become the "coming soon page" for
 others, and for FifthTry employees it would act as
 planning document. Also implement auth with following
 groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
+
+
+
+
 
 -- container: demo-id.demo-container.right-sidebar
 
@@ -96,9 +106,9 @@ string number:
 string date:
 optional string year:
 boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video: rny1EGkqw_M
-optional string review-video: rny1EGkqw_M
+optional string demo-video: 
+optional string planning-video: 
+optional string review-video: 
 optional string demo-date: 
 optional string planning-date:
 optional string review-date:
@@ -175,9 +185,9 @@ optional fpm.toc-item current-page:
 string number:
 string date:
 boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video: rny1EGkqw_M
-optional string review-video: rny1EGkqw_M
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
 optional string demo-date:
 optional string planning-date:
 optional string review-date:
@@ -300,6 +310,7 @@ margin-bottom: -16
 
 --- detail.detail: Demo Meeting
 color: $fpm.color.main.text-strong
+info-right: $demo-date
 width: fill
 is-open: true
 
@@ -327,6 +338,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Planning Meeting
+info-right: $planning-date
 color: $fpm.color.main.custom.three
 width: fill
 
@@ -354,6 +366,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Review Meeting
+info-right: $review-date
 color: $fpm.color.main.border-strong
 width: fill
 
@@ -406,9 +419,9 @@ optional fpm.toc-item current-page: $sitemap.current-page
 string number:
 string date:
 boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video: rny1EGkqw_M
-optional string review-video: rny1EGkqw_M
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
 optional string demo-date:
 optional string planning-date:
 optional string review-date:
@@ -491,7 +504,7 @@ spacing: 12
 background-image: $assets.files.static.calender.svg
 width: 75
 height: 85
-margin-left: 100
+margin-left: 105
 
 --- ftd.text: $date
 role: $fpm.type.heading-small
@@ -540,6 +553,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Demo Meeting
+info-right: $demo-date
 width: fill
 is-open: true
 
@@ -567,6 +581,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Planning Meeting
+info-right: $planning-date
 color: $fpm.color.main.custom.three
 width: fill
 
@@ -593,7 +608,8 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Review Meetingte
+--- detail.detail: Review Meeting
+info-right: $review-date
 width: fill
 
 --- youtube:
@@ -609,7 +625,7 @@ top: 0
 bottom: 0
 left: 0
 right: 0
-background-color:  $fpm.color.main.background.overlay
+background-color: $fpm.color.main.background.overlay
 z-index: 1
 width: fill
 $on-click$: $open-right-sidebar-info = false
@@ -667,9 +683,9 @@ string number:
 string date:
 optional string year:
 boolean in-future: false
-optional string demo-video: rny1EGkqw_M 
-optional string planning-video: rny1EGkqw_M
-optional string review-video: rny1EGkqw_M
+optional string demo-video: 
+optional string planning-video: 
+optional string review-video: 
 optional string demo-date:
 optional string planning-date:
 optional string review-date:
@@ -746,9 +762,9 @@ optional fpm.toc-item current-page:
 string number:
 string date:
 boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video: rny1EGkqw_M
-optional string review-video: rny1EGkqw_M
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
 optional string demo-date:
 optional string planning-date:
 optional string review-date:
@@ -870,6 +886,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Demo Meeting
+info-right: $demo-date
 color: $fpm.color.main.text-strong
 width: fill
 is-open: true
@@ -898,6 +915,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Planning Meeting
+info-right: $planning-date
 color: $fpm.color.main.custom.three
 width: fill
 
@@ -924,7 +942,8 @@ width: fill
 id: detail
 margin-bottom: -16
 
---- detail.detail: Review Meetingte
+--- detail.detail: Review Meeting
+info-right: $review-date
 width: fill
 
 --- youtube:
@@ -976,9 +995,9 @@ optional fpm.toc-item current-page: $sitemap.current-page
 string number:
 string date:
 boolean in-future: false
-optional string demo-video: rny1EGkqw_M
-optional string planning-video: rny1EGkqw_M
-optional string review-video: rny1EGkqw_M
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
 optional string demo-date:
 optional string planning-date:
 optional string review-date:
@@ -1110,6 +1129,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Demo Meeting
+info-right: $demo-date
 width: fill
 is-open: true
 
@@ -1122,6 +1142,14 @@ v: $demo-video
 --- ftd.column:
 if: $planning-video is not null
 width: fill
+border-width: 1
+border-color: $fpm.color.main.border
+border-radius: 4
+padding-right: 10
+padding-top: 10
+padding-left: 10
+margin-bottom: 20
+color: $fpm.color.main.cta-primary.text
 
 --- ftd.column:
 width: fill
@@ -1129,6 +1157,8 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Planning Meeting
+info-right: $planning-date
+color: $fpm.color.main.custom.three
 width: fill
 
 --- youtube:
@@ -1147,6 +1177,7 @@ id: detail
 margin-bottom: -16
 
 --- detail.detail: Review Meeting
+info-right: $review-date
 width: fill
 
 --- youtube:
@@ -1162,7 +1193,7 @@ top: 0
 bottom: 0
 left: 0
 right: 0
-background-color:  $fpm.color.main.background.overlay
+background-color: $fpm.color.main.background.overlay
 z-index: 1
 width: fill
 $on-click$: $open-right-sidebar-info = false
@@ -1552,18 +1583,11 @@ text: $body
 role: $fpm.type.copy-tight
 color: $fpm.color.main.text
 width: fill
-text-align: justify
 margin-top: $fpm.space.space-2
-padding-right: 20
 
 --- ftd.column:
 width: fill
 id: presentation-container
-
-
-
-
-
 
 
 
@@ -1592,7 +1616,7 @@ background-color: $fpm.color.main.background.code
 border-radius: 10
 padding-vertical: 24
 padding-horizontal: 24
-spacing: 24
+spacing: 10
 
 --- ftd.column:
 width: fill
@@ -1606,7 +1630,7 @@ id: card-block
 width: percent 20
 id: picture-area
 spacing: 20
-
+padding-right: $fpm.space.space-6
 
 --- ftd.column:
 if: $owner is not null
@@ -1694,7 +1718,6 @@ padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
 
-
 --- ftd.image:
 src: $assets.files.static.pending.svg
 height: 20
@@ -1716,7 +1739,6 @@ border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
-
 
 --- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1740,7 +1762,6 @@ padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
 
-
 --- ftd.image:
 src: $assets.files.static.pending.svg
 height: 20
@@ -1763,7 +1784,6 @@ padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
 
-
 --- ftd.image:
 src: $assets.files.static.pending.svg
 height: 20
@@ -1785,7 +1805,6 @@ border-radius: 4
 padding-vertical: 4
 padding-horizontal: 6
 spacing: 4
-
 
 --- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1872,7 +1891,6 @@ text: $body
 role: $fpm.type.copy-tight
 color: $fpm.color.main.text
 width: fill
-text-align: justify
 margin-top: $fpm.space.space-2
 margin-left: $fpm.space.space-6
 padding-right: 24
@@ -1881,9 +1899,7 @@ padding-right: 24
 width: fill
 id: presentation-container
 
-
 --- container: presentation-container
-
 
 
 
@@ -1903,7 +1919,7 @@ height: calc 100vh - 0px
 overflow-y: auto
 min-width: 280
 align: top-left
-background-color:  $fpm.color.main.background.overlay
+background-color: $fpm.color.main.background.overlay
 border-radius: 8
 padding-left: 24
 padding-top: 24
