@@ -26,7 +26,7 @@ download-base-url: https://raw.githubusercontent.com/fifthtry/demo-day/main
 
 #Home: /index.html
 
-## Demo: /index.html
+## Demo: index.html/
 
 - Presentation: /index.html
 - Upcoming: /upcoming/
