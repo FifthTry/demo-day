@@ -2118,4 +2118,5 @@ $processor$: sitemap
 dark: $assets.files.static.brand-logo.svg.dark
 light: $assets.files.static.brand-logo.svg.light
 
--- string site-url: /
+-- string site-url: index.html
+
