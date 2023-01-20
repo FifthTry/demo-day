@@ -236,15 +236,15 @@ toc-obj: $past-demo-day-desktop.toc
 -- ftd.column:
 width: fill-container
 min-height.fixed.percent: 100
+
+-- ftd.column: 
+width: fill-container
 padding-vertical.px: 16
 background.solid: $inherited.colors.background.step-1
 padding-horizontal.px: 24
 border-radius.px: 10
 margin-bottom.px: 24
 margin-top.px: 24
-
--- ftd.column: 
-width: fill-container
 
 -- ftd.row:
 width: fill-container
@@ -696,7 +696,6 @@ right.px: 0
 background.solid: $inherited.colors.background.overlay
 z-index: 1
 width: fill-container
-$on-click$: $ftd.toggle($a = $open-right-sidebar-info)
 
 -- ftd.column:
 width: fill-container
@@ -1295,7 +1294,6 @@ right.px: 0
 background.solid: $inherited.colors.background.overlay
 z-index: 1
 width: fill-container
-$on-click$: $ftd.toggle($a = $open-right-sidebar-info)
 
 -- ftd.column:
 width: fill-container
@@ -1426,7 +1424,7 @@ width: fill-container
 border-radius.px: 10
 padding-vertical.px: 24
 padding-horizontal.px: 24
-background.solid: $inherited.colors.background.step-1
+background.solid: $inherited.colors.background.code
 border-width.px: 1
 border-color: $inherited.colors.border
 
@@ -2284,15 +2282,3 @@ here](https://fifthtry.com/events/).
 -- end: ftd.column
 
 -- end: sidebar
-
-
-
-
-
-
-
-
-
-
-
-
