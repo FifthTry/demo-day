@@ -13,7 +13,7 @@ number: 12th
 date: Nov 26
 demo-video: rny1EGkqw_M
 sidebar: true
-id: upcoming-id
+;;id: upcoming-id
 
 Lorem Ipsum is simply {dd: 22 nov} text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 when an unknown printer took a galley of type and scrambled it to make a type
@@ -23,13 +23,7 @@ in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
 ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
 including versions of Lorem Ipsum.
 
--- container:upcoming-id.upcoming-demo-container.right-sidebar
 
--- dd.sidebar:
-
--- container: upcoming-id.upcoming-demo-container.right-sidebar-mobile
-
--- dd.sidebar:
 
 
 
