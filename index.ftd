@@ -14,6 +14,8 @@
 
 -- boolean $open-right-sidebar-info: false
 
+-- integer toc-sidebar-width: 320
+
 
 -- optional string $site-name: 
 
@@ -236,6 +238,8 @@ toc-obj: $past-demo-day-desktop.toc
 -- ftd.column:
 width: fill-container
 min-height.fixed.percent: 100
+margin-bottom.px: 25
+margin-top.px: 25
 
 -- ftd.column: 
 width: fill-container
@@ -243,8 +247,6 @@ padding-vertical.px: 16
 background.solid: $inherited.colors.background.step-1
 padding-horizontal.px: 24
 border-radius.px: 10
-margin-bottom.px: 24
-margin-top.px: 24
 
 -- ftd.row:
 width: fill-container
@@ -416,7 +418,8 @@ background.solid: $inherited.colors.background.overlay
 ;;sticky: true
 top.px: 0
 right.px: 48
-height.fixed.calc: 100vh - 0px
+min-height.fixed.calc: 100vh - 0px
+height.fixed.calc: 100% - 48px
 overflow-y: auto
 align-content: top-right
 margin-right.px: 48
@@ -2069,25 +2072,23 @@ width: fill-container
 pr.toc-item list toc-obj:
 
 -- ftd.column:
-;;sticky: true
+;; sticky: true
 top.px: 0
-margin-left.px.px.px: 24
-height.fixed.calc: 100vh - 0px
-;;height: fill-container
+left.px: 24
+min-width.fixed.px: 320
+min-height.fixed.calc: 100vh - 0px
+height.fixed.calc: 100% - 48px
 overflow-y: auto
-min-width.fixed.px: 280
+width.fixed.px: $toc-sidebar-width
 align-content: top-left
 background.solid: $inherited.colors.background.overlay
-padding-left.px.px: 24
-padding-top.px: 24
+border-radius.px: 8
+padding-left.px: 24
+padding-top.px: 16
 padding-right.px: 16
-padding-bottom.px.px: 32
+padding-bottom.px: 32
 margin-top.px: 25
 margin-bottom.px: 25
-border-bottom-right-radius.px: 15
-border-bottom-left-radius.px: 15
-border-top-left-radius.px: 8
-border-top-right-radius.px: 8
 
 -- toc-instance:
 $loop$: $render-toc.toc-obj as $obj
