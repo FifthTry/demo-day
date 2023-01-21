@@ -311,9 +311,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-top.px: 10
-padding-left.px.px: 10
-padding-right.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -343,9 +340,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-right.px: 10
-padding-top.px: 10
-padding-left.px.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -372,11 +366,8 @@ v: $past-demo-day-desktop.planning-video
 if: {$past-demo-day-desktop.review-video != NULL}
 width: fill-container
 border-width.px: 1
-border-color: $inherited.colors.border-strong
+border-color: $inherited.colors.border
 border-radius.px: 4
-padding-right.px: 10
-padding-top.px: 10
-padding-left.px.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -591,9 +582,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-right.px: 10
-padding-top.px: 10
-padding-left.px.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -622,9 +610,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-right.px: 10
-padding-top.px: 10
-padding-left.px.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -653,9 +638,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-right.px: 10
-padding-top.px: 10
-padding-left.px.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -950,9 +932,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-top.px: 10
-padding-left.px: 10
-padding-right.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -981,9 +960,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-right.px: 10
-padding-top.px: 10
-padding-left.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -1010,9 +986,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-top.px: 10
-padding-left.px: 10
-padding-right.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -1209,9 +1182,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-top.px: 10
-padding-left.px: 10
-padding-right.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -1238,9 +1208,6 @@ width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
 border-radius.px: 4
-padding-right.px: 10
-padding-top.px: 10
-padding-left.px: 10
 margin-bottom.px: 20
 color: $inherited.colors.cta-primary.text
 
@@ -1264,6 +1231,11 @@ v: $upcoming-demo-day-mobile.planning-video
 -- ftd.column:
 if: {$upcoming-demo-day-mobile.review-video != NULL}
 width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
 
 -- ftd.column:
 width: fill-container
