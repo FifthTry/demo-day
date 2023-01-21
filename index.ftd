@@ -278,7 +278,7 @@ color: $inherited.colors.text-strong
 
 -- ftd.row:
 spacing.px: 12
-;;background-image: $assets.files.static.calender.svg
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
 margin-top.px: -24
@@ -534,7 +534,7 @@ width: fill-container
 
 -- ftd.row:
 spacing.px: 12
-;;background-image: $assets.files.static.calender.svg
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
 margin-left.px.px.px: 105
@@ -751,6 +751,7 @@ optional string demo-date:
 optional string planning-date:
 optional string review-date:
 boolean sidebar: false
+children wrapper:
 
 -- ftd.column:
 background.solid: $inherited.colors.background.base
@@ -777,6 +778,7 @@ demo-date: $upcoming-demo-day.demo-date
 planning-date: $upcoming-demo-day.planning-date
 review-date: $upcoming-demo-day.review-date
 sidebar: $upcoming-demo-day.sidebar
+wrapper: $upcoming-demo-day.wrapper
 
 -- upcoming-demo-day-mobile: $upcoming-demo-day.title
 if: { ftd.device == "mobile" }
@@ -797,6 +799,7 @@ demo-date: $upcoming-demo-day.demo-date
 planning-date: $upcoming-demo-day.planning-date
 review-date: $upcoming-demo-day.review-date
 sidebar: $upcoming-demo-day.sidebar
+wrapper: $upcoming-demo-day.wrapper
 
 -- end: ftd.column
 
@@ -831,12 +834,18 @@ optional string planning-date:
 optional string review-date:
 boolean sidebar:
 optional string site-name:
+children wrapper:
 
 -- ftd.column:
-background.solid: $inherited.colors.background.base
 ;;open: true
 width: fill-container
 spacing.px: 32
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.base
+height: fill-container
+padding-bottom.px: 50
 
 -- h.header: 
 sections: $upcoming-demo-day-desktop.sections
@@ -859,15 +868,15 @@ toc-obj: $upcoming-demo-day-desktop.toc
 -- ftd.column:
 width: fill-container
 min-height.fixed.percent: 100
-padding-vertical.px: 16
-max-width.fixed.px: 800
+margin-bottom.px: 25
+margin-top.px: 25
 
 -- ftd.column: 
 width: fill-container
+padding-vertical.px: 16
 background.solid: $inherited.colors.background.step-1
 padding-horizontal.px: 24
-border-radius.px: 4
-margin-bottom.px: 24
+border-radius.px: 10
 
 -- ftd.row:
 width: fill-container
@@ -879,16 +888,17 @@ spacing.px: 8
 width: fill-container
 
 -- ftd.image:
-src: $assets.files.static.clock.png
+src: $assets.files.static.presentation.png
 width.fixed.px: 50
 height.fixed.px: 50
-;;align-content: center
+margin-top.px: -5
 
 -- ftd.text: $upcoming-demo-day-desktop.title
 role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 
--- ftd.text: $upcoming-demo-day-desktop.number
+-- ftd.text: 
+text: $upcoming-demo-day-desktop.number
 role: $inherited.types.heading-large
 color: $inherited.colors.text-strong
 
@@ -900,12 +910,13 @@ color: $inherited.colors.text-strong
 
 -- ftd.row:
 spacing.px: 12
-;;background-image: $assets.files.static.calenderr.svg
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
 margin-top.px: -24
 
--- ftd.text: $upcoming-demo-day-desktop.date
+-- ftd.text: 
+text: $upcoming-demo-day-desktop.date
 role: $inherited.types.heading-small
 color: $inherited.colors.text-strong
 ;;style: bold
@@ -918,9 +929,10 @@ padding-top.px: 8
 
 -- ftd.text:
 text: $upcoming-demo-day-desktop.body
-role: $inherited.types.copy-relaxed
+role: $inherited.types.copy-tight
 color: $inherited.colors.text
 margin-bottom.px: 26
+text-align: justify
 
 -- ftd.column:
 if: {$upcoming-demo-day-desktop.demo-video != NULL}
@@ -936,14 +948,16 @@ width: fill-container
 margin-bottom.px: -16
 
 -- detail.detail: Demo Meeting
-info-right: $upcoming-demo-day-desktop.demo-date
 ;;color: $inherited.colors.text-strong
+info-right: $upcoming-demo-day-desktop.demo-date
 ;;width: fill-container
-;;is-open: true
+$is-open: true
 
 -- youtube:
 if: {$upcoming-demo-day-desktop.demo-video != NULL}
 v: $upcoming-demo-day-desktop.demo-video
+
+-- end: detail.detail
 
 -- end: ftd.column
 
@@ -971,6 +985,8 @@ info-right: $upcoming-demo-day-desktop.planning-date
 if: {$upcoming-demo-day-desktop.planning-video != NULL}
 v: $upcoming-demo-day-desktop.planning-video
 
+-- end: detail.detail
+
 -- end: ftd.column
 
 -- end: ftd.column
@@ -990,15 +1006,24 @@ margin-bottom.px: -16
 
 -- detail.detail: Review Meeting
 info-right: $upcoming-demo-day-desktop.review-date
+;;color: $inherited.colors.border-strong
 ;;width: fill-container
 
 -- youtube:
 if: {$upcoming-demo-day-desktop.review-video != NULL}
 v: $upcoming-demo-day-desktop.review-video
 
+-- end: detail.detail
+
 -- end: ftd.column
 
 -- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $upcoming-demo-day-desktop.wrapper
 
 -- end: ftd.column
 
@@ -1013,14 +1038,15 @@ background.solid: $inherited.colors.background.overlay
 ;;sticky: true
 top.px: 0
 right.px: 48
-height.fixed.calc: 100vh - 0px
+min-height.fixed.calc: 100vh - 0px
+height.fixed.calc: 100% - 48px
 overflow-y: auto
 align-content: top-right
 margin-right.px: 48
-padding-left.px: 24
+padding-left.px.px: 24
 padding-top.px: 4
 padding-right.px: 16
-padding-bottom.px: 32
+padding-bottom.px.px: 32
 margin-top.px: 25
 margin-bottom.px: 25
 border-radius.px: 8
@@ -1033,7 +1059,10 @@ border-radius.px: 8
 
 -- end: ftd.column
 
+-- end: ftd.column
+
 -- end: upcoming-demo-day-desktop
+
 
 
 
@@ -1064,12 +1093,18 @@ optional string planning-date:
 optional string review-date:
 boolean sidebar:
 optional string site-name:
+children wrapper:
 
 -- ftd.column:
-background.solid: $inherited.colors.background.base
 ;;open: true
 width: fill-container
 spacing.px: 32
+
+-- ftd.column:
+background.solid: $inherited.colors.background.base
+width: fill-container
+height: fill-container
+padding-bottom.px: 50
 
 -- h.header: 
 sections: $upcoming-demo-day-mobile.sections
@@ -1079,13 +1114,13 @@ current-subsection: $upcoming-demo-day-mobile.current-subsection
 current-page: $upcoming-demo-day-mobile.current-page
 site-logo: $site-logo
 site-url: $site-url
-toc: $upcoming-demo-day-mobile.toc
 site-name: $upcoming-demo-day-mobile.site-name
+toc: $upcoming-demo-day-mobile.toc
 
 -- ftd.column:
 width: fill-container
 spacing.px: 48
-padding-bottom.px: 48
+padding-bottom.px.px: 48
 padding-horizontal.px: 24
 
 -- ftd.column:
@@ -1110,6 +1145,7 @@ width: fill-container
 
 -- ftd.row:
 spacing.px: 8
+width: fill-container
 
 -- ftd.text: $upcoming-demo-day-mobile.title
 role: $inherited.types.heading-small
@@ -1126,16 +1162,15 @@ color: $inherited.colors.text-strong
 -- end: ftd.row
 
 -- ftd.row:
-spacing.px: 4
-margin-left.px.px: 8
 padding-top.px: 4
+width: fill-container
 
 -- ftd.row:
 spacing.px: 12
-;;background-image: $assets.files.static.calenderr.svg
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
-margin-left.px.px: 130
+margin-left.px.px.px: 105
 
 -- ftd.text: $upcoming-demo-day-mobile.date
 role: $inherited.types.heading-small
@@ -1152,7 +1187,7 @@ padding-top.px: 8
 -- ftd.image:
 src: $assets.files.static.info-icon.svg
 width.fixed.px: 30
-margin-top.px: -63
+margin-top.px: -66
 margin-left.px.px: 90
 $on-click$: $ftd.toggle($a = $open-right-sidebar-info)
 
@@ -1166,8 +1201,8 @@ $on-click$: $ftd.toggle($a = $open-right-sidebar-info)
 
 -- ftd.text:
 text: $upcoming-demo-day-mobile.body
-role: $inherited.types.copy-relaxed
-color: $inherited.colors.text-strong
+role: $inherited.types.copy-tight
+color: $inherited.colors.text
 margin-bottom.px: 26
 text-align: justify
 
@@ -1187,11 +1222,13 @@ margin-bottom.px: -16
 -- detail.detail: Demo Meeting
 info-right: $upcoming-demo-day-mobile.demo-date
 ;;width: fill-container
-;;is-open: true
+$is-open: true
 
 -- youtube:
 if: {$upcoming-demo-day-mobile.demo-video != NULL}
 v: $upcoming-demo-day-mobile.demo-video
+
+-- end: detail.detail
 
 -- end: ftd.column
 
@@ -1219,6 +1256,8 @@ info-right: $upcoming-demo-day-mobile.planning-date
 if: {$upcoming-demo-day-mobile.planning-video != NULL}
 v: $upcoming-demo-day-mobile.planning-video
 
+-- end: detail.detail
+
 -- end: ftd.column
 
 -- end: ftd.column
@@ -1244,9 +1283,17 @@ info-right: $upcoming-demo-day-mobile.review-date
 if: {$upcoming-demo-day-mobile.review-video != NULL}
 v: $upcoming-demo-day-mobile.review-video
 
+-- end: detail.detail
+
 -- end: ftd.column
 
 -- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $upcoming-demo-day-mobile.wrapper
 
 -- end: ftd.column
 
@@ -1273,8 +1320,8 @@ src: $assets.files.static.cross.svg
 height.fixed.px: 16
 width: auto
 margin-top.px: 30
-margin-left.px.px: 16
-$on-click$: $ftd.toggle($a = $open-right-sidebar-info, v = false)
+margin-left.px.px.px: 16
+$on-click$: $ftd.toggle($a = $open-right-sidebar-info, v= false) 
 
 -- end: ftd.column
 
@@ -1296,6 +1343,8 @@ z-index: 1
 width: fill-container
 padding-vertical.px: 24
 padding-horizontal.px: 24
+
+-- end: ftd.column
 
 -- end: ftd.column
 
