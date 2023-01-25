@@ -1446,6 +1446,8 @@ padding-horizontal.px: 24
 background.solid: $inherited.colors.background.code
 border-width.px: 1
 border-color: $inherited.colors.border
+margin-bottom.px: 16
+margin-top.px: 16
 
 -- ftd.column:
 width: fill-container
