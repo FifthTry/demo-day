@@ -1717,6 +1717,7 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.text: 
+if: { presentation-desktop.body != NULL }
 text: $presentation-desktop.body
 role: $inherited.types.copy-tight
 color: $inherited.colors.text
@@ -2037,7 +2038,8 @@ text-align: center
 
 -- end: ftd.row
 
--- ftd.text: 
+-- ftd.text:
+if: { presentation-mobile.body != NULL }
 text: $presentation-mobile.body
 role: $inherited.types.copy-tight
 color: $inherited.colors.text
