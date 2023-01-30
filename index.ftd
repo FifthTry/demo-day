@@ -750,7 +750,8 @@ optional string review-video:
 optional string demo-date:
 optional string planning-date:
 optional string review-date:
-boolean sidebar: false
+boolean $sidebar: false
+ftd.ui list sidebar-content:
 children wrapper:
 
 -- ftd.column:
@@ -778,6 +779,7 @@ demo-date: $upcoming-demo-day.demo-date
 planning-date: $upcoming-demo-day.planning-date
 review-date: $upcoming-demo-day.review-date
 sidebar: $upcoming-demo-day.sidebar
+sidebar-content: $upcoming-demo-day.sidebar-content
 wrapper: $upcoming-demo-day.wrapper
 
 -- upcoming-demo-day-mobile: $upcoming-demo-day.title
@@ -800,6 +802,8 @@ planning-date: $upcoming-demo-day.planning-date
 review-date: $upcoming-demo-day.review-date
 sidebar: $upcoming-demo-day.sidebar
 wrapper: $upcoming-demo-day.wrapper
+sidebar-content: $upcoming-demo-day.sidebar-content
+
 
 -- end: ftd.column
 
@@ -835,6 +839,7 @@ optional string review-date:
 boolean sidebar:
 optional string site-name:
 children wrapper:
+ftd.ui list sidebar-content:
 
 -- ftd.column:
 ;;open: true
@@ -866,7 +871,7 @@ if: { !ftd.is_empty(upcoming-demo-day-desktop.toc) }
 toc-obj: $upcoming-demo-day-desktop.toc
 
 -- ftd.column:
-width: fill-container
+width.fixed.percent: 60
 min-height.fixed.percent: 100
 margin-bottom.px: 25
 margin-top.px: 25
@@ -1031,6 +1036,7 @@ children: $upcoming-demo-day-desktop.wrapper
 
 -- ftd.column:
 if: { upcoming-demo-day-desktop.sidebar}
+children: $upcoming-demo-day-desktop.sidebar-content
 min-width.fixed.px: 284
 max-width.fixed.px: 284
 z-index: 999
@@ -1051,7 +1057,6 @@ margin-top.px: 25
 margin-bottom.px: 25
 border-radius.px: 8
 
--- sidebar:
 
 -- end: ftd.column
 
@@ -1092,11 +1097,11 @@ optional string demo-date:
 optional string planning-date:
 optional string review-date:
 boolean sidebar:
+ftd.ui list sidebar-content:
 optional string site-name:
 children wrapper:
 
 -- ftd.column:
-;;open: true
 width: fill-container
 spacing.fixed.px: 32
 
@@ -1297,9 +1302,6 @@ children: $upcoming-demo-day-mobile.wrapper
 
 -- end: ftd.column
 
--- end: ftd.column
-
--- end: ftd.column
 
 -- ftd.column:
 if: { open-right-sidebar-info}
@@ -1340,9 +1342,14 @@ background.solid: $inherited.colors.background.step-1
 z-index: 1
 
 -- ftd.column:
+children: $upcoming-demo-day-mobile.sidebar-content
 width: fill-container
 padding-vertical.px: 24
 padding-horizontal.px: 24
+
+-- end: ftd.column
+
+-- end: ftd.column
 
 -- end: ftd.column
 
