@@ -44,7 +44,14 @@ planning-video: rny1EGkqw_M
 planning-date: 25 Nov 2022
 review-video: rny1EGkqw_M
 review-date: 30 Nov 2022
-sidebar: true
+
+-- past-demo-day.sidebar-content:
+
+-- sidebar:
+
+-- end: past-demo-day.sidebar-content
+
+-- past-demo-day.body:
 
 Lorem Ipsum is simply {dd: 22 nov} text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 when an unknown printer took a galley of type and scrambled it to make a type
@@ -54,19 +61,6 @@ in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
 ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
 including versions of Lorem Ipsum.
 
--- presentation: Move FifthTry.com to Heroku
-owner: Abrar K
-helper: Priyanka
-status: Pending
-
-Currently we are using github pages, now lets switch to
-Heroku so we can start using fpm's auth feature.
-This document will become the "coming soon page" for
-others, and for FifthTry employees it would act as
-planning document. Also implement auth with following
-groups: `ft-zens`, `ftd-fans`, `fpm-fans`.
-
--- end: presentation
 
 -- end: past-demo-day
 
@@ -119,13 +113,14 @@ optional string review-video:
 optional string demo-date: 
 optional string planning-date:
 optional string review-date:
-boolean sidebar: false
+boolean $sidebar: false
 children past-wrapper:
+ftd.ui list sidebar-content:
+
 
 -- ftd.column:
-spacing.px: 32
+spacing.fixed.px: 32
 background.solid: $inherited.colors.background.base
-;;open: true
 width: fill-container
 
 -- past-demo-day-desktop: $past-demo-day.title
@@ -147,6 +142,7 @@ demo-date: $past-demo-day.demo-date
 planning-date: $past-demo-day.planning-date
 review-date: $past-demo-day.review-date
 sidebar: $past-demo-day.sidebar
+sidebar-content: $past-demo-day.sidebar-content
 wrapper: $past-demo-day.past-wrapper
 
 -- past-demo-day-mobile: $past-demo-day.title
@@ -167,6 +163,7 @@ planning-video: $past-demo-day.planning-video
 demo-date: $past-demo-day.demo-date
 planning-date: $past-demo-day.planning-date
 review-date: $past-demo-day.review-date
+sidebar-content: $past-demo-day.sidebar-content
 sidebar: $past-demo-day.sidebar
 wrapper: $past-demo-day.past-wrapper
 
@@ -201,13 +198,13 @@ optional string demo-date:
 optional string planning-date:
 optional string review-date:
 boolean sidebar:
+ftd.ui list sidebar-content:
 optional string site-name:
 children wrapper:
 
 -- ftd.column:
-;;open: true
 width: fill-container
-spacing.px: 32
+spacing.fixed.px: 32
 
 -- ftd.column:
 width: fill-container
@@ -226,15 +223,16 @@ site-url: $site-url
 site-name: $past-demo-day-desktop.site-name
 
 -- ftd.row:
+padding-horizontal.px: 24
 width: fill-container
-spacing.px: 64
+spacing.fixed.px: 64
 
 -- render-toc:
-if: { !is_empty(past-demo-day-desktop.toc) }
+if: { !ftd.is_empty(past-demo-day-desktop.toc) }
 toc-obj: $past-demo-day-desktop.toc
 
 -- ftd.column:
-width: fill-container
+width.fixed.percent: 60
 min-height.fixed.percent: 100
 margin-bottom.px: 25
 margin-top.px: 25
@@ -252,7 +250,7 @@ padding-vertical.px: 12
 region: h1
 
 -- ftd.row:
-spacing.px: 8
+spacing.fixed.px: 8
 width: fill-container
 
 -- ftd.image:
@@ -277,7 +275,7 @@ color: $inherited.colors.text-strong
 -- end: ftd.row
 
 -- ftd.row:
-spacing.px: 12
+spacing.fixed.px: 12
 ;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
@@ -303,7 +301,7 @@ margin-bottom.px: 26
 text-align: justify
 
 -- ftd.column:
-if: {$past-demo-day-desktop.demo-video != NULL}
+if: { past-demo-day-desktop.demo-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -322,7 +320,7 @@ info-right: $past-demo-day-desktop.demo-date
 $is-open: true
 
 -- youtube:
-if: {$past-demo-day-desktop.demo-video != NULL}
+if: {past-demo-day-desktop.demo-video != NULL}
 v: $past-demo-day-desktop.demo-video
 
 -- end: detail.detail
@@ -332,7 +330,7 @@ v: $past-demo-day-desktop.demo-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$past-demo-day-desktop.planning-video != NULL}
+if: { past-demo-day-desktop.planning-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -350,7 +348,7 @@ info-right: $past-demo-day-desktop.planning-date
 ;;width: fill-container
 
 -- youtube:
-if: {$past-demo-day-desktop.planning-video != NULL}
+if: { past-demo-day-desktop.planning-video != NULL}
 v: $past-demo-day-desktop.planning-video
 
 -- end: detail.detail
@@ -360,7 +358,7 @@ v: $past-demo-day-desktop.planning-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$past-demo-day-desktop.review-video != NULL}
+if: { past-demo-day-desktop.review-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -378,7 +376,7 @@ info-right: $past-demo-day-desktop.review-date
 ;;width: fill-container
 
 -- youtube:
-if: {$past-demo-day-desktop.review-video != NULL}
+if: { past-demo-day-desktop.review-video != NULL}
 v: $past-demo-day-desktop.review-video
 
 -- end: detail.detail
@@ -398,7 +396,8 @@ children: $past-demo-day-desktop.wrapper
 -- end: ftd.column
 
 -- ftd.column:
-if: {$past-demo-day-desktop.sidebar}
+if: { past-demo-day-desktop.sidebar }
+children: $past-demo-day-desktop.sidebar-content
 min-width.fixed.px: 284
 max-width.fixed.px: 284
 z-index: 999
@@ -410,7 +409,6 @@ min-height.fixed.calc: 100vh - 0px
 height.fixed.calc: 100% - 48px
 overflow-y: auto
 align-content: top-right
-margin-right.px: 48
 padding-left.px.px: 24
 padding-top.px: 4
 padding-right.px: 16
@@ -419,7 +417,7 @@ margin-top.px: 25
 margin-bottom.px: 25
 border-radius.px: 8
 
--- sidebar:
+
 
 -- end: ftd.column
 
@@ -459,13 +457,14 @@ optional string demo-date:
 optional string planning-date:
 optional string review-date:
 boolean sidebar:
+ftd.ui list sidebar-content:
 optional string site-name:
 children wrapper:
 
 -- ftd.column:
 ;;open: true
 width: fill-container
-spacing.px: 32
+spacing.fixed.px: 32
 
 -- ftd.column:
 background.solid: $inherited.colors.background.base
@@ -486,7 +485,7 @@ toc: $past-demo-day-mobile.toc
 
 -- ftd.column:
 width: fill-container
-spacing.px: 48
+spacing.fixed.px: 48
 padding-bottom.px.px: 48
 padding-horizontal.px: 24
 
@@ -511,7 +510,7 @@ region: h1
 width: fill-container
 
 -- ftd.row:
-spacing.px: 8
+spacing.fixed.px: 8
 width: fill-container
 
 -- ftd.text: $past-demo-day-mobile.title
@@ -533,7 +532,7 @@ padding-top.px: 4
 width: fill-container
 
 -- ftd.row:
-spacing.px: 12
+spacing.fixed.px: 12
 ;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
@@ -547,7 +546,7 @@ text-align: center
 padding-top.px: 8
 
 -- ftd.column:
-if: {$past-demo-day-mobile.sidebar}
+if: { past-demo-day-mobile.sidebar}
 align-content: center
 padding-top.px: 8
 
@@ -574,7 +573,7 @@ margin-bottom.px: 26
 text-align: justify
 
 -- ftd.column:
-if: {$past-demo-day-mobile.demo-video != NULL}
+if: { past-demo-day-mobile.demo-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -592,7 +591,7 @@ info-right: $past-demo-day-mobile.demo-date
 $is-open: true
 
 -- youtube:
-if: {$past-demo-day-mobile.demo-video != NULL}
+if: { past-demo-day-mobile.demo-video != NULL}
 v: $past-demo-day-mobile.demo-video
 
 -- end: detail.detail
@@ -602,7 +601,7 @@ v: $past-demo-day-mobile.demo-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$past-demo-day-mobile.planning-video != NULL}
+if: { past-demo-day-mobile.planning-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -620,7 +619,7 @@ info-right: $past-demo-day-mobile.planning-date
 ;;width: fill-container
 
 -- youtube:
-if: {$past-demo-day-mobile.planning-video != NULL}
+if: { past-demo-day-mobile.planning-video != NULL}
 v: $past-demo-day-mobile.planning-video
 
 -- end: detail.detail
@@ -630,7 +629,7 @@ v: $past-demo-day-mobile.planning-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$past-demo-day-mobile.review-video != NULL}
+if: { past-demo-day-mobile.review-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -647,7 +646,7 @@ info-right: $past-demo-day-mobile.review-date
 ;;width: fill-container
 
 -- youtube:
-if: {$past-demo-day-mobile.review-video != NULL}
+if: { past-demo-day-mobile.review-video != NULL}
 v: $past-demo-day-mobile.review-video
 
 -- end: detail.detail
@@ -669,7 +668,7 @@ children: $past-demo-day-mobile.wrapper
 -- end: ftd.column
 
 -- ftd.column:
-if: {$open-right-sidebar-info}
+if: { open-right-sidebar-info}
 anchor: parent
 top.px: 0
 bottom.px: 0
@@ -695,7 +694,7 @@ $on-click$: $ftd.toggle($a = $open-right-sidebar-info, v= false)
 -- end: ftd.column
 
 -- ftd.column:
-if: {$open-right-sidebar-info}
+if: { open-right-sidebar-info}
 width.fixed.calc: 100% - 48px
 height.fixed.calc: 100vh - 0px
 overflow-y: auto
@@ -707,6 +706,7 @@ background.solid: $inherited.colors.background.step-1
 z-index: 1
 
 -- ftd.column:
+children: $past-demo-day-mobile.sidebar-content
 width: fill-container
 padding-vertical.px: 24
 padding-horizontal.px: 24
@@ -757,7 +757,7 @@ children wrapper:
 background.solid: $inherited.colors.background.base
 ;;open: true
 width: fill-container
-spacing.px: 32
+spacing.fixed.px: 32
 
 -- upcoming-demo-day-desktop: $upcoming-demo-day.title
 if: { ftd.device != "mobile" }
@@ -839,7 +839,7 @@ children wrapper:
 -- ftd.column:
 ;;open: true
 width: fill-container
-spacing.px: 32
+spacing.fixed.px: 32
 
 -- ftd.column:
 width: fill-container
@@ -859,10 +859,10 @@ site-name: $upcoming-demo-day-desktop.site-name
 
 -- ftd.row:
 width: fill-container
-spacing.px: 64
+spacing.fixed.px: 64
 
 -- render-toc:
-if: { !is_empty(upcoming-demo-day-desktop.toc) }
+if: { !ftd.is_empty(upcoming-demo-day-desktop.toc) }
 toc-obj: $upcoming-demo-day-desktop.toc
 
 -- ftd.column:
@@ -884,7 +884,7 @@ padding-vertical.px: 12
 region: h1
 
 -- ftd.row:
-spacing.px: 8
+spacing.fixed.px: 8
 width: fill-container
 
 -- ftd.image:
@@ -909,7 +909,7 @@ color: $inherited.colors.text-strong
 -- end: ftd.row
 
 -- ftd.row:
-spacing.px: 12
+spacing.fixed.px: 12
 ;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
@@ -935,7 +935,7 @@ margin-bottom.px: 26
 text-align: justify
 
 -- ftd.column:
-if: {$upcoming-demo-day-desktop.demo-video != NULL}
+if: { upcoming-demo-day-desktop.demo-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -954,7 +954,7 @@ info-right: $upcoming-demo-day-desktop.demo-date
 $is-open: true
 
 -- youtube:
-if: {$upcoming-demo-day-desktop.demo-video != NULL}
+if: { upcoming-demo-day-desktop.demo-video != NULL}
 v: $upcoming-demo-day-desktop.demo-video
 
 -- end: detail.detail
@@ -964,7 +964,7 @@ v: $upcoming-demo-day-desktop.demo-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$upcoming-demo-day-desktop.planning-video != NULL}
+if: { upcoming-demo-day-desktop.planning-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -982,7 +982,7 @@ info-right: $upcoming-demo-day-desktop.planning-date
 ;;width: fill-container
 
 -- youtube:
-if: {$upcoming-demo-day-desktop.planning-video != NULL}
+if: { upcoming-demo-day-desktop.planning-video != NULL}
 v: $upcoming-demo-day-desktop.planning-video
 
 -- end: detail.detail
@@ -992,7 +992,7 @@ v: $upcoming-demo-day-desktop.planning-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$upcoming-demo-day-desktop.review-video != NULL}
+if: { upcoming-demo-day-desktop.review-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -1010,7 +1010,7 @@ info-right: $upcoming-demo-day-desktop.review-date
 ;;width: fill-container
 
 -- youtube:
-if: {$upcoming-demo-day-desktop.review-video != NULL}
+if: { upcoming-demo-day-desktop.review-video != NULL}
 v: $upcoming-demo-day-desktop.review-video
 
 -- end: detail.detail
@@ -1030,7 +1030,7 @@ children: $upcoming-demo-day-desktop.wrapper
 -- end: ftd.column
 
 -- ftd.column:
-if: {$upcoming-demo-day-desktop.sidebar}
+if: { upcoming-demo-day-desktop.sidebar}
 min-width.fixed.px: 284
 max-width.fixed.px: 284
 z-index: 999
@@ -1098,7 +1098,7 @@ children wrapper:
 -- ftd.column:
 ;;open: true
 width: fill-container
-spacing.px: 32
+spacing.fixed.px: 32
 
 -- ftd.column:
 background.solid: $inherited.colors.background.base
@@ -1119,7 +1119,7 @@ toc: $upcoming-demo-day-mobile.toc
 
 -- ftd.column:
 width: fill-container
-spacing.px: 48
+spacing.fixed.px: 48
 padding-bottom.px.px: 48
 padding-horizontal.px: 24
 
@@ -1144,7 +1144,7 @@ region: h1
 width: fill-container
 
 -- ftd.row:
-spacing.px: 8
+spacing.fixed.px: 8
 width: fill-container
 
 -- ftd.text: $upcoming-demo-day-mobile.title
@@ -1166,7 +1166,7 @@ padding-top.px: 4
 width: fill-container
 
 -- ftd.row:
-spacing.px: 12
+spacing.fixed.px: 12
 ;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
 width.fixed.px: 75
 height.fixed.px: 75
@@ -1180,7 +1180,7 @@ text-align: center
 padding-top.px: 8
 
 -- ftd.column:
-if: {$upcoming-demo-day-mobile.sidebar}
+if: { upcoming-demo-day-mobile.sidebar}
 align-content: center
 padding-top.px: 8
 
@@ -1207,7 +1207,7 @@ margin-bottom.px: 26
 text-align: justify
 
 -- ftd.column:
-if: {$upcoming-demo-day-mobile.demo-video != NULL}
+if: { upcoming-demo-day-mobile.demo-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -1225,7 +1225,7 @@ info-right: $upcoming-demo-day-mobile.demo-date
 $is-open: true
 
 -- youtube:
-if: {$upcoming-demo-day-mobile.demo-video != NULL}
+if: { upcoming-demo-day-mobile.demo-video != NULL}
 v: $upcoming-demo-day-mobile.demo-video
 
 -- end: detail.detail
@@ -1235,7 +1235,7 @@ v: $upcoming-demo-day-mobile.demo-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$upcoming-demo-day-mobile.planning-video != NULL}
+if: { upcoming-demo-day-mobile.planning-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -1253,7 +1253,7 @@ info-right: $upcoming-demo-day-mobile.planning-date
 ;;width: fill-container
 
 -- youtube:
-if: {$upcoming-demo-day-mobile.planning-video != NULL}
+if: { upcoming-demo-day-mobile.planning-video != NULL}
 v: $upcoming-demo-day-mobile.planning-video
 
 -- end: detail.detail
@@ -1263,7 +1263,7 @@ v: $upcoming-demo-day-mobile.planning-video
 -- end: ftd.column
 
 -- ftd.column:
-if: {$upcoming-demo-day-mobile.review-video != NULL}
+if: { upcoming-demo-day-mobile.review-video != NULL}
 width: fill-container
 border-width.px: 1
 border-color: $inherited.colors.border
@@ -1280,7 +1280,7 @@ info-right: $upcoming-demo-day-mobile.review-date
 ;;width: fill-container
 
 -- youtube:
-if: {$upcoming-demo-day-mobile.review-video != NULL}
+if: { upcoming-demo-day-mobile.review-video != NULL}
 v: $upcoming-demo-day-mobile.review-video
 
 -- end: detail.detail
@@ -1302,7 +1302,7 @@ children: $upcoming-demo-day-mobile.wrapper
 -- end: ftd.column
 
 -- ftd.column:
-if: {$open-right-sidebar-info}
+if: { open-right-sidebar-info}
 anchor: parent
 top.px: 0
 bottom.px: 0
@@ -1328,7 +1328,7 @@ $on-click$: $ftd.toggle($a = $open-right-sidebar-info, v= false)
 -- end: ftd.column
 
 -- ftd.column:
-if: {$open-right-sidebar-info}
+if: { open-right-sidebar-info}
 width.fixed.calc: 100% - 48px
 height.fixed.calc: 100vh - 0px
 overflow-y: auto
@@ -1376,11 +1376,8 @@ string status:
 children wrapper:
 
 -- ftd.column:
-;;open: true
 width: fill-container
 
--- ftd.column:
-width: fill-container
 
 -- presentation-desktop: $presentation.title
 if: { ftd.device != "mobile" } 
@@ -1392,6 +1389,7 @@ owner-avatar: $presentation.owner-avatar
 helper-avatar: $presentation.helper-avatar
 owner-profile: $presentation.owner-profile
 helper-profile: $presentation.helper-profile
+wrapper: $presentation.wrapper
 
 
 -- presentation-mobile: $presentation.title
@@ -1404,14 +1402,7 @@ owner-avatar: $presentation.owner-avatar
 helper-avatar: $presentation.helper-avatar
 owner-profile: $presentation.owner-profile
 helper-profile: $presentation.helper-profile
-
--- end: ftd.column
-
--- ftd.column:
-width: fill-container
-children: $presentation.wrapper
-
--- end: ftd.column
+wrapper: $presentation.wrapper
 
 -- end: ftd.column
 
@@ -1436,6 +1427,7 @@ optional ftd.image-src helper-avatar:
 optional string owner-profile:
 optional string helper-profile:
 string status:
+children wrapper:
 
 -- ftd.column:
 width: fill-container
@@ -1458,23 +1450,23 @@ width: fill-container
 
 -- ftd.column:
 width.fixed.percent: 20
-spacing.px: 20
+spacing.fixed.px: 20
 padding-right.px: 24
 
 -- ftd.column:
-if: {$presentation-desktop.owner != NULL}
-spacing.px: 8
+if: { presentation-desktop.owner != NULL}
+spacing.fixed.px: 8
 align-content: center
 
 -- ftd.image:
-if: {$presentation-desktop.owner-avatar == NULL}
+if: { presentation-desktop.owner-avatar == NULL}
 src: $assets.files.static.avatar.png
 width.fixed.px: 64
 height.fixed.px: 64
 border-radius.px: 100
 
 -- ftd.image:
-if: {$presentation-desktop.owner-avatar != NULL}
+if: { presentation-desktop.owner-avatar != NULL}
 src: $presentation-desktop.owner-avatar
 width.fixed.px: 64
 height.fixed.px: 64
@@ -1489,12 +1481,12 @@ margin-top.px: 12
 -- end: ftd.column
 
 -- ftd.column:
-spacing.px: 12
-if: {$presentation-desktop.helper != NULL}
+spacing.fixed.px: 12
+if: { presentation-desktop.helper != NULL}
 align-content: center
 
 -- ftd.image:
-if: {$presentation-desktop.helper-avatar == NULL}
+if: { presentation-desktop.helper-avatar == NULL}
 src: $assets.files.static.avatar.png
 width.fixed.px: 42
 height.fixed.px: 42
@@ -1502,7 +1494,7 @@ border-radius.px: 100
 ;;align-content: center
 
 -- ftd.image:
-if: {$presentation-desktop.helper-avatar != NULL}
+if: { presentation-desktop.helper-avatar != NULL}
 src: $presentation-desktop.helper-avatar
 width.fixed.px: 42
 height.fixed.px: 42
@@ -1535,18 +1527,18 @@ margin-bottom.px: 8
 
 -- ftd.row:
 align-content: center
-spacing.px: 8
+spacing.fixed.px: 8
 anchor: parent
 top.px: -24
 right.px: -24
 
 -- ftd.row:
-if: {$presentation-desktop.status == "Done"}
+if: { presentation-desktop.status == "Done"}
 background.solid: $inherited.colors.success.text
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1563,12 +1555,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-desktop.status == "In Progress"}
+if: { presentation-desktop.status == "In Progress"}
 background.solid: $inherited.colors.cta-secondary.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1585,12 +1577,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-desktop.status == "Half Done"}
+if: { presentation-desktop.status == "Half Done"}
 background.solid: $inherited.colors.error.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1607,12 +1599,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-desktop.status == "Experimenting"}
+if: { presentation-desktop.status == "Experimenting"}
 background.solid: $inherited.colors.accent.secondary
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1629,12 +1621,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-desktop.status == "Pending"}
+if: { presentation-desktop.status == "Pending"}
 background.solid: $inherited.colors.error.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1651,12 +1643,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-desktop.status == "Not Sure"}
+if: { presentation-desktop.status == "Not Sure"}
 background.solid: $inherited.colors.background.step-2
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1673,12 +1665,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-desktop.status == "On Track"}
+if: { presentation-desktop.status == "On Track"}
 background.solid: $inherited.colors.cta-primary.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1695,12 +1687,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-desktop.status == "Carry Over"}
+if: { presentation-desktop.status == "Carry Over"}
 background.solid: $inherited.colors.custom.ten
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1726,16 +1718,19 @@ color: $inherited.colors.text
 width: fill-container
 margin-top.px: 8
 
--- end: ftd.column
-
--- end: ftd.row
-
 -- ftd.column:
+children: $presentation-desktop.wrapper 
 width: fill-container
 
 -- end: ftd.column
 
 -- end: ftd.column
+
+-- end: ftd.row
+
+
+-- end: ftd.column
+
 
 -- end: ftd.column
 
@@ -1760,6 +1755,7 @@ optional string owner-profile:
 optional string helper-profile:
 optional ftd.image-src owner-avatar:
 optional ftd.image-src helper-avatar:
+children wrapper: 
 
 -- ftd.column:
 ;;open: true
@@ -1768,7 +1764,7 @@ background.solid: $inherited.colors.background.code
 border-radius.px: 10
 padding-vertical.px: 24
 padding-horizontal.px: 24
-spacing.px: 10
+spacing.fixed.px: 10
 
 -- ftd.column:
 width: fill-container
@@ -1779,23 +1775,23 @@ width: fill-container
 
 -- ftd.column:
 width.fixed.percent: 20
-spacing.px: 20
+spacing.fixed.px: 20
 padding-right.px: 24
 
 -- ftd.column:
-if: {$presentation-mobile.owner != NULL}
-spacing.px: 8
+if: { presentation-mobile.owner != NULL}
+spacing.fixed.px: 8
 align-content: center
 
 -- ftd.image:
-if: {$presentation-mobile.owner-avatar == NULL}
+if: { presentation-mobile.owner-avatar == NULL}
 src: $assets.files.static.avatar.png
 width.fixed.px: 64
 height.fixed.px: 64
 border-radius.px: 100
 
 -- ftd.image:
-if: {$presentation-mobile.owner-avatar != NULL}
+if: { presentation-mobile.owner-avatar != NULL}
 src: $presentation-mobile.owner-avatar
 width.fixed.px: 64
 height.fixed.px: 64
@@ -1810,12 +1806,12 @@ margin-top.px: 12
 -- end: ftd.column
 
 -- ftd.column:
-spacing.px: 12
-if: {$presentation-mobile.helper != NULL}
+spacing.fixed.px: 12
+if: { presentation-mobile.helper != NULL}
 align-content: center
 
 -- ftd.image:
-if: {$presentation-mobile.helper-avatar == NULL}
+if: { presentation-mobile.helper-avatar == NULL}
 src: $assets.files.static.avatar.png
 width.fixed.px: 42
 height.fixed.px: 42
@@ -1823,7 +1819,7 @@ border-radius.px: 100
 ;;align-content: center
 
 -- ftd.image:
-if: {$presentation-mobile.helper-avatar != NULL}
+if: { presentation-mobile.helper-avatar != NULL}
 src: $presentation-mobile.helper-avatar
 width.fixed.px: 42
 height.fixed.px: 42
@@ -1857,18 +1853,18 @@ margin-left.px: 24
 
 -- ftd.row:
 align-content: center
-spacing.px: 8
+spacing.fixed.px: 8
 anchor: parent
 top.px: -24
 right.px: -24
 
 -- ftd.row:
-if: {$presentation-mobile.status == "Done"}
+if: { presentation-mobile.status == "Done"}
 background.solid: $inherited.colors.success.text
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1885,12 +1881,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-mobile.status == "In Progress"}
+if: { presentation-mobile.status == "In Progress"}
 background.solid: $inherited.colors.cta-secondary.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1907,12 +1903,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-mobile.status == "Half Done"}
+if: { presentation-mobile.status == "Half Done"}
 background.solid: $inherited.colors.error.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1929,12 +1925,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-mobile.status == "Experimenting"}
+if: { presentation-mobile.status == "Experimenting"}
 background.solid: $inherited.colors.accent.secondary
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1951,12 +1947,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-mobile.status == "Pending"}
+if: { presentation-mobile.status == "Pending"}
 background.solid: $inherited.colors.error.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1973,12 +1969,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-mobile.status == "Not Sure"}
+if: { presentation-mobile.status == "Not Sure"}
 background.solid: $inherited.colors.background.step-2
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -1995,12 +1991,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-mobile.status == "On Track"}
+if: { presentation-mobile.status == "On Track"}
 background.solid: $inherited.colors.cta-primary.base
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 4
+spacing.fixed.px: 4
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -2017,12 +2013,12 @@ text-align: center
 -- end: ftd.row
 
 -- ftd.row:
-if: {$presentation-mobile.status == "Carry Over"}
+if: { presentation-mobile.status == "Carry Over"}
 background.solid: $inherited.colors.custom.ten
 border-radius.px: 4
 padding-vertical.px: 4
 padding-horizontal.px: 6
-spacing.px: 41
+spacing.fixed.px: 41
 
 -- ftd.image:
 src: $assets.files.static.pending.svg
@@ -2051,6 +2047,7 @@ margin-left.px: 24
 padding-right.px: 24
 
 -- ftd.column:
+children: $presentation-mobile.wrapper
 width: fill-container
 
 -- end: ftd.column
@@ -2084,7 +2081,7 @@ pr.toc-item list toc-obj:
 ;; sticky: true
 top.px: 0
 left.px: 24
-min-width.fixed.px: 320
+min-width.fixed.percent: 20
 min-height.fixed.calc: 100vh - 0px
 height.fixed.calc: 100% - 48px
 overflow-y: auto
@@ -2124,7 +2121,7 @@ pr.toc-item toc:
 -- ftd.row:
 if: {toc-instance.toc.url != NULL}
 width: fill-container
-spacing.px: 8
+spacing.fixed.px: 8
 
 -- ftd.image:
 if: {toc-instance.toc.font-icon != NULL}
@@ -2134,7 +2131,7 @@ width: auto
 
 
 -- ftd.text: 
-if: {$toc-instance.toc.url != NULL}
+if: { toc-instance.toc.url != NULL}
 link: $toc-instance.toc.url
 text: $toc-instance.toc.title
 role: $inherited.types.label-small
@@ -2148,7 +2145,7 @@ color if {toc-instance.toc.is-active}: $inherited.colors.cta-primary.base
 -- ftd.row:
 if: {toc-instance.toc.url == NULL}
 width: fill-container
-spacing.px: 8
+spacing.fixed.px: 8
 
 -- ftd.image:
 if: {toc-instance.toc.font-icon != NULL}
@@ -2170,7 +2167,7 @@ color if {toc-instance.toc.is-active}: $inherited.colors.cta-primary.base
 margin-left.px.px.px: 12
 
 -- childrens:
-if: {!is_empty(toc-instance.toc.children)}
+if: {!ftd.is_empty(toc-instance.toc.children)}
 $loop$: $toc-instance.toc.children as $obj
 toc: $obj
 
@@ -2197,7 +2194,7 @@ pr.toc-item toc:
 -- ftd.row:
 if: {childrens.toc.url != NULL}
 width: fill-container
-spacing.px: 8
+spacing.fixed.px: 8
 
 -- ftd.image:
 if: {childrens.toc.font-icon != NULL}
@@ -2219,7 +2216,7 @@ color if {childrens.toc.is-active}: $inherited.colors.cta-primary.base
 -- ftd.row:
 if: {childrens.toc.url == NULL}
 width: fill-container
-spacing.px: 8
+spacing.fixed.px: 8
 
 -- ftd.image:
 if: {childrens.toc.font-icon != NULL}
@@ -2238,7 +2235,7 @@ color if {childrens.toc.is-active}: $inherited.colors.cta-primary.base
 -- end: ftd.row
 
 -- childrens:
-if: {!is_empty(childrens.toc.children)}
+if: {!ftd.is_empty(childrens.toc.children)}
 $loop$: $childrens.toc.children as $obj
 toc: $obj
 
