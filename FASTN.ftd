@@ -1,0 +1,33 @@
+-- import: fastn
+
+-- fastn.package: fifthtry.github.io/demo-day
+download-base-url: https://raw.githubusercontent.com/fifthtry/demo-day/main
+
+-- fastn.dependency: fifthtry.github.io/doc-site as ds
+
+-- fastn.dependency: fifthtry.github.io/header as h
+;;-- fastn.dependency: fifthtry.github.io/color-doc as cs
+
+
+-- fastn.dependency: fifthtry.github.io/admonitions as cbox
+-- fastn.dependency: fifthtry.github.io/bling 
+
+-- fastn.auto-import: fifthtry.github.io/demo-day/FASTN/config
+
+
+-- fastn.auto-import: cbox
+
+-- fastn.auto-import: ds
+-- fastn.auto-import: fastn
+
+
+
+-- fastn.sitemap:
+
+#Home: index.html
+
+## Demo: index.html
+
+- Presentation: index.html
+- Upcoming: /upcoming/
+

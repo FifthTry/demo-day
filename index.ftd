@@ -1,7 +1,7 @@
 -- import: fifthtry.github.io/header as h
 -- import: fifthtry.github.io/demo-day/assets 
 -- import: fifthtry.github.io/bling/detail as detail
--- import: fpm/processors as pr
+-- import: fastn/processors as pr
 
 
 -- pr.toc-item list sections:
