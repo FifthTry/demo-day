@@ -12,8 +12,8 @@
 number: 12th
 date: Nov 26
 demo-video: rny1EGkqw_M
-sidebar: true
-;;id: upcoming-id
+$sidebar: true
+/id: upcoming-id
 
 Lorem Ipsum is simply {dd: 22 nov} text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 when an unknown printer took a galley of type and scrambled it to make a type
