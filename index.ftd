@@ -1,0 +1,2298 @@
+-- import: fifthtry.github.io/header as h
+-- import: fifthtry.github.io/demo-day/assets 
+-- import: fifthtry.github.io/bling/detail as detail
+-- import: fastn/processors as pr
+
+
+-- pr.toc-item list sections:
+
+-- pr.toc-item list sub-sections:
+
+-- pr.toc-item list toc:
+
+-- boolean show-section: false
+
+-- boolean $open-right-sidebar-info: false
+
+-- integer toc-sidebar-width: 320
+
+
+-- optional string $site-name: 
+
+
+-- ftd.image-src $site-logo:
+light: https://www.fifthtry.com/-/fifthtry.com/assets/images/logo-fifthtry-dark.svg
+dark: https://www.fifthtry.com/-/fifthtry.com/assets/images/logo-fifthtry-dark.svg
+
+-- string $site-url: index.html
+
+-- pr.sitemap-data sitemap:
+$processor$: pr.sitemap
+
+
+
+
+
+
+
+-- past-demo-day: Fifthtry
+number: 11th
+date: Nov 22
+demo-date: 22 Nov 2022
+demo-video: rny1EGkqw_M
+planning-video: rny1EGkqw_M
+planning-date: 25 Nov 2022
+review-video: rny1EGkqw_M
+review-date: 30 Nov 2022
+
+-- past-demo-day.sidebar-content:
+
+-- sidebar:
+
+-- end: past-demo-day.sidebar-content
+
+-- past-demo-day.body:
+
+Lorem Ipsum is simply {dd: 22 nov} text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+when an unknown printer took a galley of type and scrambled it to make a type
+specimen book. It has survived not only five centuries, but also the leap int
+o electronic typesetting, remaining essentially unchanged. It was popularised
+in the 1960s with the release of Letraset sheets containing Lorem Ipsum passa
+ges, and more recently with desktop {remote:publishing} software like Aldus PageMaker
+including versions of Lorem Ipsum.
+
+
+-- end: past-demo-day
+
+
+
+
+-- ftd.text dd: yo
+link: https://www.fifthtry.com/h/dd/
+role: $inherited.types.copy-regular
+
+
+
+
+
+
+
+
+
+
+-- ftd.text remote: yo
+link: https://www.fifthtry.com/h/remote/
+role: $inherited.types.copy-regular
+
+
+
+
+
+
+
+
+
+
+
+-- component past-demo-day:
+optional caption title:
+optional body body:
+pr.toc-item list toc: $sitemap.toc
+pr.toc-item list sections: $sitemap.sections
+pr.toc-item list sub-sections: $sitemap.subsections
+optional pr.toc-item current-section: $sitemap.current-section
+optional pr.toc-item current-subsection: $sitemap.current-subsection
+optional pr.toc-item current-page: $sitemap.current-page
+string number:
+string date:
+optional string year:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video: 
+optional string review-video: 
+optional string demo-date: 
+optional string planning-date:
+optional string review-date:
+boolean $sidebar: false
+children past-wrapper:
+ftd.ui list sidebar-content:
+
+
+-- ftd.column:
+spacing.fixed.px: 32
+background.solid: $inherited.colors.background.base
+width: fill-container
+
+-- past-demo-day-desktop: $past-demo-day.title
+if: { ftd.device != "mobile" }
+body: $past-demo-day.body
+toc: $past-demo-day.toc
+sections: $past-demo-day.sections
+sub-sections: $past-demo-day.sub-sections
+current-section: $past-demo-day.current-section
+current-subsection: $past-demo-day.current-subsection
+current-page: $past-demo-day.current-page
+number: $past-demo-day.number
+date: $past-demo-day.date
+in-future: $past-demo-day.in-future
+demo-video: $past-demo-day.demo-video
+review-video: $past-demo-day.review-video
+planning-video: $past-demo-day.planning-video
+demo-date: $past-demo-day.demo-date
+planning-date: $past-demo-day.planning-date
+review-date: $past-demo-day.review-date
+sidebar: $past-demo-day.sidebar
+sidebar-content: $past-demo-day.sidebar-content
+wrapper: $past-demo-day.past-wrapper
+
+-- past-demo-day-mobile: $past-demo-day.title
+if: { ftd.device == "mobile" }
+body: $past-demo-day.body
+toc: $past-demo-day.toc
+sections: $past-demo-day.sections
+sub-sections: $past-demo-day.sub-sections
+current-section: $past-demo-day.current-section
+current-subsection: $past-demo-day.current-subsection
+current-page: $past-demo-day.current-page
+number: $past-demo-day.number
+date: $past-demo-day.date
+in-future: $past-demo-day.in-future
+demo-video: $past-demo-day.demo-video
+review-video: $past-demo-day.review-video
+planning-video: $past-demo-day.planning-video
+demo-date: $past-demo-day.demo-date
+planning-date: $past-demo-day.planning-date
+review-date: $past-demo-day.review-date
+sidebar-content: $past-demo-day.sidebar-content
+sidebar: $past-demo-day.sidebar
+wrapper: $past-demo-day.past-wrapper
+
+-- end: ftd.column
+
+-- end: past-demo-day
+
+
+
+
+
+
+
+
+
+-- component past-demo-day-desktop:
+optional caption title:
+optional body body:
+pr.toc-item list toc: 
+pr.toc-item list sections: 
+pr.toc-item list sub-sections: 
+optional pr.toc-item current-section:
+optional pr.toc-item current-subsection:
+optional pr.toc-item current-page:
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean sidebar:
+ftd.ui list sidebar-content:
+optional string site-name:
+children wrapper:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.base
+height: fill-container
+padding-bottom.px: 50
+
+-- h.header: 
+sections: $past-demo-day-desktop.sections
+sub-sections: $past-demo-day-desktop.sub-sections
+current-section: $past-demo-day-desktop.current-section
+current-subsection: $past-demo-day-desktop.current-subsection
+current-page: $past-demo-day-desktop.current-page
+site-logo: $site-logo
+site-url: $site-url
+site-name: $past-demo-day-desktop.site-name
+
+-- ftd.row:
+padding-horizontal.px: 24
+width: fill-container
+spacing.fixed.px: 64
+
+-- render-toc:
+if: { !ftd.is_empty(past-demo-day-desktop.toc) }
+toc-obj: $past-demo-day-desktop.toc
+
+-- ftd.column:
+width.fixed.percent: 60
+min-height.fixed.percent: 100
+margin-bottom.px: 25
+margin-top.px: 25
+
+-- ftd.column: 
+width: fill-container
+padding-vertical.px: 16
+background.solid: $inherited.colors.background.step-1
+padding-horizontal.px: 24
+border-radius.px: 10
+
+-- ftd.row:
+width: fill-container
+padding-vertical.px: 12
+region: h1
+
+-- ftd.row:
+spacing.fixed.px: 8
+width: fill-container
+
+-- ftd.image:
+src: $assets.files.static.presentation.png
+width.fixed.px: 50
+height.fixed.px: 50
+margin-top.px: -5
+
+-- ftd.text: $past-demo-day-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- ftd.text: 
+text: $past-demo-day-desktop.number
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- ftd.text: Demo Day
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 12
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
+width.fixed.px: 75
+height.fixed.px: 75
+margin-top.px: -24
+
+-- ftd.text: 
+text: $past-demo-day-desktop.date
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+;;style: bold
+text-align: center
+padding-top.px: 8
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.text:
+text: $past-demo-day-desktop.body
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+margin-bottom.px: 26
+text-align: justify
+
+-- ftd.column:
+if: { past-demo-day-desktop.demo-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Demo Meeting
+;;color: $inherited.colors.text-strong
+info-right: $past-demo-day-desktop.demo-date
+;;width: fill-container
+$is-open: true
+
+-- youtube:
+if: {past-demo-day-desktop.demo-video != NULL}
+v: $past-demo-day-desktop.demo-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { past-demo-day-desktop.planning-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Planning Meeting
+info-right: $past-demo-day-desktop.planning-date
+;;color: $inherited.colors.custom.three
+;;width: fill-container
+
+-- youtube:
+if: { past-demo-day-desktop.planning-video != NULL}
+v: $past-demo-day-desktop.planning-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { past-demo-day-desktop.review-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Review Meeting
+info-right: $past-demo-day-desktop.review-date
+;;color: $inherited.colors.border-strong
+;;width: fill-container
+
+-- youtube:
+if: { past-demo-day-desktop.review-video != NULL}
+v: $past-demo-day-desktop.review-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $past-demo-day-desktop.wrapper
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { past-demo-day-desktop.sidebar }
+children: $past-demo-day-desktop.sidebar-content
+min-width.fixed.px: 284
+max-width.fixed.px: 284
+z-index: 999
+background.solid: $inherited.colors.background.overlay
+;;sticky: true
+top.px: 0
+right.px: 48
+min-height.fixed.calc: 100vh - 0px
+height.fixed.calc: 100% - 48px
+overflow-y: auto
+align-content: top-right
+padding-left.px.px: 24
+padding-top.px: 4
+padding-right.px: 16
+padding-bottom.px.px: 32
+margin-top.px: 25
+margin-bottom.px: 25
+border-radius.px: 8
+
+
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: past-demo-day-desktop
+
+
+
+
+
+
+
+
+
+
+-- component past-demo-day-mobile:
+optional caption title:
+optional body body:
+pr.toc-item list toc: 
+pr.toc-item list sections: 
+pr.toc-item list sub-sections: 
+optional pr.toc-item current-section:
+optional pr.toc-item current-subsection:
+optional pr.toc-item current-page:
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean sidebar:
+ftd.ui list sidebar-content:
+optional string site-name:
+children wrapper:
+
+-- ftd.column:
+;;open: true
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.column:
+background.solid: $inherited.colors.background.base
+width: fill-container
+height: fill-container
+padding-bottom.px: 50
+
+-- h.header: 
+sections: $past-demo-day-mobile.sections
+sub-sections: $past-demo-day-mobile.sub-sections
+current-section: $past-demo-day-mobile.current-section
+current-subsection: $past-demo-day-mobile.current-subsection
+current-page: $past-demo-day-mobile.current-page
+site-logo: $site-logo
+site-url: $site-url
+site-name: $past-demo-day-mobile.site-name
+toc: $past-demo-day-mobile.toc
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 48
+padding-bottom.px.px: 48
+padding-horizontal.px: 24
+
+-- ftd.column:
+width: fill-container
+min-height.fixed.percent: 100
+padding-vertical.px: 16
+
+-- ftd.column: 
+width: fill-container
+background.solid: $inherited.colors.background.step-1
+padding-horizontal.px: 24
+border-radius.px: 4
+margin-bottom.px: 24
+
+-- ftd.row:
+width: fill-container
+padding-vertical.px: 12
+region: h1
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 8
+width: fill-container
+
+-- ftd.text: $past-demo-day-mobile.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: $past-demo-day-mobile.number
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: Demo Day
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- ftd.row:
+padding-top.px: 4
+width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 12
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
+width.fixed.px: 75
+height.fixed.px: 75
+margin-left.px.px.px: 105
+
+-- ftd.text: $past-demo-day-mobile.date
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+;;style: bold
+text-align: center
+padding-top.px: 8
+
+-- ftd.column:
+if: { past-demo-day-mobile.sidebar}
+align-content: center
+padding-top.px: 8
+
+-- ftd.image:
+src: $assets.files.static.info-icon.svg
+width.fixed.px: 30
+margin-top.px: -66
+margin-left.px.px: 90
+$on-click$: $ftd.toggle($a = $open-right-sidebar-info)
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.text:
+text: $past-demo-day-mobile.body
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+margin-bottom.px: 26
+text-align: justify
+
+-- ftd.column:
+if: { past-demo-day-mobile.demo-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Demo Meeting
+info-right: $past-demo-day-mobile.demo-date
+;;width: fill-container
+$is-open: true
+
+-- youtube:
+if: { past-demo-day-mobile.demo-video != NULL}
+v: $past-demo-day-mobile.demo-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { past-demo-day-mobile.planning-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Planning Meeting
+info-right: $past-demo-day-mobile.planning-date
+;;color: $inherited.colors.custom.three
+;;width: fill-container
+
+-- youtube:
+if: { past-demo-day-mobile.planning-video != NULL}
+v: $past-demo-day-mobile.planning-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { past-demo-day-mobile.review-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Review Meeting
+info-right: $past-demo-day-mobile.review-date
+;;width: fill-container
+
+-- youtube:
+if: { past-demo-day-mobile.review-video != NULL}
+v: $past-demo-day-mobile.review-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $past-demo-day-mobile.wrapper
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { open-right-sidebar-info}
+anchor: parent
+top.px: 0
+bottom.px: 0
+left.px: 0
+right.px: 0
+background.solid: $inherited.colors.background.overlay
+z-index: 1
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.image:
+src: $assets.files.static.cross.svg
+height.fixed.px: 16
+width: auto
+margin-top.px: 30
+margin-left.px.px.px: 16
+$on-click$: $ftd.toggle($a = $open-right-sidebar-info, v= false) 
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { open-right-sidebar-info}
+width.fixed.calc: 100% - 48px
+height.fixed.calc: 100vh - 0px
+overflow-y: auto
+align-content: top-right
+anchor: parent
+right.px: 0
+top.px: 0
+background.solid: $inherited.colors.background.step-1
+z-index: 1
+
+-- ftd.column:
+children: $past-demo-day-mobile.sidebar-content
+width: fill-container
+padding-vertical.px: 24
+padding-horizontal.px: 24
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: past-demo-day-mobile
+
+
+
+
+
+
+
+
+
+
+
+-- component upcoming-demo-day:
+optional caption title:
+optional body body:
+pr.toc-item list toc: $sitemap.toc
+pr.toc-item list sections: $sitemap.sections
+pr.toc-item list sub-sections: $sitemap.subsections
+optional pr.toc-item current-section: $sitemap.current-section
+optional pr.toc-item current-subsection: $sitemap.current-subsection
+optional pr.toc-item current-page: $sitemap.current-page
+string number:
+string date:
+optional string year:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video: 
+optional string review-video: 
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean $sidebar: false
+ftd.ui list sidebar-content:
+children wrapper:
+
+-- ftd.column:
+background.solid: $inherited.colors.background.base
+;;open: true
+width: fill-container
+spacing.fixed.px: 32
+
+-- upcoming-demo-day-desktop: $upcoming-demo-day.title
+if: { ftd.device != "mobile" }
+body: $upcoming-demo-day.body
+toc: $upcoming-demo-day.toc
+sections: $upcoming-demo-day.sections
+sub-sections: $upcoming-demo-day.sub-sections
+current-section: $upcoming-demo-day.current-section
+current-subsection: $upcoming-demo-day.current-subsection
+current-page: $upcoming-demo-day.current-page
+number: $upcoming-demo-day.number
+date: $upcoming-demo-day.date
+in-future: $upcoming-demo-day.in-future
+demo-video: $upcoming-demo-day.demo-video
+review-video: $upcoming-demo-day.review-video
+planning-video: $upcoming-demo-day.planning-video
+demo-date: $upcoming-demo-day.demo-date
+planning-date: $upcoming-demo-day.planning-date
+review-date: $upcoming-demo-day.review-date
+sidebar: $upcoming-demo-day.sidebar
+sidebar-content: $upcoming-demo-day.sidebar-content
+wrapper: $upcoming-demo-day.wrapper
+
+-- upcoming-demo-day-mobile: $upcoming-demo-day.title
+if: { ftd.device == "mobile" }
+body: $upcoming-demo-day.body
+toc: $upcoming-demo-day.toc
+sections: $upcoming-demo-day.sections
+sub-sections: $upcoming-demo-day.sub-sections
+current-section: $upcoming-demo-day.current-section
+current-subsection: $upcoming-demo-day.current-subsection
+current-page: $upcoming-demo-day.current-page
+number: $upcoming-demo-day.number
+date: $upcoming-demo-day.date
+in-future: $upcoming-demo-day.in-future
+demo-video: $upcoming-demo-day.demo-video
+review-video: $upcoming-demo-day.review-video
+planning-video: $upcoming-demo-day.planning-video
+demo-date: $upcoming-demo-day.demo-date
+planning-date: $upcoming-demo-day.planning-date
+review-date: $upcoming-demo-day.review-date
+sidebar: $upcoming-demo-day.sidebar
+wrapper: $upcoming-demo-day.wrapper
+sidebar-content: $upcoming-demo-day.sidebar-content
+
+
+-- end: ftd.column
+
+-- end: upcoming-demo-day
+
+
+
+
+
+
+
+
+
+
+-- component upcoming-demo-day-desktop:
+optional caption title:
+optional body body:
+pr.toc-item list toc: 
+pr.toc-item list sections: 
+pr.toc-item list sub-sections: 
+optional pr.toc-item current-section:
+optional pr.toc-item current-subsection:
+optional pr.toc-item current-page:
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean sidebar:
+optional string site-name:
+children wrapper:
+ftd.ui list sidebar-content:
+
+-- ftd.column:
+;;open: true
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.column:
+width: fill-container
+background.solid: $inherited.colors.background.base
+height: fill-container
+padding-bottom.px: 50
+
+-- h.header: 
+sections: $upcoming-demo-day-desktop.sections
+sub-sections: $upcoming-demo-day-desktop.sub-sections
+current-section: $upcoming-demo-day-desktop.current-section
+current-subsection: $upcoming-demo-day-desktop.current-subsection
+current-page: $upcoming-demo-day-desktop.current-page
+site-logo: $site-logo
+site-url: $site-url
+site-name: $upcoming-demo-day-desktop.site-name
+
+-- ftd.row:
+width: fill-container
+spacing.fixed.px: 64
+
+-- render-toc:
+if: { !ftd.is_empty(upcoming-demo-day-desktop.toc) }
+toc-obj: $upcoming-demo-day-desktop.toc
+
+-- ftd.column:
+width.fixed.percent: 60
+min-height.fixed.percent: 100
+margin-bottom.px: 25
+margin-top.px: 25
+
+-- ftd.column: 
+width: fill-container
+padding-vertical.px: 16
+background.solid: $inherited.colors.background.step-1
+padding-horizontal.px: 24
+border-radius.px: 10
+
+-- ftd.row:
+width: fill-container
+padding-vertical.px: 12
+region: h1
+
+-- ftd.row:
+spacing.fixed.px: 8
+width: fill-container
+
+-- ftd.image:
+src: $assets.files.static.presentation.png
+width.fixed.px: 50
+height.fixed.px: 50
+margin-top.px: -5
+
+-- ftd.text: $upcoming-demo-day-desktop.title
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- ftd.text: 
+text: $upcoming-demo-day-desktop.number
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- ftd.text: Demo Day
+role: $inherited.types.heading-large
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- ftd.row:
+spacing.fixed.px: 12
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
+width.fixed.px: 75
+height.fixed.px: 75
+margin-top.px: -24
+
+-- ftd.text: 
+text: $upcoming-demo-day-desktop.date
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+;;style: bold
+text-align: center
+padding-top.px: 8
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.text:
+text: $upcoming-demo-day-desktop.body
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+margin-bottom.px: 26
+text-align: justify
+
+-- ftd.column:
+if: { upcoming-demo-day-desktop.demo-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Demo Meeting
+;;color: $inherited.colors.text-strong
+info-right: $upcoming-demo-day-desktop.demo-date
+;;width: fill-container
+$is-open: true
+
+-- youtube:
+if: { upcoming-demo-day-desktop.demo-video != NULL}
+v: $upcoming-demo-day-desktop.demo-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { upcoming-demo-day-desktop.planning-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Planning Meeting
+info-right: $upcoming-demo-day-desktop.planning-date
+;;color: $inherited.colors.custom.three
+;;width: fill-container
+
+-- youtube:
+if: { upcoming-demo-day-desktop.planning-video != NULL}
+v: $upcoming-demo-day-desktop.planning-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { upcoming-demo-day-desktop.review-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Review Meeting
+info-right: $upcoming-demo-day-desktop.review-date
+;;color: $inherited.colors.border-strong
+;;width: fill-container
+
+-- youtube:
+if: { upcoming-demo-day-desktop.review-video != NULL}
+v: $upcoming-demo-day-desktop.review-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $upcoming-demo-day-desktop.wrapper
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { upcoming-demo-day-desktop.sidebar}
+children: $upcoming-demo-day-desktop.sidebar-content
+min-width.fixed.px: 284
+max-width.fixed.px: 284
+z-index: 999
+background.solid: $inherited.colors.background.overlay
+;;sticky: true
+top.px: 0
+right.px: 48
+min-height.fixed.calc: 100vh - 0px
+height.fixed.calc: 100% - 48px
+overflow-y: auto
+align-content: top-right
+margin-right.px: 48
+padding-left.px.px: 24
+padding-top.px: 4
+padding-right.px: 16
+padding-bottom.px.px: 32
+margin-top.px: 25
+margin-bottom.px: 25
+border-radius.px: 8
+
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: upcoming-demo-day-desktop
+
+
+
+
+
+
+
+
+
+
+
+-- component upcoming-demo-day-mobile:
+optional caption title:
+optional body body:
+pr.toc-item list toc: $sitemap.toc
+pr.toc-item list sections: $sitemap.sections
+pr.toc-item list sub-sections: $sitemap.subsections
+optional pr.toc-item current-section: $sitemap.current-section
+optional pr.toc-item current-subsection: $sitemap.current-subsection
+optional pr.toc-item current-page: $sitemap.current-page
+string number:
+string date:
+boolean in-future: false
+optional string demo-video: 
+optional string planning-video:
+optional string review-video:
+optional string demo-date:
+optional string planning-date:
+optional string review-date:
+boolean sidebar:
+ftd.ui list sidebar-content:
+optional string site-name:
+children wrapper:
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 32
+
+-- ftd.column:
+background.solid: $inherited.colors.background.base
+width: fill-container
+height: fill-container
+padding-bottom.px: 50
+
+-- h.header: 
+sections: $upcoming-demo-day-mobile.sections
+sub-sections: $upcoming-demo-day-mobile.sub-sections
+current-section: $upcoming-demo-day-mobile.current-section
+current-subsection: $upcoming-demo-day-mobile.current-subsection
+current-page: $upcoming-demo-day-mobile.current-page
+site-logo: $site-logo
+site-url: $site-url
+site-name: $upcoming-demo-day-mobile.site-name
+toc: $upcoming-demo-day-mobile.toc
+
+-- ftd.column:
+width: fill-container
+spacing.fixed.px: 48
+padding-bottom.px.px: 48
+padding-horizontal.px: 24
+
+-- ftd.column:
+width: fill-container
+min-height.fixed.percent: 100
+padding-vertical.px: 16
+
+-- ftd.column: 
+width: fill-container
+background.solid: $inherited.colors.background.step-1
+padding-horizontal.px: 24
+border-radius.px: 4
+margin-bottom.px: 24
+
+-- ftd.row:
+width: fill-container
+padding-vertical.px: 12
+region: h1
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 8
+width: fill-container
+
+-- ftd.text: $upcoming-demo-day-mobile.title
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: $upcoming-demo-day-mobile.number
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- ftd.text: Demo Day
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+
+-- end: ftd.row
+
+-- ftd.row:
+padding-top.px: 4
+width: fill-container
+
+-- ftd.row:
+spacing.fixed.px: 12
+;; background-image: $assets.files.static.calender.svg -- TODO FTD 0.3
+width.fixed.px: 75
+height.fixed.px: 75
+margin-left.px.px.px: 105
+
+-- ftd.text: $upcoming-demo-day-mobile.date
+role: $inherited.types.heading-small
+color: $inherited.colors.text-strong
+;;style: bold
+text-align: center
+padding-top.px: 8
+
+-- ftd.column:
+if: { upcoming-demo-day-mobile.sidebar}
+align-content: center
+padding-top.px: 8
+
+-- ftd.image:
+src: $assets.files.static.info-icon.svg
+width.fixed.px: 30
+margin-top.px: -66
+margin-left.px.px: 90
+$on-click$: $ftd.toggle($a = $open-right-sidebar-info)
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- ftd.text:
+text: $upcoming-demo-day-mobile.body
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+margin-bottom.px: 26
+text-align: justify
+
+-- ftd.column:
+if: { upcoming-demo-day-mobile.demo-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Demo Meeting
+info-right: $upcoming-demo-day-mobile.demo-date
+;;width: fill-container
+$is-open: true
+
+-- youtube:
+if: { upcoming-demo-day-mobile.demo-video != NULL}
+v: $upcoming-demo-day-mobile.demo-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { upcoming-demo-day-mobile.planning-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Planning Meeting
+info-right: $upcoming-demo-day-mobile.planning-date
+;;color: $inherited.colors.custom.three
+;;width: fill-container
+
+-- youtube:
+if: { upcoming-demo-day-mobile.planning-video != NULL}
+v: $upcoming-demo-day-mobile.planning-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { upcoming-demo-day-mobile.review-video != NULL}
+width: fill-container
+border-width.px: 1
+border-color: $inherited.colors.border
+border-radius.px: 4
+margin-bottom.px: 20
+color: $inherited.colors.cta-primary.text
+
+-- ftd.column:
+width: fill-container
+margin-bottom.px: -16
+
+-- detail.detail: Review Meeting
+info-right: $upcoming-demo-day-mobile.review-date
+;;width: fill-container
+
+-- youtube:
+if: { upcoming-demo-day-mobile.review-video != NULL}
+v: $upcoming-demo-day-mobile.review-video
+
+-- end: detail.detail
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width: fill-container
+children: $upcoming-demo-day-mobile.wrapper
+
+-- end: ftd.column
+
+
+-- ftd.column:
+if: { open-right-sidebar-info}
+anchor: parent
+top.px: 0
+bottom.px: 0
+left.px: 0
+right.px: 0
+background.solid: $inherited.colors.background.overlay
+z-index: 1
+width: fill-container
+
+-- ftd.column:
+width: fill-container
+
+-- ftd.image:
+src: $assets.files.static.cross.svg
+height.fixed.px: 16
+width: auto
+margin-top.px: 30
+margin-left.px.px.px: 16
+$on-click$: $ftd.toggle($a = $open-right-sidebar-info, v= false) 
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+if: { open-right-sidebar-info}
+width.fixed.calc: 100% - 48px
+height.fixed.calc: 100vh - 0px
+overflow-y: auto
+align-content: top-right
+anchor: parent
+right.px: 0
+top.px: 0
+background.solid: $inherited.colors.background.step-1
+z-index: 1
+
+-- ftd.column:
+children: $upcoming-demo-day-mobile.sidebar-content
+width: fill-container
+padding-vertical.px: 24
+padding-horizontal.px: 24
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: upcoming-demo-day-mobile
+
+
+
+
+
+
+
+
+
+
+-- component presentation:
+optional caption title:
+optional body body:
+optional string owner:
+optional string helper:
+optional ftd.image-src owner-avatar:
+optional ftd.image-src helper-avatar:
+optional string owner-profile:
+optional string helper-profile:
+string status:
+children wrapper:
+
+-- ftd.column:
+width: fill-container
+
+
+-- presentation-desktop: $presentation.title
+if: { ftd.device != "mobile" } 
+body: $presentation.body
+owner: $presentation.owner
+helper: $presentation.helper
+status: $presentation.status
+owner-avatar: $presentation.owner-avatar
+helper-avatar: $presentation.helper-avatar
+owner-profile: $presentation.owner-profile
+helper-profile: $presentation.helper-profile
+wrapper: $presentation.wrapper
+
+
+-- presentation-mobile: $presentation.title
+if: { ftd.device == "mobile" } 
+body: $presentation.body
+owner: $presentation.owner
+helper: $presentation.helper
+status: $presentation.status
+owner-avatar: $presentation.owner-avatar
+helper-avatar: $presentation.helper-avatar
+owner-profile: $presentation.owner-profile
+helper-profile: $presentation.helper-profile
+wrapper: $presentation.wrapper
+
+-- end: ftd.column
+
+-- end: presentation
+
+
+
+
+
+
+
+
+
+
+-- component presentation-desktop:
+optional caption title:
+optional body body:
+optional string owner:
+optional string helper:
+optional ftd.image-src owner-avatar:
+optional ftd.image-src helper-avatar:
+optional string owner-profile:
+optional string helper-profile:
+string status:
+children wrapper:
+
+-- ftd.column:
+width: fill-container
+;;open: true
+border-radius.px: 10
+padding-vertical.px: 24
+padding-horizontal.px: 24
+background.solid: $inherited.colors.background.code
+border-width.px: 1
+border-color: $inherited.colors.border
+margin-bottom.px: 16
+margin-top.px: 16
+
+-- ftd.column:
+width: fill-container
+min-height.fixed.percent: 100
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.column:
+width.fixed.percent: 20
+spacing.fixed.px: 20
+padding-right.px: 24
+
+-- ftd.column:
+if: { presentation-desktop.owner != NULL}
+spacing.fixed.px: 8
+align-content: center
+
+-- ftd.image:
+if: { presentation-desktop.owner-avatar == NULL}
+src: $assets.files.static.avatar.png
+width.fixed.px: 64
+height.fixed.px: 64
+border-radius.px: 100
+
+-- ftd.image:
+if: { presentation-desktop.owner-avatar != NULL}
+src: $presentation-desktop.owner-avatar
+width.fixed.px: 64
+height.fixed.px: 64
+border-radius.px: 100
+
+-- ftd.text: $presentation-desktop.owner
+role: $inherited.types.copy-small
+color: $inherited.colors.cta-primary.base
+text-align: center
+margin-top.px: 12
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 12
+if: { presentation-desktop.helper != NULL}
+align-content: center
+
+-- ftd.image:
+if: { presentation-desktop.helper-avatar == NULL}
+src: $assets.files.static.avatar.png
+width.fixed.px: 42
+height.fixed.px: 42
+border-radius.px: 100
+;;align-content: center
+
+-- ftd.image:
+if: { presentation-desktop.helper-avatar != NULL}
+src: $presentation-desktop.helper-avatar
+width.fixed.px: 42
+height.fixed.px: 42
+border-radius.px: 100
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.helper
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+text-align: center
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 80
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.text: $presentation-desktop.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.cta-secondary.text
+width: fill-container
+margin-top.px: 8
+margin-bottom.px: 8
+
+-- end: ftd.row
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 8
+anchor: parent
+top.px: -24
+right.px: -24
+
+-- ftd.row:
+if: { presentation-desktop.status == "Done"}
+background.solid: $inherited.colors.success.text
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-desktop.status == "In Progress"}
+background.solid: $inherited.colors.cta-secondary.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-desktop.status == "Half Done"}
+background.solid: $inherited.colors.error.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-desktop.status == "Experimenting"}
+background.solid: $inherited.colors.accent.secondary
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-desktop.status == "Pending"}
+background.solid: $inherited.colors.error.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-desktop.status == "Not Sure"}
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-desktop.status == "On Track"}
+background.solid: $inherited.colors.cta-primary.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 24
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-desktop.status == "Carry Over"}
+background.solid: $inherited.colors.custom.ten
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-desktop.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.text: 
+if: { presentation-desktop.body != NULL }
+text: $presentation-desktop.body
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+width: fill-container
+margin-top.px: 8
+
+-- ftd.column:
+children: $presentation-desktop.wrapper 
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+
+-- end: ftd.column
+
+
+-- end: ftd.column
+
+-- end: presentation-desktop
+
+
+
+
+
+
+
+
+
+
+-- component presentation-mobile:
+optional caption title:
+optional body body:
+optional string owner:
+optional string helper:
+optional string status:
+optional string owner-profile:
+optional string helper-profile:
+optional ftd.image-src owner-avatar:
+optional ftd.image-src helper-avatar:
+children wrapper: 
+
+-- ftd.column:
+;;open: true
+width: fill-container
+background.solid: $inherited.colors.background.code
+border-radius.px: 10
+padding-vertical.px: 24
+padding-horizontal.px: 24
+spacing.fixed.px: 10
+
+-- ftd.column:
+width: fill-container
+min-height.fixed.percent: 100
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.column:
+width.fixed.percent: 20
+spacing.fixed.px: 20
+padding-right.px: 24
+
+-- ftd.column:
+if: { presentation-mobile.owner != NULL}
+spacing.fixed.px: 8
+align-content: center
+
+-- ftd.image:
+if: { presentation-mobile.owner-avatar == NULL}
+src: $assets.files.static.avatar.png
+width.fixed.px: 64
+height.fixed.px: 64
+border-radius.px: 100
+
+-- ftd.image:
+if: { presentation-mobile.owner-avatar != NULL}
+src: $presentation-mobile.owner-avatar
+width.fixed.px: 64
+height.fixed.px: 64
+border-radius.px: 100
+
+-- ftd.text: $presentation-mobile.owner
+role: $inherited.types.copy-small
+color: $inherited.colors.cta-primary.base
+text-align: center
+margin-top.px: 12
+
+-- end: ftd.column
+
+-- ftd.column:
+spacing.fixed.px: 12
+if: { presentation-mobile.helper != NULL}
+align-content: center
+
+-- ftd.image:
+if: { presentation-mobile.helper-avatar == NULL}
+src: $assets.files.static.avatar.png
+width.fixed.px: 42
+height.fixed.px: 42
+border-radius.px: 100
+;;align-content: center
+
+-- ftd.image:
+if: { presentation-mobile.helper-avatar != NULL}
+src: $presentation-mobile.helper-avatar
+width.fixed.px: 42
+height.fixed.px: 42
+border-radius.px: 100
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.helper
+role: $inherited.types.fine-print
+color: $inherited.colors.text
+text-align: center
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- ftd.column:
+width.fixed.percent: 80
+
+-- ftd.row:
+width: fill-container
+
+-- ftd.text: $presentation-mobile.title
+role: $inherited.types.heading-medium
+color: $inherited.colors.cta-secondary.text
+width: fill-container
+margin-top.px: 8
+margin-bottom.px: 8
+margin-left.px: 24
+
+-- end: ftd.row
+
+-- ftd.row:
+align-content: center
+spacing.fixed.px: 8
+anchor: parent
+top.px: -24
+right.px: -24
+
+-- ftd.row:
+if: { presentation-mobile.status == "Done"}
+background.solid: $inherited.colors.success.text
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-mobile.status == "In Progress"}
+background.solid: $inherited.colors.cta-secondary.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-mobile.status == "Half Done"}
+background.solid: $inherited.colors.error.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-mobile.status == "Experimenting"}
+background.solid: $inherited.colors.accent.secondary
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-mobile.status == "Pending"}
+background.solid: $inherited.colors.error.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-mobile.status == "Not Sure"}
+background.solid: $inherited.colors.background.step-2
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-mobile.status == "On Track"}
+background.solid: $inherited.colors.cta-primary.base
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 4
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 24
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- ftd.row:
+if: { presentation-mobile.status == "Carry Over"}
+background.solid: $inherited.colors.custom.ten
+border-radius.px: 4
+padding-vertical.px: 4
+padding-horizontal.px: 6
+spacing.fixed.px: 41
+
+-- ftd.image:
+src: $assets.files.static.pending.svg
+height.fixed.px: 20
+;;align-content: center
+
+-- ftd.text: $presentation-mobile.status
+color: $inherited.colors.background.step-1
+role: $inherited.types.copy-small
+width: fill-container
+white-space: nowrap
+text-align: center
+
+-- end: ftd.row
+
+-- end: ftd.row
+
+-- ftd.text:
+if: { presentation-mobile.body != NULL }
+text: $presentation-mobile.body
+role: $inherited.types.copy-small
+color: $inherited.colors.text
+width: fill-container
+margin-top.px: 8
+margin-left.px: 24
+padding-right.px: 24
+
+-- ftd.column:
+children: $presentation-mobile.wrapper
+width: fill-container
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: ftd.row
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: presentation-mobile
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- component render-toc:
+pr.toc-item list toc-obj:
+
+-- ftd.column:
+;; sticky: true
+top.px: 0
+left.px: 24
+min-width.fixed.percent: 20
+min-height.fixed.calc: 100vh - 0px
+height.fixed.calc: 100% - 48px
+overflow-y: auto
+width.fixed.px: $toc-sidebar-width
+align-content: top-left
+background.solid: $inherited.colors.background.overlay
+border-radius.px: 8
+padding-left.px: 24
+padding-top.px: 16
+padding-right.px: 16
+padding-bottom.px: 32
+margin-top.px: 25
+margin-bottom.px: 25
+
+-- toc-instance:
+$loop$: $render-toc.toc-obj as $obj
+toc: $obj
+
+-- end: ftd.column
+
+-- end: render-toc
+
+
+
+
+
+
+
+
+
+
+-- component toc-instance:
+pr.toc-item toc:
+
+-- ftd.column:
+
+-- ftd.row:
+if: {toc-instance.toc.url != NULL}
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: {toc-instance.toc.font-icon != NULL}
+src: $toc-instance.toc.font-icon
+height.fixed.px: 14
+width: auto
+
+
+-- ftd.text: 
+if: { toc-instance.toc.url != NULL}
+link: $toc-instance.toc.url
+text: $toc-instance.toc.title
+role: $inherited.types.label-small
+min-width: hug-content
+margin-bottom.px: 16
+color: $inherited.colors.text
+color if {toc-instance.toc.is-active}: $inherited.colors.cta-primary.base
+
+-- end: ftd.row
+
+-- ftd.row:
+if: {toc-instance.toc.url == NULL}
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: {toc-instance.toc.font-icon != NULL}
+src: $toc-instance.toc.font-icon
+height.fixed.px: 14
+width: auto
+
+-- ftd.text: 
+text: $toc-instance.toc.title
+role: $inherited.types.label-small
+min-width: hug-content
+margin-bottom.px: 16
+color: $inherited.colors.text
+color if {toc-instance.toc.is-active}: $inherited.colors.cta-primary.base
+
+-- end: ftd.row
+
+-- ftd.column:
+margin-left.px.px.px: 12
+
+-- childrens:
+if: {!ftd.is_empty(toc-instance.toc.children)}
+$loop$: $toc-instance.toc.children as $obj
+toc: $obj
+
+-- end: ftd.column
+
+-- end: ftd.column
+
+-- end: toc-instance
+
+
+
+
+
+
+
+
+
+
+-- component childrens:
+pr.toc-item toc:
+
+-- ftd.column:
+
+-- ftd.row:
+if: {childrens.toc.url != NULL}
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: {childrens.toc.font-icon != NULL}
+src: $childrens.toc.font-icon
+height.fixed.px: 14
+width: auto
+
+-- ftd.text: 
+link: $childrens.toc.url
+text: $childrens.toc.title
+role: $inherited.types.label-small
+min-width: hug-content
+margin-bottom.px: 16
+color: $inherited.colors.text
+color if {childrens.toc.is-active}: $inherited.colors.cta-primary.base
+
+-- end: ftd.row
+
+-- ftd.row:
+if: {childrens.toc.url == NULL}
+width: fill-container
+spacing.fixed.px: 8
+
+-- ftd.image:
+if: {childrens.toc.font-icon != NULL}
+src: $childrens.toc.font-icon
+height.fixed.px: 14
+width: fill-container
+
+-- ftd.text: 
+text: $childrens.toc.title
+role: $inherited.types.label-small
+min-width: hug-content
+margin-bottom.px: 16
+color: $inherited.colors.text
+color if {childrens.toc.is-active}: $inherited.colors.cta-primary.base
+
+-- end: ftd.row
+
+-- childrens:
+if: {!ftd.is_empty(childrens.toc.children)}
+$loop$: $childrens.toc.children as $obj
+toc: $obj
+
+-- end: ftd.column
+
+-- end: childrens
+
+
+
+
+
+
+
+
+-- component youtube:
+caption v:
+
+-- ftd.iframe:
+youtube: $youtube.v
+height.fixed.px: 400
+width: fill-container
+margin-bottom.px: 34
+
+-- end: youtube
+
+
+
+
+
+-- component sidebar:
+
+-- ftd.column:
+width: fill-container
+
+-- cbox.text-4: Need Help?
+
+Please join our [Discord to ask any questions](https://discord.gg/d2MgKBybEQ)
+related to this workshop!
+Or just meet the others who are learning FTD like you :-)
+
+-- cbox.info: Github Repo
+
+The code for this workshop can be found on Github:
+[ftd-lang/ftd-workshop](https://github.com/ftd-lang/ftd-workshop).
+
+-- cbox.text-4: Join The Next Session
+
+The next remote workshop would be happening on **4th Nov 2022**. [Learn more
+here](https://fifthtry.com/events/).
+
+-- end: ftd.column
+
+-- end: sidebar
