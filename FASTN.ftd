@@ -9,7 +9,7 @@
 
 
 -- fastn.dependency: fifthtry.github.io/admonitions as cbox
--- fastn.dependency: fastn-community.github.io/bling 
+-- fastn.dependency: fifthtry.github.io/bling 
 
 -- fastn.auto-import: fifthtry.github.io/demo-day/FASTN/config
 
