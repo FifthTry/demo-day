@@ -1,0 +1,126 @@
+{
+  "files": {
+    "FASTN.ftd": {
+      "name": "FASTN.ftd",
+      "checksum": "5A133D25182CC0BA0FCB440D0DBE01FC046042E734F75C7046B1187818F42904",
+      "size": 600
+    },
+    "FASTN/config.ftd": {
+      "name": "FASTN/config.ftd",
+      "checksum": "FF1E32B62F1C0392091A4305AC2CBA0D02189F20BE3E785B0FB3140BD415E08F",
+      "size": 18
+    },
+    "LICENSE": {
+      "name": "LICENSE",
+      "checksum": "5B8B83357C092AC57F28508D18CAB65E4965AAA3BA61226DE038719E022638C1",
+      "size": 1516
+    },
+    "README.md": {
+      "name": "README.md",
+      "checksum": "F41162394FBDFA3332A5C28567DE130AF4CDB92C9ABE44921DB6A98C6E68AE4A",
+      "size": 945
+    },
+    "doc-site-example.png": {
+      "name": "doc-site-example.png",
+      "checksum": "611E21D16829D0FACDB5D2C21ABA2ADF95BF7359DAFA16FCE1351F0AC0E5C44B",
+      "size": 90059
+    },
+    "index.ftd": {
+      "name": "index.ftd",
+      "checksum": "F73FACBEDB422996BF6C2774BE8F6CA7CB02A9BB45E159F49B5F8AFF7A1C56BE",
+      "size": 47964
+    },
+    "static/abrar.jpg": {
+      "name": "static/abrar.jpg",
+      "checksum": "CD4EC481084FB36904D2125D6765D75DD624A899C5A8A009CD6A7DBEF5C9FAA8",
+      "size": 203790
+    },
+    "static/ajit.jpg": {
+      "name": "static/ajit.jpg",
+      "checksum": "9569498E5CC95317ADE29EF5A36A3707EF87052E7B3D6231D05A0EDB23657FF8",
+      "size": 50438
+    },
+    "static/amitu.jpg": {
+      "name": "static/amitu.jpg",
+      "checksum": "AD320C765CD06C2C1140E5C03B264EEDA1CB4F06C432F4130DB901E6E0ED2F10",
+      "size": 10479
+    },
+    "static/arpita.jpg": {
+      "name": "static/arpita.jpg",
+      "checksum": "F7E1B83007984C261AD02C6CED5C62132B8ED8E14341747226A8C2B3A4105578",
+      "size": 20111
+    },
+    "static/avatar.png": {
+      "name": "static/avatar.png",
+      "checksum": "585424A705A13D37B6C662A25AD4FD722E8E913E098D2F5290BA51BBBD32878F",
+      "size": 1886
+    },
+    "static/brand-logo.svg": {
+      "name": "static/brand-logo.svg",
+      "checksum": "38CC38B23F9E62D4360599A37C1499ED25F56F7635EB2DD85D07FBBE92FCC2FD",
+      "size": 10515
+    },
+    "static/calender.svg": {
+      "name": "static/calender.svg",
+      "checksum": "C8472EADF6FBE68E18132880E705E06DA107B4CD4B7BCF5D2B12000F126B1213",
+      "size": 498
+    },
+    "static/calenderr.svg": {
+      "name": "static/calenderr.svg",
+      "checksum": "9EE72A589D88E502313E55BAD96176EF1FD41B74D7A76B9AC72872AB7E96D0B5",
+      "size": 498
+    },
+    "static/clock.png": {
+      "name": "static/clock.png",
+      "checksum": "F6ADE62977761B79B79B7535BF49C85C94C51D7C31D38A58DE9EC7E4C3F17F41",
+      "size": 22141
+    },
+    "static/cross.svg": {
+      "name": "static/cross.svg",
+      "checksum": "030E3E7DBA0BD039E86E78A1DA968F24EA0811FB1C4CAD3481E18947A3F7A1D4",
+      "size": 1483
+    },
+    "static/ganesh.jpg": {
+      "name": "static/ganesh.jpg",
+      "checksum": "00235574DABC1573F13F6ACE4D263E2D46ABC997C35763BB3117108C107D93E2",
+      "size": 21996
+    },
+    "static/info-icon.svg": {
+      "name": "static/info-icon.svg",
+      "checksum": "236FA3E9F63ECACBDB8521D447D4579E1E0D25CEEED94DD620EFD6754AE1F665",
+      "size": 2048
+    },
+    "static/pending.svg": {
+      "name": "static/pending.svg",
+      "checksum": "4400659E7A1253E26FEDFCBEDAA7E1D7E825BA0CBE376BAE6EB1C7EDC3321779",
+      "size": 607
+    },
+    "static/presenatation.png": {
+      "name": "static/presenatation.png",
+      "checksum": "E98B585D30E6255B3760EAD4659EB1A038799E61CAC3C07D561D43A145DE8DD6",
+      "size": 9502
+    },
+    "static/presentation-icon.png": {
+      "name": "static/presentation-icon.png",
+      "checksum": "4174B0A7B088C50073378812FC85917FB3EE85C9CE1C47E324115D669D259F47",
+      "size": 53269
+    },
+    "static/presentation.png": {
+      "name": "static/presentation.png",
+      "checksum": "4F5E01301C3DE33CA1F6A5EB3EE75D45252003E1B4E3D3D9BD840AFEFB9C3F47",
+      "size": 9082
+    },
+    "static/tag.svg": {
+      "name": "static/tag.svg",
+      "checksum": "0DA7156045F3025D8BEB4085D1F6CFC419DD62BF9F4C6D65B74DE5866DA83B9D",
+      "size": 561
+    },
+    "upcoming.ftd": {
+      "name": "upcoming.ftd",
+      "checksum": "ADDC4EB3C191F3A778D6141C0E28B12816F448AE8E34E4AA60AE20F150208228",
+      "size": 772
+    }
+  },
+  "zip_url": "https://codeload.github.com/fifthtry/demo-day/zip/refs/heads/main",
+  "checksum": "076698D75838EB39215ECBBAD2F6BEF06388399B481FF36D479725E0040D1EB6"
+}
